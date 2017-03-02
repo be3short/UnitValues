@@ -1,22 +1,22 @@
-package bs.commons.unitvars.units;
+package bs.commons.dimvars.units;
 
 
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-public class MemoryUnits
+public class MemoryUnitsz
 {
 
-	static private ArrayList<MemoryUnits> Units = new ArrayList<MemoryUnits>();
-	static private TreeMap<String, MemoryUnits> UnitsByName = new TreeMap<String, MemoryUnits>();
+	static private ArrayList<MemoryUnitsz> Units = new ArrayList<MemoryUnitsz>();
+	static private TreeMap<String, MemoryUnitsz> UnitsByName = new TreeMap<String, MemoryUnitsz>();
 	static private int NextOrdinal = 0;
 
-	public static final MemoryUnits UNKNOWN = addUnits("Unknown");
-	public static final MemoryUnits BYTES = addUnits("Bytes");
-	public static final MemoryUnits KB = addUnits("KB");
-	public static final MemoryUnits MB = addUnits("MB");
-	public static final MemoryUnits GB = addUnits("GB");
-	public static final MemoryUnits TB = addUnits("TB");
+	public static final MemoryUnitsz UNKNOWN = addUnits("Unknown");
+	public static final MemoryUnitsz BYTES = addUnits("Bytes");
+	public static final MemoryUnitsz KB = addUnits("KB");
+	public static final MemoryUnitsz MB = addUnits("MB");
+	public static final MemoryUnitsz GB = addUnits("GB");
+	public static final MemoryUnitsz TB = addUnits("TB");
 
 	public static final Double MemoryFactor = 1024.0;
 	//	public static final Double BytesPerKB = 1024.0;
@@ -67,7 +67,7 @@ public class MemoryUnits
 					1 }, // tb
 	};
 
-	public static double convert(double value, MemoryUnits unitsFrom, MemoryUnits unitsTo)
+	public static double convert(double value, MemoryUnitsz unitsFrom, MemoryUnitsz unitsTo)
 	{
 		// No conversion if units are the same
 		if (unitsFrom == unitsTo)
@@ -78,16 +78,16 @@ public class MemoryUnits
 		return FACTORS[unitsFrom.ordinal][unitsTo.ordinal] * value;
 	}
 
-	private MemoryUnits(String name)
+	private MemoryUnitsz(String name)
 	{
 		this.ordinal = NextOrdinal;
 		this.name = name;
 		NextOrdinal++;
 	}
 
-	private static MemoryUnits addUnits(String name)
+	private static MemoryUnitsz addUnits(String name)
 	{
-		MemoryUnits Next = new MemoryUnits(name);
+		MemoryUnitsz Next = new MemoryUnitsz(name);
 		Units.add(Next);
 		UnitsByName.put(name, Next);
 		return Next;

@@ -1,9 +1,12 @@
-package bs.commons.unitvars.units;
+package bs.commons.dimvars.units;
 
 import java.util.HashMap;
 
-import bs.commons.unitvars.units.UnitGroupDefinitions.Unit;
-import bs.commons.unitvars.units.UnitGroupDefinitions.UnitGroup;
+import bs.commons.dimvars.core.UnitConversionMap;
+import bs.commons.dimvars.core.UnitData;
+import bs.commons.dimvars.core.UnitGroup;
+import bs.commons.dimvars.core.UnitData.Unit;
+import bs.commons.dimvars.core.UnitType;
 
 public enum DistanceUnit implements Unit
 {
@@ -19,24 +22,25 @@ public enum DistanceUnit implements Unit
 
 	private DistanceUnit(String unit_name, String unit_abbreviation)
 	{
-		UnitData.newUnitDetails(unit_name, unit_abbreviation, this, UnitGroup.DISTANCE);
+		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.DISTANCE);
+
 	}
 
 	@Override
-	public void updateConversionMap()
+	public UnitConversionMap getConversionMap()
 	{
 		UnitConversionMap map = new UnitConversionMap();
 		map.addConversions(DistanceUnit.METERS, 1.0, .001, 100.0);
 		map.addConversions(DistanceUnit.KM, 100000.0, 1.0, 100.0);
 		map.addConversions(DistanceUnit.CM, .00001, .001, 1.0);
-		Unit.updateConversions(map.getMap());
+		return map;
 	}
 
 	@Override
 	public UnitGroup getGroup()
 	{
 		// TODO Auto-generated method stub
-		return UnitGroup.DISTANCE;
+		return UnitType.DISTANCE;
 	}
 
 }

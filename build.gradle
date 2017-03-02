@@ -28,4 +28,7 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
+    //compile 'org.springframework.boot:spring-boot-dependencies:1.1.8.RELEASE'
+   // compile 'com.github.spring-projects:spring-framework:v5.0.0.M5'
+  //  compile 'com.github.brendan1991:ObjectTools:v0.1'
 }
