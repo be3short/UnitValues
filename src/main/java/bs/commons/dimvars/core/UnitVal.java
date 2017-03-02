@@ -12,7 +12,7 @@ public class UnitVal
 {
 
 	public Unit unit;
-	private TimeUnit rate;
+	public TimeUnit rate;
 	public Double value;
 
 	public UnitVal(Double val, Unit unit) throws UnitException

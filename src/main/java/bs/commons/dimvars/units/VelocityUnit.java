@@ -49,7 +49,7 @@ public enum VelocityUnit implements Unit
 		Double[] conversions = new Double[VelocityUnit.values().length];
 		for (Integer place = 0; place < conversions.length; place++)
 		{
-			conversions[place] = Math.pow(10, -(place - 4) * 3);
+			conversions[place] = Math.pow(10, -(place - 3) * 3);
 		}
 
 		return conversions;

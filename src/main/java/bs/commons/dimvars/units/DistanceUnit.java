@@ -6,6 +6,7 @@ import bs.commons.dimvars.core.UnitConversionMap;
 import bs.commons.dimvars.core.UnitData;
 import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
+import bs.commons.dimvars.values.Distance;
 import bs.commons.dimvars.core.UnitType;
 
 public enum DistanceUnit implements Unit
@@ -49,7 +50,7 @@ public enum DistanceUnit implements Unit
 		Double[] conversions = new Double[DistanceUnit.values().length];
 		for (Integer place = 0; place < conversions.length; place++)
 		{
-			conversions[place] = Math.pow(10, -(place - 4) * 3);
+			conversions[place] = Math.pow(10, -(place - 3) * 3);
 		}
 
 		return conversions;
@@ -66,5 +67,14 @@ public enum DistanceUnit implements Unit
 	public TimeUnit getRate()
 	{
 		return null;
+	}
+
+	public static void main(String args[])
+	{
+		Distance d = new Distance(1000.0, DistanceUnit.MILLIMETERS);
+		System.out.println(d.m());
+		System.out.println(d.km());
+		System.out.println(d.um());
+
 	}
 }

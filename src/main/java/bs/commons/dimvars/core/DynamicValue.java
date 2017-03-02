@@ -12,9 +12,8 @@ public class DynamicValue<T>
 {
 
 	private T value;
-	private TimeUnit valueRate;
+
 	private T derivative;
-	private TimeUnit changeRate;
 
 	public DynamicValue(T val, T der)
 	{
@@ -54,12 +53,12 @@ public class DynamicValue<T>
 
 	public static Double derivative(DynamicValue var)
 	{
-		return ((UnitVal) var.derivative).getValue(((UnitVal) var.value).unit);
+		return ((UnitVal) var.derivative).getValue(((UnitVal) var.value).unit, TimeUnit.SECOND);
 	}
 
 	public static Double value(DynamicValue var)
 	{
-		return ((UnitVal) var.value).getValue(((UnitVal) var.value).unit);
+		return ((UnitVal) var.value).getValue(((UnitVal) var.value).unit, TimeUnit.SECOND);
 	}
 
 	public static void setValue(DynamicValue var, Double val)

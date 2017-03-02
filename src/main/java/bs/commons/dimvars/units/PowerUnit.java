@@ -63,18 +63,17 @@ public enum PowerUnit implements Unit
 
 		return conversions;
 	}
+	@Override
+	public TimeUnit getRate()
+	{
+		return null;
+	}
 
 	@Override
 	public UnitGroup getGroup()
 	{
 		// TODO Auto-generated method stub
 		return UnitType.POWER;
-	}
-
-	@Override
-	public TimeUnit getRate()
-	{
-		return null;
 	}
 
 	public static void main(String args[])
