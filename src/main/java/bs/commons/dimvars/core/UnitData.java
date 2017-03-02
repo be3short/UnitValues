@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.exceptions.UnitException;
+import bs.commons.dimvars.units.TimeUnit;
 
 public class UnitData
 {
@@ -15,6 +16,8 @@ public class UnitData
 		public UnitGroup getGroup();
 
 		public UnitConversionMap getConversionMap();
+
+		public TimeUnit getRate();
 
 		static void updateConversions(UnitConversionMap map)
 		{

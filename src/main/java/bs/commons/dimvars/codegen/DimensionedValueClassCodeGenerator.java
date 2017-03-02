@@ -5,12 +5,16 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import bs.commons.dimvars.core.UnitData;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.exceptions.UnitException;
 import bs.commons.dimvars.units.DistanceUnit;
 import bs.commons.dimvars.units.MemoryUnit;
+import bs.commons.dimvars.units.TimeUnit;
+import bs.commons.dimvars.units.VoltageUnit;
 
 public class DimensionedValueClassCodeGenerator
 {
@@ -25,6 +29,7 @@ public class DimensionedValueClassCodeGenerator
 		String valueClassFile = getPreClassSection(units, package_name);
 		valueClassFile += getClassHeader(units);
 		valueClassFile += getConstructor(units);
+		valueClassFile += getDynamicConstructor(units);
 		for (Unit unit : units)
 		{
 			valueClassFile += getUnitMethods(unit);
@@ -35,11 +40,11 @@ public class DimensionedValueClassCodeGenerator
 
 	private static void writeFile(String source_directory, String package_name, Unit[] units, String content)
 	{
-		String fileName = units[0].getGroup().getCategory() + "Value.java";
+		String fileName = units[0].getGroup().getCategory() + ".java";
 		File dir = new File(
-		System.getProperty("user.home") + "/" + source_directory + "/" + package_name.replace(".", "/"));
+		System.getProperty("user.dir") + "/" + source_directory + "/" + package_name.replace(".", "/"));
 		dir.mkdirs();
-		File file = new File(System.getProperty("user.home") + "/" + source_directory + "/"
+		File file = new File(System.getProperty("user.dir") + "/" + source_directory + "/"
 		+ package_name.replace(".", "/") + "/" + fileName);
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"))) // create
 		{
@@ -57,9 +62,10 @@ public class DimensionedValueClassCodeGenerator
 		String unitGroupFullClassName = units[0].getGroup().getClass().getName();
 		String unitFullClassName = units[0].getClass().getName();
 		String section = "package " + package_name + ";\n\n";
-		section += "import bs.commons.dimvars.core.DimensionedValue;\n";
+		section += "import bs.commons.dimvars.core.UnitVal;\n";
 		section += "import bs.commons.dimvars.core.UnitData.Unit;\n";
-		section += "import bs.commons.dimvars.core.UnitData.Unit;\n";
+		section += "import bs.commons.dimvars.units.TimeUnit;\n";
+		section += "import bs.commons.dimvars.core.DynamicValue;\n";
 		section += "import " + unitFullClassName + ";\n";
 		section += "import " + unitGroupFullClassName + ";\n\n";
 		return section;
@@ -67,18 +73,47 @@ public class DimensionedValueClassCodeGenerator
 
 	public static String getClassHeader(Unit[] units)
 	{
-		String classHeader = "public class " + units[0].getGroup().getCategory() + "Value extends DimensionedValue"
-		+ "\n{\n";
+		String classHeader = "public class " + units[0].getGroup().getCategory() + " extends UnitVal" + "\n{\n";
 		return classHeader;
 	}
 
 	public static String getConstructor(Unit[] units)
 	{
-		String className = units[0].getGroup().getCategory() + "Value";
+		TimeUnit rate = units[0].getRate();
+		String rateString = "null";
+		if (rate != null)
+		{
+			rateString = "TimeUnit.SECOND";
+		}
+		String className = units[0].getGroup().getCategory();
 		String unitGroupName = units[0].getGroup().getClass().getSimpleName() + "."
 		+ ((Enum) units[0].getGroup()).name();
-		String constructor = "public " + className + "(Unit unit, Double val)\n{\n";
-		constructor += "super(val,unit," + unitGroupName + ");\n}\n";
+		String constructor = "public " + className + "(Double val,Unit unit)\n{\n";
+		constructor += "super(val,unit," + unitGroupName + "," + rateString + ");\n}\n";
+		constructor += "protected " + className + "(Double val,Unit unit, TimeUnit rate)\n{\n";
+		constructor += "super(val,unit," + unitGroupName + ",rate);\n}\n";
+		constructor += "public " + className + "()\n{\n";
+		String unitClassName = ((Enum) units[0]).getClass().getSimpleName() + "." + ((Enum) units[0]).name();
+		constructor += "super(0.0," + unitClassName + "," + unitGroupName + "," + rateString + ");\n}\n";
+		return constructor;
+	}
+
+	public static String getDynamicConstructor(Unit[] units)
+	{
+		TimeUnit rate = units[0].getRate();
+		String unitClassName = ((Enum) units[0]).getClass().getSimpleName() + "." + ((Enum) units[0]).name();
+		String rateString = "null";
+		if (rate != null)
+		{
+			rateString = "TimeUnit.SECOND";
+		}
+		String className = units[0].getGroup().getCategory();
+		String unitGroupName = units[0].getGroup().getClass().getSimpleName() + "."
+		+ ((Enum) units[0].getGroup()).name();
+		String constructor = "public static DynamicValue<" + className + "> getDynamic" + className + "Value()\n{\n";
+		constructor += className + " valClass = new " + className + "(0.0," + unitClassName + "," + rateString + ");\n";
+		constructor += className + " derClass = new " + className + "(0.0," + unitClassName + ", TimeUnit.SECOND);\n";
+		constructor += "return new DynamicValue<" + className + ">(valClass,derClass);\n}\n";
 		return constructor;
 	}
 
@@ -99,17 +134,39 @@ public class DimensionedValueClassCodeGenerator
 			unitAbrev = "_byte";
 		}
 		String getMethod = "public Double " + unitAbrev + "()\n{\n";
-		getMethod += "return getValue(" + unitClassName + ");\n}\n";
+		getMethod += "return getValue(" + unitClassName + ",TimeUnit.SECOND);\n}\n";
 		getMethod += "public void " + unitAbrev + "(Double val)\n{\n";
-		getMethod += "setValue(val," + unitClassName + ");\n}\n";
+		getMethod += "setValue(val," + unitClassName + ",TimeUnit.SECOND);\n}\n";
+		//if (unit.getRate() != null)
+		{
+			getMethod += "public Double " + unitAbrev + "(TimeUnit rate)\n{\n";
+			getMethod += "return getValue(" + unitClassName + ",rate);\n}\n";
+			getMethod += "public void " + unitAbrev + "(Double val, TimeUnit rate)\n{\n";
+			getMethod += "setValue(val," + unitClassName + ",rate);\n}\n";
+		}
 		return getMethod;
+	}
+
+	public static void createAllValueClasses()
+	{
+		HashMap<String, ArrayList<Object>> units = ClassUtilities.getAllInterfaceEnumValues(Unit.class, "bs.");
+		System.out.println("Value classes to write " + units.size());
+		for (ArrayList<Object> unitList : units.values())
+		{
+			System.out.println(unitList.toString());
+			Unit[] unitArray = new Unit[unitList.size()];
+			for (int objInd = 0; objInd < unitList.size(); objInd++)
+			{
+				unitArray[objInd] = (Unit) unitList.get(objInd);
+			}
+			generateDimensionValueClass(unitArray, "bs.commons.dimvars.values", "src/main/java");
+		}
 	}
 
 	public static void main(String[] args)
 	{
-		System.out.print(getPreClassSection(MemoryUnit.values(), "bs.commons.dimvars.core"));
-		System.out.print(getClassHeader(MemoryUnit.values()));
-		System.out.println(getConstructor(MemoryUnit.values()));
-		generateDimensionValueClass(DistanceUnit.values(), "bs.commons.dimvars.values", "Desktop/test/");
+		System.out.println("Creating");
+		//generateDimensionValueClass(VoltageUnit.values(), "bs.commons.dimvars.tvalues", "src/main/java");
+		createAllValueClasses();
 	}
 }

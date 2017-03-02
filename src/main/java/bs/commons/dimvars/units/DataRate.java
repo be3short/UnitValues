@@ -8,7 +8,7 @@ import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.core.UnitType;
 
-public enum MemoryUnit implements Unit
+public enum DataRate implements Unit
 {
 	BIT(
 		"Bit",
@@ -43,9 +43,9 @@ public enum MemoryUnit implements Unit
 
 	public static final Double MemoryFactor = 1024.0;
 
-	private MemoryUnit(String unit_name, String unit_abbreviation)
+	private DataRate(String unit_name, String unit_abbreviation)
 	{
-		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.MEMORY);
+		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.DATA_RATE);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public enum MemoryUnit implements Unit
 	{
 
 		UnitConversionMap map = new UnitConversionMap();
-		for (MemoryUnit unit : MemoryUnit.values())
+		for (DataRate unit : DataRate.values())
 		{
 			map.addConversions(unit, getByteConversionArray(unit.ordinal()));
 		}
@@ -80,12 +80,19 @@ public enum MemoryUnit implements Unit
 	public UnitGroup getGroup()
 	{
 		// TODO Auto-generated method stub
-		return UnitType.MEMORY;
+		return UnitType.DATA_RATE;
+	}
+
+	public static void main(String[] args)
+	{
+		Unit byteVal = DataRate.BYTE;
+		Enum b = (Enum) byteVal;
+		System.out.println(b.getClass().getSimpleName() + "." + b.name());
 	}
 
 	@Override
 	public TimeUnit getRate()
 	{
-		return null;
+		return TimeUnit.SECOND;
 	}
 }

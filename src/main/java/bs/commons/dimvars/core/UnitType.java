@@ -3,12 +3,28 @@ package bs.commons.dimvars.core;
 public enum UnitType implements UnitGroup
 {
 
-	SPEED(
-		"Speed"),
 	DISTANCE(
 		"Distance"),
+	VELOCITY(
+		"Velocity"),
+	ANGLE(
+		"Angle"),
+	MASS(
+		"Mass"),
 	MEMORY(
-		"Memory");
+		"Memory"),
+	VOLTAGE(
+		"Voltage"),
+	CURRENT(
+		"Current"),
+	POWER(
+		"Power"),
+	TIME(
+		"Time"),
+	DATA_RATE(
+		"Datarate"),
+	NONE(
+		"NoUnits"),;
 
 	private final String category;
 

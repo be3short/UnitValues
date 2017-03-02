@@ -8,7 +8,7 @@ import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.core.UnitType;
 
-public enum DistanceUnit implements Unit
+public enum VelocityUnit implements Unit
 {
 	NANOMETERS(
 		"Nanometers",
@@ -26,9 +26,9 @@ public enum DistanceUnit implements Unit
 		"Kilometers",
 		"km");
 
-	private DistanceUnit(String unit_name, String unit_abbreviation)
+	private VelocityUnit(String unit_name, String unit_abbreviation)
 	{
-		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.DISTANCE);
+		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.VELOCITY);
 
 	}
 
@@ -37,7 +37,7 @@ public enum DistanceUnit implements Unit
 	{
 
 		UnitConversionMap map = new UnitConversionMap();
-		for (DistanceUnit unit : DistanceUnit.values())
+		for (VelocityUnit unit : VelocityUnit.values())
 		{
 			map.addConversions(unit, getDistanceConversionArray(unit.ordinal()));
 		}
@@ -46,7 +46,7 @@ public enum DistanceUnit implements Unit
 
 	public Double[] getDistanceConversionArray(Integer multiplier_index)
 	{
-		Double[] conversions = new Double[DistanceUnit.values().length];
+		Double[] conversions = new Double[VelocityUnit.values().length];
 		for (Integer place = 0; place < conversions.length; place++)
 		{
 			conversions[place] = Math.pow(10, -(place - 4) * 3);
@@ -59,12 +59,13 @@ public enum DistanceUnit implements Unit
 	public UnitGroup getGroup()
 	{
 		// TODO Auto-generated method stub
-		return UnitType.DISTANCE;
+		return UnitType.VELOCITY;
 	}
 
 	@Override
 	public TimeUnit getRate()
 	{
-		return null;
+		return TimeUnit.SECOND;
 	}
+
 }
