@@ -11,7 +11,6 @@ import java.util.HashMap;
 import bs.commons.dimvars.core.UnitData;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.exceptions.UnitException;
-import bs.commons.dimvars.values.NoUnits;
 
 public class DimensionedValueClassCodeGenerator
 {
@@ -23,10 +22,6 @@ public class DimensionedValueClassCodeGenerator
 		valueClassFile += getConstructor(units);
 		for (Unit unit : units)
 		{
-			if (!unit.getClass().equals(NoUnits.class))
-			{
-				valueClassFile += getUnitMethods(unit);
-			}
 		}
 		valueClassFile += "}";
 		writeFile(source_directory, package_name, units, valueClassFile);
@@ -172,6 +167,7 @@ public class DimensionedValueClassCodeGenerator
 	public static void createAllValueClasses()
 	{
 		HashMap<String, ArrayList<Object>> units = ClassUtilities.getAllInterfaceEnumValues(Unit.class, "bs.");
+		units.remove("NoUnit");
 		System.out.println("Value classes to write " + units.size());
 		for (ArrayList<Object> unitList : units.values())
 		{
