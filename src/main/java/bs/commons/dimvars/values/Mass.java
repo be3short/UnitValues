@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.MassUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Mass extends UnitVal
+public class Mass extends UnitValue
 {
 public Mass(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Mass()
 {
 super(0.0,MassUnit.GRAMS,UnitType.MASS,null);
 }
-public static DynamicValue<Mass> getDynamicMassValue()
+public static DynamicVal<Mass> getDynamicMassValue()
 {
 Mass valClass = new Mass(0.0,MassUnit.GRAMS,null);
 Mass derClass = new Mass(0.0,MassUnit.GRAMS, TimeUnit.SECOND);
-return new DynamicValue<Mass>(valClass,derClass);
+return new DynamicVal<Mass>(valClass,derClass);
 }
 public Double g()
 {

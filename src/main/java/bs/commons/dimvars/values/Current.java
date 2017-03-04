@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.CurrentUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Current extends UnitVal
+public class Current extends UnitValue
 {
 public Current(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Current()
 {
 super(0.0,CurrentUnit.NANOAMP,UnitType.CURRENT,null);
 }
-public static DynamicValue<Current> getDynamicCurrentValue()
+public static DynamicVal<Current> getDynamicCurrentValue()
 {
 Current valClass = new Current(0.0,CurrentUnit.NANOAMP,null);
 Current derClass = new Current(0.0,CurrentUnit.NANOAMP, TimeUnit.SECOND);
-return new DynamicValue<Current>(valClass,derClass);
+return new DynamicVal<Current>(valClass,derClass);
 }
 public Double nA()
 {

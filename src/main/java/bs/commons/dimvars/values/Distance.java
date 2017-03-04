@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.DistanceUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Distance extends UnitVal
+public class Distance extends UnitValue
 {
 public Distance(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Distance()
 {
 super(0.0,DistanceUnit.NANOMETERS,UnitType.DISTANCE,null);
 }
-public static DynamicValue<Distance> getDynamicDistanceValue()
+public static DynamicVal<Distance> getDynamicDistanceValue()
 {
 Distance valClass = new Distance(0.0,DistanceUnit.NANOMETERS,null);
 Distance derClass = new Distance(0.0,DistanceUnit.NANOMETERS, TimeUnit.SECOND);
-return new DynamicValue<Distance>(valClass,derClass);
+return new DynamicVal<Distance>(valClass,derClass);
 }
 public Double nm()
 {

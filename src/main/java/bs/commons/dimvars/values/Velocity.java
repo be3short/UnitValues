@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.VelocityUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Velocity extends UnitVal
+public class Velocity extends UnitValue
 {
 public Velocity(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Velocity()
 {
 super(0.0,VelocityUnit.NANOMETERS,UnitType.VELOCITY,TimeUnit.SECOND);
 }
-public static DynamicValue<Velocity> getDynamicVelocityValue()
+public static DynamicVal<Velocity> getDynamicVelocityValue()
 {
 Velocity valClass = new Velocity(0.0,VelocityUnit.NANOMETERS,TimeUnit.SECOND);
 Velocity derClass = new Velocity(0.0,VelocityUnit.NANOMETERS, TimeUnit.SECOND);
-return new DynamicValue<Velocity>(valClass,derClass);
+return new DynamicVal<Velocity>(valClass,derClass);
 }
 public Double nm()
 {

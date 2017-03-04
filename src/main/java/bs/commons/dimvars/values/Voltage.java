@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.VoltageUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Voltage extends UnitVal
+public class Voltage extends UnitValue
 {
 public Voltage(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Voltage()
 {
 super(0.0,VoltageUnit.NANOVOLT,UnitType.VOLTAGE,null);
 }
-public static DynamicValue<Voltage> getDynamicVoltageValue()
+public static DynamicVal<Voltage> getDynamicVoltageValue()
 {
 Voltage valClass = new Voltage(0.0,VoltageUnit.NANOVOLT,null);
 Voltage derClass = new Voltage(0.0,VoltageUnit.NANOVOLT, TimeUnit.SECOND);
-return new DynamicValue<Voltage>(valClass,derClass);
+return new DynamicVal<Voltage>(valClass,derClass);
 }
 public Double nV()
 {

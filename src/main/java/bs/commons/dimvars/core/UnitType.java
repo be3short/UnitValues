@@ -19,6 +19,8 @@ public enum UnitType implements UnitGroup
 		"Current"),
 	POWER(
 		"Power"),
+	ENERGY(
+		"Energy"),
 	TIME(
 		"Time"),
 	DATA_RATE(

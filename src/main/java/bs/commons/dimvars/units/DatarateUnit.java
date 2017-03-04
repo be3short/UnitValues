@@ -8,7 +8,7 @@ import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.core.UnitType;
 
-public enum DataRate implements Unit
+public enum DatarateUnit implements Unit
 {
 	BIT(
 		"Bit",
@@ -43,7 +43,7 @@ public enum DataRate implements Unit
 
 	public static final Double MemoryFactor = 1024.0;
 
-	private DataRate(String unit_name, String unit_abbreviation)
+	private DatarateUnit(String unit_name, String unit_abbreviation)
 	{
 		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.DATA_RATE);
 	}
@@ -53,7 +53,7 @@ public enum DataRate implements Unit
 	{
 
 		UnitConversionMap map = new UnitConversionMap();
-		for (DataRate unit : DataRate.values())
+		for (DatarateUnit unit : DatarateUnit.values())
 		{
 			map.addConversions(unit, getByteConversionArray(unit.ordinal()));
 		}
@@ -85,7 +85,7 @@ public enum DataRate implements Unit
 
 	public static void main(String[] args)
 	{
-		Unit byteVal = DataRate.BYTE;
+		Unit byteVal = DatarateUnit.BYTE;
 		Enum b = (Enum) byteVal;
 		System.out.println(b.getClass().getSimpleName() + "." + b.name());
 	}

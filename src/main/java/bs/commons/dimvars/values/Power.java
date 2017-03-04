@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.PowerUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Power extends UnitVal
+public class Power extends UnitValue
 {
 public Power(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Power()
 {
 super(0.0,PowerUnit.NANOWATT,UnitType.POWER,null);
 }
-public static DynamicValue<Power> getDynamicPowerValue()
+public static DynamicVal<Power> getDynamicPowerValue()
 {
 Power valClass = new Power(0.0,PowerUnit.NANOWATT,null);
 Power derClass = new Power(0.0,PowerUnit.NANOWATT, TimeUnit.SECOND);
-return new DynamicValue<Power>(valClass,derClass);
+return new DynamicVal<Power>(valClass,derClass);
 }
 public Double nW()
 {

@@ -8,14 +8,14 @@ import bs.commons.dimvars.units.TimeUnit;
 /*
  * DUV stands for Dynamic Unit Value where the value is definined by the class T.  A dynamic unit value is a value with units that changes continuously.  This class allows for a value and it's derivative to be stored as unit values.
  */
-public class DynamicValue<T>
+public class DynamicVal<T>
 {
 
 	private T value;
 
 	private T derivative;
 
-	public DynamicValue(T val, T der)
+	public DynamicVal(T val, T der)
 	{
 		value = val;
 		derivative = der;
@@ -26,9 +26,19 @@ public class DynamicValue<T>
 		return value;
 	}
 
+	public void v(T new_value)
+	{
+		value = new_value;
+	}
+
 	public T d()
 	{
 		return derivative;
+	}
+
+	public void d(T new_value)
+	{
+		derivative = new_value;
 	}
 
 	//	public Double value()
@@ -51,23 +61,29 @@ public class DynamicValue<T>
 	//		derivative.setValue(val, value.unit);
 	//	}
 
-	public static Double derivative(DynamicValue var)
+	public static Double derivative(DynamicVal var)
 	{
-		return ((UnitVal) var.derivative).getValue(((UnitVal) var.value).unit, TimeUnit.SECOND);
+		return ((UnitValue) var.derivative).getValue(((UnitValue) var.value).unit, TimeUnit.SECOND);
 	}
 
-	public static Double value(DynamicValue var)
+	public static Double value(DynamicVal var)
 	{
-		return ((UnitVal) var.value).getValue(((UnitVal) var.value).unit, TimeUnit.SECOND);
+		try
+		{
+			return ((UnitValue) var.value).getValue(((UnitValue) var.value).unit, TimeUnit.SECOND);
+		} catch (Exception e)
+		{
+			return null;
+		}
 	}
 
-	public static void setValue(DynamicValue var, Double val)
+	public static void setValue(DynamicVal var, Double val)
 	{
-		((UnitVal) var.value).setValue(val, ((UnitVal) var.value).unit);
+		((UnitValue) var.value).setValue(val, ((UnitValue) var.value).unit);
 	}
 
-	public static void removeDerivative(DynamicValue var)
+	public static void removeDerivative(DynamicVal var)
 	{
-		var.derivative = null;
+		var.d(null);
 	}
 }

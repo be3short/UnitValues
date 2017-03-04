@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.NoUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class NoUnits extends UnitVal
+public class NoUnits extends UnitValue
 {
 public NoUnits(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public NoUnits()
 {
 super(0.0,NoUnit.NONE,UnitType.NONE,null);
 }
-public static DynamicValue<NoUnits> getDynamicNoUnitsValue()
+public static DynamicVal<NoUnits> getDynamicNoUnitsValue()
 {
 NoUnits valClass = new NoUnits(0.0,NoUnit.NONE,null);
 NoUnits derClass = new NoUnits(0.0,NoUnit.NONE, TimeUnit.SECOND);
-return new DynamicValue<NoUnits>(valClass,derClass);
+return new DynamicVal<NoUnits>(valClass,derClass);
 }
 public Double val()
 {

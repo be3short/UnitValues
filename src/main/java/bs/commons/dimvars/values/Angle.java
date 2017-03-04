@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.AngleUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Angle extends UnitVal
+public class Angle extends UnitValue
 {
 public Angle(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Angle()
 {
 super(0.0,AngleUnit.RAD,UnitType.ANGLE,null);
 }
-public static DynamicValue<Angle> getDynamicAngleValue()
+public static DynamicVal<Angle> getDynamicAngleValue()
 {
 Angle valClass = new Angle(0.0,AngleUnit.RAD,null);
 Angle derClass = new Angle(0.0,AngleUnit.RAD, TimeUnit.SECOND);
-return new DynamicValue<Angle>(valClass,derClass);
+return new DynamicVal<Angle>(valClass,derClass);
 }
 public Double rad()
 {

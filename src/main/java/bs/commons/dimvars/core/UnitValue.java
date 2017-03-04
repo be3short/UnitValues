@@ -8,28 +8,28 @@ import bs.commons.dimvars.units.TimeUnit;
 /*
  * Unit Val is short for Unit Value, which is a value with an associated unit.  This class allows values to be stored in a specified unit, and then retrieved in any unit of the same type
  */
-public class UnitVal
+public class UnitValue
 {
 
 	public Unit unit;
 	public TimeUnit rate;
 	public Double value;
 
-	public UnitVal(Double val, Unit unit) throws UnitException
+	public UnitValue(Double val, Unit unit) throws UnitException
 	{
 		value = val;
 		this.rate = null;
 		this.unit = unit;//UnitData.getUnitData(unit);
 	}
 
-	public UnitVal(Double val, Unit unit, TimeUnit rate) throws UnitException
+	public UnitValue(Double val, Unit unit, TimeUnit rate) throws UnitException
 	{
 		value = val;
 		this.rate = rate;
 		this.unit = unit;//UnitData.getUnitData(unit);
 	}
 
-	protected UnitVal(Double val, Unit unit, UnitGroup group, TimeUnit rate)
+	protected UnitValue(Double val, Unit unit, UnitGroup group, TimeUnit rate)
 	{
 		UnitData data = null;
 		try

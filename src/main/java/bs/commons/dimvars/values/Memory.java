@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.MemoryUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Memory extends UnitVal
+public class Memory extends UnitValue
 {
 public Memory(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Memory()
 {
 super(0.0,MemoryUnit.BIT,UnitType.MEMORY,null);
 }
-public static DynamicValue<Memory> getDynamicMemoryValue()
+public static DynamicVal<Memory> getDynamicMemoryValue()
 {
 Memory valClass = new Memory(0.0,MemoryUnit.BIT,null);
 Memory derClass = new Memory(0.0,MemoryUnit.BIT, TimeUnit.SECOND);
-return new DynamicValue<Memory>(valClass,derClass);
+return new DynamicVal<Memory>(valClass,derClass);
 }
 public Double bit()
 {

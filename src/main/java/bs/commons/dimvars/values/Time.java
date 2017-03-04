@@ -1,13 +1,13 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitVal;
+import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicValue;
+import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.TimeUnit;
 import bs.commons.dimvars.core.UnitType;
 
-public class Time extends UnitVal
+public class Time extends UnitValue
 {
 public Time(Double val,Unit unit)
 {
@@ -21,11 +21,11 @@ public Time()
 {
 super(0.0,TimeUnit.NANOSECOND,UnitType.TIME,null);
 }
-public static DynamicValue<Time> getDynamicTimeValue()
+public static DynamicVal<Time> getDynamicTimeValue()
 {
 Time valClass = new Time(0.0,TimeUnit.NANOSECOND,null);
 Time derClass = new Time(0.0,TimeUnit.NANOSECOND, TimeUnit.SECOND);
-return new DynamicValue<Time>(valClass,derClass);
+return new DynamicVal<Time>(valClass,derClass);
 }
 public Double nS()
 {
