@@ -1,11 +1,8 @@
 package bs.commons.dimvars.units;
 
-import java.util.HashMap;
-
 import bs.commons.dimvars.core.UnitConversionMap;
-import bs.commons.dimvars.core.UnitData;
-import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
+import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitType;
 
 public enum MemoryUnit implements Unit
@@ -79,13 +76,7 @@ public enum MemoryUnit implements Unit
 	@Override
 	public UnitGroup getGroup()
 	{
-		// TODO Auto-generated method stub
 		return UnitType.MEMORY;
 	}
 
-	@Override
-	public TimeUnit getRate()
-	{
-		return null;
-	}
 }

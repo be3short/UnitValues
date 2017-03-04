@@ -11,28 +11,22 @@ import java.util.HashMap;
 import bs.commons.dimvars.core.UnitData;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.exceptions.UnitException;
-import bs.commons.dimvars.units.DistanceUnit;
-import bs.commons.dimvars.units.MemoryUnit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.units.VoltageUnit;
+import bs.commons.dimvars.values.NoUnits;
 
 public class DimensionedValueClassCodeGenerator
 {
-
-	private static String getBeginningOfFile()
-	{
-		return null;
-	}
 
 	public static void generateDimensionValueClass(Unit[] units, String package_name, String source_directory)
 	{
 		String valueClassFile = getPreClassSection(units, package_name);
 		valueClassFile += getClassHeader(units);
 		valueClassFile += getConstructor(units);
-		valueClassFile += getDynamicConstructor(units);
 		for (Unit unit : units)
 		{
-			valueClassFile += getUnitMethods(unit);
+			if (!unit.getClass().equals(NoUnits.class))
+			{
+				valueClassFile += getUnitMethods(unit);
+			}
 		}
 		valueClassFile += "}";
 		writeFile(source_directory, package_name, units, valueClassFile);
@@ -40,7 +34,7 @@ public class DimensionedValueClassCodeGenerator
 
 	private static void writeFile(String source_directory, String package_name, Unit[] units, String content)
 	{
-		String fileName = units[0].getGroup().getCategory() + ".java";
+		String fileName = units[0].getGroup().getType() + ".java";
 		File dir = new File(
 		System.getProperty("user.dir") + "/" + source_directory + "/" + package_name.replace(".", "/"));
 		dir.mkdirs();
@@ -62,10 +56,10 @@ public class DimensionedValueClassCodeGenerator
 		String unitGroupFullClassName = units[0].getGroup().getClass().getName();
 		String unitFullClassName = units[0].getClass().getName();
 		String section = "package " + package_name + ";\n\n";
-		section += "import bs.commons.dimvars.core.UnitVal;\n";
+		section += "import bs.commons.dimvars.core.UnitValue;\n";
 		section += "import bs.commons.dimvars.core.UnitData.Unit;\n";
-		section += "import bs.commons.dimvars.units.TimeUnit;\n";
-		section += "import bs.commons.dimvars.core.DynamicValue;\n";
+		//section += "import bs.commons.dimvars.units.TimeUnit;\n";
+		//section += "import bs.commons.dimvars.core.DynamicValue;\n";
 		section += "import " + unitFullClassName + ";\n";
 		section += "import " + unitGroupFullClassName + ";\n\n";
 		return section;
@@ -73,78 +67,106 @@ public class DimensionedValueClassCodeGenerator
 
 	public static String getClassHeader(Unit[] units)
 	{
-		String classHeader = "public class " + units[0].getGroup().getCategory() + " extends UnitVal" + "\n{\n";
+		String unitTypeName = units[0].getGroup().getType();
+		String classHeader = "/**\n * Class that stores a value in " + unitTypeName
+		+ "units. This value can be extracted or updated in any units of the same type.\n *\n * @author: Brendan Short\n *\n * @date: 03-02-2017\n */\n";
+		classHeader += "public class " + units[0].getGroup().getType() + " extends UnitValue" + "\n{\n";
 		return classHeader;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static String getConstructor(Unit[] units)
 	{
-		TimeUnit rate = units[0].getRate();
-		String rateString = "null";
-		if (rate != null)
-		{
-			rateString = "TimeUnit.SECOND";
-		}
-		String className = units[0].getGroup().getCategory();
+		String className = units[0].getGroup().getType();
 		String unitGroupName = units[0].getGroup().getClass().getSimpleName() + "."
 		+ ((Enum) units[0].getGroup()).name();
-		String constructor = "public " + className + "(Double val,Unit unit)\n{\n";
-		constructor += "super(val,unit," + unitGroupName + "," + rateString + ");\n}\n";
-		constructor += "protected " + className + "(Double val,Unit unit, TimeUnit rate)\n{\n";
-		constructor += "super(val,unit," + unitGroupName + ",rate);\n}\n";
-		constructor += "public " + className + "()\n{\n";
-		String unitClassName = ((Enum) units[0]).getClass().getSimpleName() + "." + ((Enum) units[0]).name();
-		constructor += "super(0.0," + unitClassName + "," + unitGroupName + "," + rateString + ");\n}\n";
+		String constructor = getConstructorComment();
+		constructor += "public " + className + "(Double val,Unit unit)\n{\n";
+		constructor += "super(val,unit," + unitGroupName + ");\n}\n";
+		//constructor += "protected " + className + "(Double val,Unit unit)\n{\n";
+		//constructor += "super(val,unit," + unitGroupName + ",rate);\n}\n";
+		//constructor += "public " + className + "()\n{\n";
+		//String unitClassName = ((Enum) units[0]).getClass().getSimpleName() + "." + ((Enum) units[0]).name();
+		//constructor += "super(0.0," + unitClassName + "," + unitGroupName + "," + rateString + ");\n}\n";
 		return constructor;
 	}
 
-	public static String getDynamicConstructor(Unit[] units)
+	public static String getConstructorComment()
 	{
-		TimeUnit rate = units[0].getRate();
-		String unitClassName = ((Enum) units[0]).getClass().getSimpleName() + "." + ((Enum) units[0]).name();
-		String rateString = "null";
-		if (rate != null)
-		{
-			rateString = "TimeUnit.SECOND";
-		}
-		String className = units[0].getGroup().getCategory();
-		String unitGroupName = units[0].getGroup().getClass().getSimpleName() + "."
-		+ ((Enum) units[0].getGroup()).name();
-		String constructor = "public static DynamicValue<" + className + "> getDynamic" + className + "Value()\n{\n";
-		constructor += className + " valClass = new " + className + "(0.0," + unitClassName + "," + rateString + ");\n";
-		constructor += className + " derClass = new " + className + "(0.0," + unitClassName + ", TimeUnit.SECOND);\n";
-		constructor += "return new DynamicValue<" + className + ">(valClass,derClass);\n}\n";
-		return constructor;
+		return "	/*\n	 * General Constructor\n	 * \n	 * @param val - value to be stored\n	 * \n	 * @param unit - units of the value to be stored\n	 * \n	 * @throws UnitException - throws an exception if the unit is not configured\n	 * correctly\n	 */\n";
 	}
 
+	//	public static String getDynamicConstructor(Unit[] units)
+	//	{
+	//
+	//		String unitClassName = ((Enum) units[0]).getClass().getSimpleName() + "." + ((Enum) units[0]).name();
+	//		String className = units[0].getGroup().getCategory();
+	//		String unitGroupName = units[0].getGroup().getClass().getSimpleName() + "."
+	//		+ ((Enum) units[0].getGroup()).name();
+	//		String constructor = "public static DynamicValue<" + className + "> getDynamic" + className + "Value()\n{\n";
+	//		constructor += className + " valClass = new " + className + "(0.0," + unitClassName + "," + rateString + ");\n";
+	//		constructor += className + " derClass = new " + className + "(0.0," + unitClassName + ", TimeUnit.SECOND);\n";
+	//		constructor += "return new DynamicValue<" + className + ">(valClass,derClass);\n}\n";
+	//		return constructor;
+	//	}
+
+	@SuppressWarnings("rawtypes")
 	public static String getUnitMethods(Unit unit)
 	{
 		String unitClassName = ((Enum) unit).getClass().getSimpleName() + "." + ((Enum) unit).name();
 		String unitAbrev = null;
+		String className = unit.getGroup().getType();
+		String unitName = null;
 		try
 		{
-			unitAbrev = UnitData.getUnitData(unit).unitAbbreviation;
+			unitAbrev = getCorrectedMethodName(UnitData.getUnitData(unit).unitName);
+			unitName = UnitData.getUnitData(unit).unitName;
 		} catch (UnitException e)
 		{
-			// TODO Auto-generated catch block
+			System.err.println("Invalid unit definition : " + unitClassName);
 			e.printStackTrace();
 		}
-		if (unitAbrev == "byte")
-		{
-			unitAbrev = "_byte";
-		}
-		String getMethod = "public Double " + unitAbrev + "()\n{\n";
-		getMethod += "return getValue(" + unitClassName + ",TimeUnit.SECOND);\n}\n";
-		getMethod += "public void " + unitAbrev + "(Double val)\n{\n";
-		getMethod += "setValue(val," + unitClassName + ",TimeUnit.SECOND);\n}\n";
+
+		String capitalizedUnitAbrev = unitAbrev.substring(0, 1).toUpperCase() + unitAbrev.substring(1);
+		String getMethod = "	/*\n	 * gets the value in " + unitName + "\n	 * \n	 * @returns value in "
+		+ unitName + "\n	 */\n";
+		getMethod += "public Double " + unitAbrev + "s()\n{\n";
+		getMethod += "return getValue(" + unitClassName + ");\n}\n";
+		getMethod += "	/*\n	 * stores the value in " + unitName
+		+ "\n	 * \n	 *@param value to be stored\n	 *\n	 * @returns value in " + unitName + "\n	 */\n";
+		getMethod += "public void " + unitAbrev + "s(Double val)\n{\n";
+		getMethod += "setValue(val," + unitClassName + ");\n}\n";
+		getMethod += "	/*\n	 * " + unitName
+		+ " Constructor\n	 * \n	 * @param val - value to be stored\n	 * \n	 * @returns " + className
+		+ " variable\n	 */\n";
+		getMethod += "public static " + className + " new" + capitalizedUnitAbrev + "(Double new_val)\n{\n";
+		getMethod += "return new " + className + "(new_val," + unitClassName + ");\n}\n";
 		//if (unit.getRate() != null)
-		{
-			getMethod += "public Double " + unitAbrev + "(TimeUnit rate)\n{\n";
-			getMethod += "return getValue(" + unitClassName + ",rate);\n}\n";
-			getMethod += "public void " + unitAbrev + "(Double val, TimeUnit rate)\n{\n";
-			getMethod += "setValue(val," + unitClassName + ",rate);\n}\n";
-		}
+		//{
+		//getMethod += "public Double " + unitAbrev + "(TimeUnit rate)\n{\n";
+		//getMethod += "return getValue(" + unitClassName + ",rate);\n}\n";
+		//getMethod += "public void " + unitAbrev + "(Double val, TimeUnit rate)\n{\n";
+		//getMethod += "setValue(val," + unitClassName + ",rate);\n}\n";
+		//	}
 		return getMethod;
+	}
+
+	public static String getCorrectedMethodName(String old_name)
+	{
+		String newName = old_name;
+		newName.toLowerCase();
+		newName.replace("Second", "Sec");
+		String[] sections = newName.split(" ");
+		newName = sections[0].toLowerCase();
+		for (int i = 1; i < sections.length; i++)
+		{
+			newName += sections[i].substring(0, 1).toUpperCase() + sections[i].substring(1);
+		}
+		if (newName.equals("byte"))
+		{
+			newName = "Byte";
+		}
+		return newName;
 	}
 
 	public static void createAllValueClasses()

@@ -1,49 +1,46 @@
 package bs.commons.dimvars.units;
 
-import java.util.HashMap;
-
 import bs.commons.dimvars.core.UnitConversionMap;
-import bs.commons.dimvars.core.UnitData;
-import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
+import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitType;
 
-public enum DatarateUnit implements Unit
+public enum DataRateUnit implements Unit
 {
-	BIT(
-		"Bit",
-		"bit"),
-	BYTE(
-		"Byte",
-		"byte"),
-	KILOBYTE(
-		"Kilobyte",
-		"kB"),
-	MEGABYTE(
-		"Megabyte",
-		"MB"),
-	GIGABYTE(
-		"Gigabyte",
-		"GB"),
-	TERABYTE(
-		"Terabyte",
-		"TB"),
-	PETABYTE(
-		"Petabyte",
-		"PB"),
-	EXABYTE(
-		"Exabyte",
-		"EB"),
-	ZETTABYTE(
-		"Zettabyte",
-		"ZB"),
-	YOTTABYTE(
-		"Yottabyte",
-		"YB");
+	BITS_PER_SEC(
+		"Bits per Second",
+		"bit/s"),
+	BYTES_PER_SEC(
+		"Bytes per Second",
+		"byte/s"),
+	KILOBYTES_PER_SEC(
+		"Kilobytes per Second",
+		"kB/s"),
+	MEGABYTES_PER_SEC(
+		"Megabytes per Second",
+		"MB/s"),
+	GIGABYTES_PER_SEC(
+		"Gigabytes per Second",
+		"GB/s"),
+	TERABYTES_PER_SEC(
+		"Terabytes per Second",
+		"TB/s"),
+	PETABYTES_PER_SEC(
+		"Petabytes per Second",
+		"PB/s"),
+	EXABYTES_PER_SEC(
+		"Exabytes per Second",
+		"EB/s"),
+	ZETTABYTES_PER_SEC(
+		"Zettabytes per Second",
+		"ZB/s"),
+	YOTTABYTES_PER_SEC(
+		"Yottabytes per Second",
+		"YB/s");
 
 	public static final Double MemoryFactor = 1024.0;
 
-	private DatarateUnit(String unit_name, String unit_abbreviation)
+	private DataRateUnit(String unit_name, String unit_abbreviation)
 	{
 		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.DATA_RATE);
 	}
@@ -53,7 +50,7 @@ public enum DatarateUnit implements Unit
 	{
 
 		UnitConversionMap map = new UnitConversionMap();
-		for (DatarateUnit unit : DatarateUnit.values())
+		for (DataRateUnit unit : DataRateUnit.values())
 		{
 			map.addConversions(unit, getByteConversionArray(unit.ordinal()));
 		}
@@ -79,20 +76,7 @@ public enum DatarateUnit implements Unit
 	@Override
 	public UnitGroup getGroup()
 	{
-		// TODO Auto-generated method stub
 		return UnitType.DATA_RATE;
 	}
 
-	public static void main(String[] args)
-	{
-		Unit byteVal = DatarateUnit.BYTE;
-		Enum b = (Enum) byteVal;
-		System.out.println(b.getClass().getSimpleName() + "." + b.name());
-	}
-
-	@Override
-	public TimeUnit getRate()
-	{
-		return TimeUnit.SECOND;
-	}
 }

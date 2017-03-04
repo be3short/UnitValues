@@ -2,141 +2,247 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.VoltageUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Voltageunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Voltage extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Voltage(Double val,Unit unit)
 {
-super(val,unit,UnitType.VOLTAGE,null);
+super(val,unit,UnitType.VOLTAGE);
 }
-protected Voltage(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Nanovolt
+	 * 
+	 * @returns value in Nanovolt
+	 */
+public Double nanovolts()
 {
-super(val,unit,UnitType.VOLTAGE,rate);
+return getValue(VoltageUnit.NANOVOLT);
 }
-public Voltage()
+	/*
+	 * stores the value in Nanovolt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Nanovolt
+	 */
+public void nanovolts(Double val)
 {
-super(0.0,VoltageUnit.NANOVOLT,UnitType.VOLTAGE,null);
+setValue(val,VoltageUnit.NANOVOLT);
 }
-public static DynamicVal<Voltage> getDynamicVoltageValue()
+	/*
+	 * Nanovolt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Voltage variable
+	 */
+public static Voltage newNanovolt(Double new_val)
 {
-Voltage valClass = new Voltage(0.0,VoltageUnit.NANOVOLT,null);
-Voltage derClass = new Voltage(0.0,VoltageUnit.NANOVOLT, TimeUnit.SECOND);
-return new DynamicVal<Voltage>(valClass,derClass);
+return new Voltage(new_val,VoltageUnit.NANOVOLT);
 }
-public Double nV()
+	/*
+	 * gets the value in Microvolt
+	 * 
+	 * @returns value in Microvolt
+	 */
+public Double microvolts()
 {
-return getValue(VoltageUnit.NANOVOLT,TimeUnit.SECOND);
+return getValue(VoltageUnit.MICROVOLT);
 }
-public void nV(Double val)
+	/*
+	 * stores the value in Microvolt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Microvolt
+	 */
+public void microvolts(Double val)
 {
-setValue(val,VoltageUnit.NANOVOLT,TimeUnit.SECOND);
+setValue(val,VoltageUnit.MICROVOLT);
 }
-public Double nV(TimeUnit rate)
+	/*
+	 * Microvolt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Voltage variable
+	 */
+public static Voltage newMicrovolt(Double new_val)
 {
-return getValue(VoltageUnit.NANOVOLT,rate);
+return new Voltage(new_val,VoltageUnit.MICROVOLT);
 }
-public void nV(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Millivolt
+	 * 
+	 * @returns value in Millivolt
+	 */
+public Double millivolts()
 {
-setValue(val,VoltageUnit.NANOVOLT,rate);
+return getValue(VoltageUnit.MILLIVOLT);
 }
-public Double uV()
+	/*
+	 * stores the value in Millivolt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Millivolt
+	 */
+public void millivolts(Double val)
 {
-return getValue(VoltageUnit.MICROVOLT,TimeUnit.SECOND);
+setValue(val,VoltageUnit.MILLIVOLT);
 }
-public void uV(Double val)
+	/*
+	 * Millivolt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Voltage variable
+	 */
+public static Voltage newMillivolt(Double new_val)
 {
-setValue(val,VoltageUnit.MICROVOLT,TimeUnit.SECOND);
+return new Voltage(new_val,VoltageUnit.MILLIVOLT);
 }
-public Double uV(TimeUnit rate)
+	/*
+	 * gets the value in Volt
+	 * 
+	 * @returns value in Volt
+	 */
+public Double volts()
 {
-return getValue(VoltageUnit.MICROVOLT,rate);
+return getValue(VoltageUnit.VOLT);
 }
-public void uV(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Volt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Volt
+	 */
+public void volts(Double val)
 {
-setValue(val,VoltageUnit.MICROVOLT,rate);
+setValue(val,VoltageUnit.VOLT);
 }
-public Double mV()
+	/*
+	 * Volt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Voltage variable
+	 */
+public static Voltage newVolt(Double new_val)
 {
-return getValue(VoltageUnit.MILLIVOLT,TimeUnit.SECOND);
+return new Voltage(new_val,VoltageUnit.VOLT);
 }
-public void mV(Double val)
+	/*
+	 * gets the value in Kilovolt
+	 * 
+	 * @returns value in Kilovolt
+	 */
+public Double kilovolts()
 {
-setValue(val,VoltageUnit.MILLIVOLT,TimeUnit.SECOND);
+return getValue(VoltageUnit.KILOVOLT);
 }
-public Double mV(TimeUnit rate)
+	/*
+	 * stores the value in Kilovolt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kilovolt
+	 */
+public void kilovolts(Double val)
 {
-return getValue(VoltageUnit.MILLIVOLT,rate);
+setValue(val,VoltageUnit.KILOVOLT);
 }
-public void mV(Double val, TimeUnit rate)
+	/*
+	 * Kilovolt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Voltage variable
+	 */
+public static Voltage newKilovolt(Double new_val)
 {
-setValue(val,VoltageUnit.MILLIVOLT,rate);
+return new Voltage(new_val,VoltageUnit.KILOVOLT);
 }
-public Double V()
+	/*
+	 * gets the value in Megavolt
+	 * 
+	 * @returns value in Megavolt
+	 */
+public Double megavolts()
 {
-return getValue(VoltageUnit.VOLT,TimeUnit.SECOND);
+return getValue(VoltageUnit.MEGAVOLT);
 }
-public void V(Double val)
+	/*
+	 * stores the value in Megavolt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Megavolt
+	 */
+public void megavolts(Double val)
 {
-setValue(val,VoltageUnit.VOLT,TimeUnit.SECOND);
+setValue(val,VoltageUnit.MEGAVOLT);
 }
-public Double V(TimeUnit rate)
+	/*
+	 * Megavolt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Voltage variable
+	 */
+public static Voltage newMegavolt(Double new_val)
 {
-return getValue(VoltageUnit.VOLT,rate);
+return new Voltage(new_val,VoltageUnit.MEGAVOLT);
 }
-public void V(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Gigavolt
+	 * 
+	 * @returns value in Gigavolt
+	 */
+public Double gigavolts()
 {
-setValue(val,VoltageUnit.VOLT,rate);
+return getValue(VoltageUnit.GIGAVOLT);
 }
-public Double kV()
+	/*
+	 * stores the value in Gigavolt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Gigavolt
+	 */
+public void gigavolts(Double val)
 {
-return getValue(VoltageUnit.KILOVOLT,TimeUnit.SECOND);
+setValue(val,VoltageUnit.GIGAVOLT);
 }
-public void kV(Double val)
+	/*
+	 * Gigavolt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Voltage variable
+	 */
+public static Voltage newGigavolt(Double new_val)
 {
-setValue(val,VoltageUnit.KILOVOLT,TimeUnit.SECOND);
-}
-public Double kV(TimeUnit rate)
-{
-return getValue(VoltageUnit.KILOVOLT,rate);
-}
-public void kV(Double val, TimeUnit rate)
-{
-setValue(val,VoltageUnit.KILOVOLT,rate);
-}
-public Double MV()
-{
-return getValue(VoltageUnit.MEGAVOLT,TimeUnit.SECOND);
-}
-public void MV(Double val)
-{
-setValue(val,VoltageUnit.MEGAVOLT,TimeUnit.SECOND);
-}
-public Double MV(TimeUnit rate)
-{
-return getValue(VoltageUnit.MEGAVOLT,rate);
-}
-public void MV(Double val, TimeUnit rate)
-{
-setValue(val,VoltageUnit.MEGAVOLT,rate);
-}
-public Double GV()
-{
-return getValue(VoltageUnit.GIGAVOLT,TimeUnit.SECOND);
-}
-public void GV(Double val)
-{
-setValue(val,VoltageUnit.GIGAVOLT,TimeUnit.SECOND);
-}
-public Double GV(TimeUnit rate)
-{
-return getValue(VoltageUnit.GIGAVOLT,rate);
-}
-public void GV(Double val, TimeUnit rate)
-{
-setValue(val,VoltageUnit.GIGAVOLT,rate);
+return new Voltage(new_val,VoltageUnit.GIGAVOLT);
 }
 }

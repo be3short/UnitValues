@@ -1,62 +1,101 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
-import bs.commons.dimvars.units.AngleUnit;
 import bs.commons.dimvars.core.UnitType;
+import bs.commons.dimvars.core.UnitValue;
+import bs.commons.dimvars.units.AngleUnit;
 
+/**
+ * Class that stores a value in Angleunits. This value can be extracted or
+ * updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Angle extends UnitValue
 {
-public Angle(Double val,Unit unit)
-{
-super(val,unit,UnitType.ANGLE,null);
-}
-protected Angle(Double val,Unit unit, TimeUnit rate)
-{
-super(val,unit,UnitType.ANGLE,rate);
-}
-public Angle()
-{
-super(0.0,AngleUnit.RAD,UnitType.ANGLE,null);
-}
-public static DynamicVal<Angle> getDynamicAngleValue()
-{
-Angle valClass = new Angle(0.0,AngleUnit.RAD,null);
-Angle derClass = new Angle(0.0,AngleUnit.RAD, TimeUnit.SECOND);
-return new DynamicVal<Angle>(valClass,derClass);
-}
-public Double rad()
-{
-return getValue(AngleUnit.RAD,TimeUnit.SECOND);
-}
-public void rad(Double val)
-{
-setValue(val,AngleUnit.RAD,TimeUnit.SECOND);
-}
-public Double rad(TimeUnit rate)
-{
-return getValue(AngleUnit.RAD,rate);
-}
-public void rad(Double val, TimeUnit rate)
-{
-setValue(val,AngleUnit.RAD,rate);
-}
-public Double deg()
-{
-return getValue(AngleUnit.DEG,TimeUnit.SECOND);
-}
-public void deg(Double val)
-{
-setValue(val,AngleUnit.DEG,TimeUnit.SECOND);
-}
-public Double deg(TimeUnit rate)
-{
-return getValue(AngleUnit.DEG,rate);
-}
-public void deg(Double val, TimeUnit rate)
-{
-setValue(val,AngleUnit.DEG,rate);
-}
+
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
+	public Angle(Double val, Unit unit)
+	{
+		super(val, unit, UnitType.ANGLE);
+	}
+
+	/*
+	 * gets the value in Radian
+	 * 
+	 * @returns value in Radian
+	 */
+	public Double radians()
+	{
+		return getValue(AngleUnit.RADIAN);
+	}
+
+	/*
+	 * stores the value in Radian
+	 * 
+	 * @param value to be stored
+	 *
+	 * @returns value in Radian
+	 */
+	public void radians(Double val)
+	{
+		setValue(val, AngleUnit.RADIAN);
+	}
+
+	/*
+	 * Radian Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Angle variable
+	 */
+	public static Angle newRadian(Double new_val)
+	{
+		return new Angle(new_val, AngleUnit.RADIAN);
+	}
+
+	/*
+	 * gets the value in Degree
+	 * 
+	 * @returns value in Degree
+	 */
+	public Double degrees()
+	{
+		return getValue(AngleUnit.DEGREE);
+	}
+
+	/*
+	 * stores the value in Degree
+	 * 
+	 * @param value to be stored
+	 *
+	 * @returns value in Degree
+	 */
+	public void degrees(Double val)
+	{
+		setValue(val, AngleUnit.DEGREE);
+	}
+
+	/*
+	 * Degree Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Angle variable
+	 */
+	public static Angle newDegree(Double new_val)
+	{
+		return new Angle(new_val, AngleUnit.DEGREE);
+	}
 }

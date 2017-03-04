@@ -2,157 +2,278 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.PowerUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Powerunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Power extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Power(Double val,Unit unit)
 {
-super(val,unit,UnitType.POWER,null);
+super(val,unit,UnitType.POWER);
 }
-protected Power(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Nanowatt
+	 * 
+	 * @returns value in Nanowatt
+	 */
+public Double nanowatts()
 {
-super(val,unit,UnitType.POWER,rate);
+return getValue(PowerUnit.NANOWATT);
 }
-public Power()
+	/*
+	 * stores the value in Nanowatt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Nanowatt
+	 */
+public void nanowatts(Double val)
 {
-super(0.0,PowerUnit.NANOWATT,UnitType.POWER,null);
+setValue(val,PowerUnit.NANOWATT);
 }
-public static DynamicVal<Power> getDynamicPowerValue()
+	/*
+	 * Nanowatt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newNanowatt(Double new_val)
 {
-Power valClass = new Power(0.0,PowerUnit.NANOWATT,null);
-Power derClass = new Power(0.0,PowerUnit.NANOWATT, TimeUnit.SECOND);
-return new DynamicVal<Power>(valClass,derClass);
+return new Power(new_val,PowerUnit.NANOWATT);
 }
-public Double nW()
+	/*
+	 * gets the value in Microwatt
+	 * 
+	 * @returns value in Microwatt
+	 */
+public Double microwatts()
 {
-return getValue(PowerUnit.NANOWATT,TimeUnit.SECOND);
+return getValue(PowerUnit.MICROWATT);
 }
-public void nW(Double val)
+	/*
+	 * stores the value in Microwatt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Microwatt
+	 */
+public void microwatts(Double val)
 {
-setValue(val,PowerUnit.NANOWATT,TimeUnit.SECOND);
+setValue(val,PowerUnit.MICROWATT);
 }
-public Double nW(TimeUnit rate)
+	/*
+	 * Microwatt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newMicrowatt(Double new_val)
 {
-return getValue(PowerUnit.NANOWATT,rate);
+return new Power(new_val,PowerUnit.MICROWATT);
 }
-public void nW(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Milliwatt
+	 * 
+	 * @returns value in Milliwatt
+	 */
+public Double milliwatts()
 {
-setValue(val,PowerUnit.NANOWATT,rate);
+return getValue(PowerUnit.MILLIWATT);
 }
-public Double uW()
+	/*
+	 * stores the value in Milliwatt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Milliwatt
+	 */
+public void milliwatts(Double val)
 {
-return getValue(PowerUnit.MICROWATT,TimeUnit.SECOND);
+setValue(val,PowerUnit.MILLIWATT);
 }
-public void uW(Double val)
+	/*
+	 * Milliwatt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newMilliwatt(Double new_val)
 {
-setValue(val,PowerUnit.MICROWATT,TimeUnit.SECOND);
+return new Power(new_val,PowerUnit.MILLIWATT);
 }
-public Double uW(TimeUnit rate)
+	/*
+	 * gets the value in Watt
+	 * 
+	 * @returns value in Watt
+	 */
+public Double watts()
 {
-return getValue(PowerUnit.MICROWATT,rate);
+return getValue(PowerUnit.WATT);
 }
-public void uW(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Watt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Watt
+	 */
+public void watts(Double val)
 {
-setValue(val,PowerUnit.MICROWATT,rate);
+setValue(val,PowerUnit.WATT);
 }
-public Double mW()
+	/*
+	 * Watt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newWatt(Double new_val)
 {
-return getValue(PowerUnit.MILLIWATT,TimeUnit.SECOND);
+return new Power(new_val,PowerUnit.WATT);
 }
-public void mW(Double val)
+	/*
+	 * gets the value in Kilowatt
+	 * 
+	 * @returns value in Kilowatt
+	 */
+public Double kilowatts()
 {
-setValue(val,PowerUnit.MILLIWATT,TimeUnit.SECOND);
+return getValue(PowerUnit.KILOWATT);
 }
-public Double mW(TimeUnit rate)
+	/*
+	 * stores the value in Kilowatt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kilowatt
+	 */
+public void kilowatts(Double val)
 {
-return getValue(PowerUnit.MILLIWATT,rate);
+setValue(val,PowerUnit.KILOWATT);
 }
-public void mW(Double val, TimeUnit rate)
+	/*
+	 * Kilowatt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newKilowatt(Double new_val)
 {
-setValue(val,PowerUnit.MILLIWATT,rate);
+return new Power(new_val,PowerUnit.KILOWATT);
 }
-public Double W()
+	/*
+	 * gets the value in Megawatt
+	 * 
+	 * @returns value in Megawatt
+	 */
+public Double megawatts()
 {
-return getValue(PowerUnit.WATT,TimeUnit.SECOND);
+return getValue(PowerUnit.MEGAWATT);
 }
-public void W(Double val)
+	/*
+	 * stores the value in Megawatt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Megawatt
+	 */
+public void megawatts(Double val)
 {
-setValue(val,PowerUnit.WATT,TimeUnit.SECOND);
+setValue(val,PowerUnit.MEGAWATT);
 }
-public Double W(TimeUnit rate)
+	/*
+	 * Megawatt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newMegawatt(Double new_val)
 {
-return getValue(PowerUnit.WATT,rate);
+return new Power(new_val,PowerUnit.MEGAWATT);
 }
-public void W(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Gigawatt
+	 * 
+	 * @returns value in Gigawatt
+	 */
+public Double gigawatts()
 {
-setValue(val,PowerUnit.WATT,rate);
+return getValue(PowerUnit.GIGAWATT);
 }
-public Double kW()
+	/*
+	 * stores the value in Gigawatt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Gigawatt
+	 */
+public void gigawatts(Double val)
 {
-return getValue(PowerUnit.KILOWATT,TimeUnit.SECOND);
+setValue(val,PowerUnit.GIGAWATT);
 }
-public void kW(Double val)
+	/*
+	 * Gigawatt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newGigawatt(Double new_val)
 {
-setValue(val,PowerUnit.KILOWATT,TimeUnit.SECOND);
+return new Power(new_val,PowerUnit.GIGAWATT);
 }
-public Double kW(TimeUnit rate)
+	/*
+	 * gets the value in Terawatt
+	 * 
+	 * @returns value in Terawatt
+	 */
+public Double terawatts()
 {
-return getValue(PowerUnit.KILOWATT,rate);
+return getValue(PowerUnit.TERAWATT);
 }
-public void kW(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Terawatt
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Terawatt
+	 */
+public void terawatts(Double val)
 {
-setValue(val,PowerUnit.KILOWATT,rate);
+setValue(val,PowerUnit.TERAWATT);
 }
-public Double MW()
+	/*
+	 * Terawatt Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Power variable
+	 */
+public static Power newTerawatt(Double new_val)
 {
-return getValue(PowerUnit.MEGAWATT,TimeUnit.SECOND);
-}
-public void MW(Double val)
-{
-setValue(val,PowerUnit.MEGAWATT,TimeUnit.SECOND);
-}
-public Double MW(TimeUnit rate)
-{
-return getValue(PowerUnit.MEGAWATT,rate);
-}
-public void MW(Double val, TimeUnit rate)
-{
-setValue(val,PowerUnit.MEGAWATT,rate);
-}
-public Double GW()
-{
-return getValue(PowerUnit.GIGAWATT,TimeUnit.SECOND);
-}
-public void GW(Double val)
-{
-setValue(val,PowerUnit.GIGAWATT,TimeUnit.SECOND);
-}
-public Double GW(TimeUnit rate)
-{
-return getValue(PowerUnit.GIGAWATT,rate);
-}
-public void GW(Double val, TimeUnit rate)
-{
-setValue(val,PowerUnit.GIGAWATT,rate);
-}
-public Double TW()
-{
-return getValue(PowerUnit.TERAWATT,TimeUnit.SECOND);
-}
-public void TW(Double val)
-{
-setValue(val,PowerUnit.TERAWATT,TimeUnit.SECOND);
-}
-public Double TW(TimeUnit rate)
-{
-return getValue(PowerUnit.TERAWATT,rate);
-}
-public void TW(Double val, TimeUnit rate)
-{
-setValue(val,PowerUnit.TERAWATT,rate);
+return new Power(new_val,PowerUnit.TERAWATT);
 }
 }

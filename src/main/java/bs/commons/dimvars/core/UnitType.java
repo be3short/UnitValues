@@ -1,5 +1,8 @@
 package bs.commons.dimvars.core;
 
+/*
+ * Enum that definies the different types of units 
+ */
 public enum UnitType implements UnitGroup
 {
 
@@ -28,18 +31,28 @@ public enum UnitType implements UnitGroup
 	NONE(
 		"NoUnits"),;
 
-	private final String category;
+	private final String typeName; // unit type name
 
+	/*
+	 * gets the type name
+	 * 
+	 * @return name of type
+	 */
 	@Override
-	public String getCategory()
+	public String getType()
 	{
-		return category;
+		return typeName;
 	}
 
-	private UnitType(String cat)
+	/*
+	 * Constructor
+	 * 
+	 * @param name of type
+	 */
+	private UnitType(String type)
 	{
 
-		category = cat;
+		this.typeName = type;
 	}
 
 }

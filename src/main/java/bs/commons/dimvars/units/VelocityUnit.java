@@ -1,29 +1,26 @@
 package bs.commons.dimvars.units;
 
-import java.util.HashMap;
-
 import bs.commons.dimvars.core.UnitConversionMap;
-import bs.commons.dimvars.core.UnitData;
-import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
+import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitType;
 
 public enum VelocityUnit implements Unit
 {
-	NANOMETERS(
-		"Nanometers",
+	NANOMETERS_PER_SECOND(
+		"Nanometers per Second",
 		"nm"),
-	MICROMETERS(
-		"Micrometers",
+	MICROMETERS_PER_SECOND(
+		"Micrometers per Second",
 		"um"),
-	MILLIMETERS(
-		"Millimeters",
+	MILLIMETERS_PER_SECOND(
+		"Millimeters per Second",
 		"mm"),
-	METERS(
-		"Meters",
+	METERS_PER_SECOND(
+		"Meters per Second",
 		"m"),
-	KILOMETERS(
-		"Kilometers",
+	KILOMETERS_PER_SECOND(
+		"Kilometers per Second",
 		"km");
 
 	private VelocityUnit(String unit_name, String unit_abbreviation)
@@ -58,14 +55,7 @@ public enum VelocityUnit implements Unit
 	@Override
 	public UnitGroup getGroup()
 	{
-		// TODO Auto-generated method stub
 		return UnitType.VELOCITY;
-	}
-
-	@Override
-	public TimeUnit getRate()
-	{
-		return TimeUnit.SECOND;
 	}
 
 }

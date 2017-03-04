@@ -1,13 +1,9 @@
 package bs.commons.dimvars.units;
 
-import java.util.HashMap;
-
 import bs.commons.dimvars.core.UnitConversionMap;
-import bs.commons.dimvars.core.UnitData;
-import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
+import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitType;
-import bs.commons.dimvars.values.Power;
 
 public enum PowerUnit implements Unit
 {
@@ -21,7 +17,7 @@ public enum PowerUnit implements Unit
 		"Milliwatt",
 		"mW"),
 	WATT(
-		"watt",
+		"Watt",
 		"W"),
 	KILOWATT(
 		"Kilowatt",
@@ -33,7 +29,7 @@ public enum PowerUnit implements Unit
 		"Gigawatt",
 		"GW"),
 	TERAWATT(
-		"Gigawatt",
+		"Terawatt",
 		"TW");
 
 	private PowerUnit(String unit_name, String unit_abbreviation)
@@ -63,23 +59,10 @@ public enum PowerUnit implements Unit
 
 		return conversions;
 	}
-	@Override
-	public TimeUnit getRate()
-	{
-		return null;
-	}
 
 	@Override
 	public UnitGroup getGroup()
 	{
-		// TODO Auto-generated method stub
 		return UnitType.POWER;
-	}
-
-	public static void main(String args[])
-	{
-		Power p = new Power(2.0, PowerUnit.MILLIWATT);
-		System.out.println(p.W());
-		System.out.println(p.kW());
 	}
 }

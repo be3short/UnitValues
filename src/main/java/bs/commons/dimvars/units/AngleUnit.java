@@ -1,18 +1,18 @@
 package bs.commons.dimvars.units;
 
 import bs.commons.dimvars.core.UnitConversionMap;
+import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitType;
-import bs.commons.dimvars.core.UnitData.Unit;
 
 public enum AngleUnit implements Unit
 {
 
-	RAD(
-		"Radians",
+	RADIAN(
+		"Radian",
 		"rad"),
-	DEG(
-		"Degrees",
+	DEGREE(
+		"Degree",
 		"deg");
 
 	private AngleUnit(String unit_name, String unit_abbreviation)
@@ -26,8 +26,8 @@ public enum AngleUnit implements Unit
 
 		UnitConversionMap map = new UnitConversionMap();
 
-		map.addConversions(AngleUnit.RAD, 1.0, 360.0 / (2 * Math.PI));
-		map.addConversions(AngleUnit.DEG, (2 * Math.PI) / 360, 1.0);
+		map.addConversions(AngleUnit.RADIAN, 1.0, 360.0 / (2 * Math.PI));
+		map.addConversions(AngleUnit.DEGREE, (2 * Math.PI) / 360, 1.0);
 
 		return map;
 	}
@@ -35,14 +35,7 @@ public enum AngleUnit implements Unit
 	@Override
 	public UnitGroup getGroup()
 	{
-		// TODO Auto-generated method stub
 		return UnitType.ANGLE;
-	}
-
-	@Override
-	public TimeUnit getRate()
-	{
-		return null;
 	}
 
 }

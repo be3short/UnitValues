@@ -1,30 +1,26 @@
 package bs.commons.dimvars.units;
 
-import java.util.HashMap;
-
 import bs.commons.dimvars.core.UnitConversionMap;
-import bs.commons.dimvars.core.UnitData;
-import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.values.Distance;
+import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitType;
 
 public enum DistanceUnit implements Unit
 {
-	NANOMETERS(
-		"Nanometers",
+	NANOMETER(
+		"Nanometer",
 		"nm"),
-	MICROMETERS(
-		"Micrometers",
+	MICROMETER(
+		"Micrometer",
 		"um"),
-	MILLIMETERS(
-		"Millimeters",
+	MILLIMETER(
+		"Millimeter",
 		"mm"),
-	METERS(
-		"Meters",
+	METER(
+		"Meter",
 		"m"),
-	KILOMETERS(
-		"Kilometers",
+	KILOMETER(
+		"Kilometer",
 		"km");
 
 	private DistanceUnit(String unit_name, String unit_abbreviation)
@@ -59,22 +55,7 @@ public enum DistanceUnit implements Unit
 	@Override
 	public UnitGroup getGroup()
 	{
-		// TODO Auto-generated method stub
 		return UnitType.DISTANCE;
 	}
 
-	@Override
-	public TimeUnit getRate()
-	{
-		return null;
-	}
-
-	public static void main(String args[])
-	{
-		Distance d = new Distance(1000.0, DistanceUnit.MILLIMETERS);
-		System.out.println(d.m());
-		System.out.println(d.km());
-		System.out.println(d.um());
-
-	}
 }

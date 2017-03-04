@@ -2,233 +2,340 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
-import bs.commons.dimvars.units.DatarateUnit;
+import bs.commons.dimvars.units.DataRateUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Datarateunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Datarate extends UnitValue
 {
-
-	public Datarate(Double val, Unit unit)
-	{
-		super(val, unit, UnitType.DATA_RATE, TimeUnit.SECOND);
-	}
-
-	public Datarate(Double val, Unit unit, TimeUnit rate)
-	{
-		super(val, unit, UnitType.DATA_RATE, rate);
-	}
-
-	public Datarate()
-	{
-		super(0.0, DatarateUnit.BIT, UnitType.DATA_RATE, TimeUnit.SECOND);
-	}
-
-	public static DynamicVal<Datarate> getDynamicDatarateValue()
-	{
-		Datarate valClass = new Datarate(0.0, DatarateUnit.BIT, TimeUnit.SECOND);
-		Datarate derClass = new Datarate(0.0, DatarateUnit.BIT, TimeUnit.SECOND);
-		return new DynamicVal<Datarate>(valClass, derClass);
-	}
-
-	public Double bit()
-	{
-		return getValue(DatarateUnit.BIT, TimeUnit.SECOND);
-	}
-
-	public void bit(Double val)
-	{
-		setValue(val, DatarateUnit.BIT, TimeUnit.SECOND);
-	}
-
-	public Double bit(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.BIT, rate);
-	}
-
-	public void bit(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.BIT, rate);
-	}
-
-	public Double _byte()
-	{
-		return getValue(DatarateUnit.BYTE, TimeUnit.SECOND);
-	}
-
-	public void _byte(Double val)
-	{
-		setValue(val, DatarateUnit.BYTE, TimeUnit.SECOND);
-	}
-
-	public Double _byte(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.BYTE, rate);
-	}
-
-	public void _byte(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.BYTE, rate);
-	}
-
-	public Double kB()
-	{
-		return getValue(DatarateUnit.KILOBYTE, TimeUnit.SECOND);
-	}
-
-	public void kB(Double val)
-	{
-		setValue(val, DatarateUnit.KILOBYTE, TimeUnit.SECOND);
-	}
-
-	public Double kB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.KILOBYTE, rate);
-	}
-
-	public void kB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.KILOBYTE, rate);
-	}
-
-	public Double MB()
-	{
-		return getValue(DatarateUnit.MEGABYTE, TimeUnit.SECOND);
-	}
-
-	public void MB(Double val)
-	{
-		setValue(val, DatarateUnit.MEGABYTE, TimeUnit.SECOND);
-	}
-
-	public Double MB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.MEGABYTE, rate);
-	}
-
-	public void MB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.MEGABYTE, rate);
-	}
-
-	public Double GB()
-	{
-		return getValue(DatarateUnit.GIGABYTE, TimeUnit.SECOND);
-	}
-
-	public void GB(Double val)
-	{
-		setValue(val, DatarateUnit.GIGABYTE, TimeUnit.SECOND);
-	}
-
-	public Double GB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.GIGABYTE, rate);
-	}
-
-	public void GB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.GIGABYTE, rate);
-	}
-
-	public Double TB()
-	{
-		return getValue(DatarateUnit.TERABYTE, TimeUnit.SECOND);
-	}
-
-	public void TB(Double val)
-	{
-		setValue(val, DatarateUnit.TERABYTE, TimeUnit.SECOND);
-	}
-
-	public Double TB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.TERABYTE, rate);
-	}
-
-	public void TB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.TERABYTE, rate);
-	}
-
-	public Double PB()
-	{
-		return getValue(DatarateUnit.PETABYTE, TimeUnit.SECOND);
-	}
-
-	public void PB(Double val)
-	{
-		setValue(val, DatarateUnit.PETABYTE, TimeUnit.SECOND);
-	}
-
-	public Double PB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.PETABYTE, rate);
-	}
-
-	public void PB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.PETABYTE, rate);
-	}
-
-	public Double EB()
-	{
-		return getValue(DatarateUnit.EXABYTE, TimeUnit.SECOND);
-	}
-
-	public void EB(Double val)
-	{
-		setValue(val, DatarateUnit.EXABYTE, TimeUnit.SECOND);
-	}
-
-	public Double EB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.EXABYTE, rate);
-	}
-
-	public void EB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.EXABYTE, rate);
-	}
-
-	public Double ZB()
-	{
-		return getValue(DatarateUnit.ZETTABYTE, TimeUnit.SECOND);
-	}
-
-	public void ZB(Double val)
-	{
-		setValue(val, DatarateUnit.ZETTABYTE, TimeUnit.SECOND);
-	}
-
-	public Double ZB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.ZETTABYTE, rate);
-	}
-
-	public void ZB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.ZETTABYTE, rate);
-	}
-
-	public Double YB()
-	{
-		return getValue(DatarateUnit.YOTTABYTE, TimeUnit.SECOND);
-	}
-
-	public void YB(Double val)
-	{
-		setValue(val, DatarateUnit.YOTTABYTE, TimeUnit.SECOND);
-	}
-
-	public Double YB(TimeUnit rate)
-	{
-		return getValue(DatarateUnit.YOTTABYTE, rate);
-	}
-
-	public void YB(Double val, TimeUnit rate)
-	{
-		setValue(val, DatarateUnit.YOTTABYTE, rate);
-	}
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
+public Datarate(Double val,Unit unit)
+{
+super(val,unit,UnitType.DATA_RATE);
+}
+	/*
+	 * gets the value in Bits per Second
+	 * 
+	 * @returns value in Bits per Second
+	 */
+public Double bitsPerSeconds()
+{
+return getValue(DataRateUnit.BITS_PER_SEC);
+}
+	/*
+	 * stores the value in Bits per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Bits per Second
+	 */
+public void bitsPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.BITS_PER_SEC);
+}
+	/*
+	 * Bits per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newBitsPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.BITS_PER_SEC);
+}
+	/*
+	 * gets the value in Bytes per Second
+	 * 
+	 * @returns value in Bytes per Second
+	 */
+public Double bytesPerSeconds()
+{
+return getValue(DataRateUnit.BYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Bytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Bytes per Second
+	 */
+public void bytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.BYTES_PER_SEC);
+}
+	/*
+	 * Bytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newBytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.BYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Kilobytes per Second
+	 * 
+	 * @returns value in Kilobytes per Second
+	 */
+public Double kilobytesPerSeconds()
+{
+return getValue(DataRateUnit.KILOBYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Kilobytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kilobytes per Second
+	 */
+public void kilobytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.KILOBYTES_PER_SEC);
+}
+	/*
+	 * Kilobytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newKilobytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.KILOBYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Megabytes per Second
+	 * 
+	 * @returns value in Megabytes per Second
+	 */
+public Double megabytesPerSeconds()
+{
+return getValue(DataRateUnit.MEGABYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Megabytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Megabytes per Second
+	 */
+public void megabytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.MEGABYTES_PER_SEC);
+}
+	/*
+	 * Megabytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newMegabytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.MEGABYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Gigabytes per Second
+	 * 
+	 * @returns value in Gigabytes per Second
+	 */
+public Double gigabytesPerSeconds()
+{
+return getValue(DataRateUnit.GIGABYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Gigabytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Gigabytes per Second
+	 */
+public void gigabytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.GIGABYTES_PER_SEC);
+}
+	/*
+	 * Gigabytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newGigabytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.GIGABYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Terabytes per Second
+	 * 
+	 * @returns value in Terabytes per Second
+	 */
+public Double terabytesPerSeconds()
+{
+return getValue(DataRateUnit.TERABYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Terabytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Terabytes per Second
+	 */
+public void terabytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.TERABYTES_PER_SEC);
+}
+	/*
+	 * Terabytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newTerabytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.TERABYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Petabytes per Second
+	 * 
+	 * @returns value in Petabytes per Second
+	 */
+public Double petabytesPerSeconds()
+{
+return getValue(DataRateUnit.PETABYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Petabytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Petabytes per Second
+	 */
+public void petabytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.PETABYTES_PER_SEC);
+}
+	/*
+	 * Petabytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newPetabytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.PETABYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Exabytes per Second
+	 * 
+	 * @returns value in Exabytes per Second
+	 */
+public Double exabytesPerSeconds()
+{
+return getValue(DataRateUnit.EXABYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Exabytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Exabytes per Second
+	 */
+public void exabytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.EXABYTES_PER_SEC);
+}
+	/*
+	 * Exabytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newExabytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.EXABYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Zettabytes per Second
+	 * 
+	 * @returns value in Zettabytes per Second
+	 */
+public Double zettabytesPerSeconds()
+{
+return getValue(DataRateUnit.ZETTABYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Zettabytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Zettabytes per Second
+	 */
+public void zettabytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.ZETTABYTES_PER_SEC);
+}
+	/*
+	 * Zettabytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newZettabytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.ZETTABYTES_PER_SEC);
+}
+	/*
+	 * gets the value in Yottabytes per Second
+	 * 
+	 * @returns value in Yottabytes per Second
+	 */
+public Double yottabytesPerSeconds()
+{
+return getValue(DataRateUnit.YOTTABYTES_PER_SEC);
+}
+	/*
+	 * stores the value in Yottabytes per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Yottabytes per Second
+	 */
+public void yottabytesPerSeconds(Double val)
+{
+setValue(val,DataRateUnit.YOTTABYTES_PER_SEC);
+}
+	/*
+	 * Yottabytes per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Datarate variable
+	 */
+public static Datarate newYottabytesPerSecond(Double new_val)
+{
+return new Datarate(new_val,DataRateUnit.YOTTABYTES_PER_SEC);
+}
 }

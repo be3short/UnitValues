@@ -2,189 +2,340 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.MemoryUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Memoryunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Memory extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Memory(Double val,Unit unit)
 {
-super(val,unit,UnitType.MEMORY,null);
+super(val,unit,UnitType.MEMORY);
 }
-protected Memory(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Bit
+	 * 
+	 * @returns value in Bit
+	 */
+public Double bits()
 {
-super(val,unit,UnitType.MEMORY,rate);
+return getValue(MemoryUnit.BIT);
 }
-public Memory()
+	/*
+	 * stores the value in Bit
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Bit
+	 */
+public void bits(Double val)
 {
-super(0.0,MemoryUnit.BIT,UnitType.MEMORY,null);
+setValue(val,MemoryUnit.BIT);
 }
-public static DynamicVal<Memory> getDynamicMemoryValue()
+	/*
+	 * Bit Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newBit(Double new_val)
 {
-Memory valClass = new Memory(0.0,MemoryUnit.BIT,null);
-Memory derClass = new Memory(0.0,MemoryUnit.BIT, TimeUnit.SECOND);
-return new DynamicVal<Memory>(valClass,derClass);
+return new Memory(new_val,MemoryUnit.BIT);
 }
-public Double bit()
+	/*
+	 * gets the value in Byte
+	 * 
+	 * @returns value in Byte
+	 */
+public Double Bytes()
 {
-return getValue(MemoryUnit.BIT,TimeUnit.SECOND);
+return getValue(MemoryUnit.BYTE);
 }
-public void bit(Double val)
+	/*
+	 * stores the value in Byte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Byte
+	 */
+public void Bytes(Double val)
 {
-setValue(val,MemoryUnit.BIT,TimeUnit.SECOND);
+setValue(val,MemoryUnit.BYTE);
 }
-public Double bit(TimeUnit rate)
+	/*
+	 * Byte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newByte(Double new_val)
 {
-return getValue(MemoryUnit.BIT,rate);
+return new Memory(new_val,MemoryUnit.BYTE);
 }
-public void bit(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Kilobyte
+	 * 
+	 * @returns value in Kilobyte
+	 */
+public Double kilobytes()
 {
-setValue(val,MemoryUnit.BIT,rate);
+return getValue(MemoryUnit.KILOBYTE);
 }
-public Double _byte()
+	/*
+	 * stores the value in Kilobyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kilobyte
+	 */
+public void kilobytes(Double val)
 {
-return getValue(MemoryUnit.BYTE,TimeUnit.SECOND);
+setValue(val,MemoryUnit.KILOBYTE);
 }
-public void _byte(Double val)
+	/*
+	 * Kilobyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newKilobyte(Double new_val)
 {
-setValue(val,MemoryUnit.BYTE,TimeUnit.SECOND);
+return new Memory(new_val,MemoryUnit.KILOBYTE);
 }
-public Double _byte(TimeUnit rate)
+	/*
+	 * gets the value in Megabyte
+	 * 
+	 * @returns value in Megabyte
+	 */
+public Double megabytes()
 {
-return getValue(MemoryUnit.BYTE,rate);
+return getValue(MemoryUnit.MEGABYTE);
 }
-public void _byte(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Megabyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Megabyte
+	 */
+public void megabytes(Double val)
 {
-setValue(val,MemoryUnit.BYTE,rate);
+setValue(val,MemoryUnit.MEGABYTE);
 }
-public Double kB()
+	/*
+	 * Megabyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newMegabyte(Double new_val)
 {
-return getValue(MemoryUnit.KILOBYTE,TimeUnit.SECOND);
+return new Memory(new_val,MemoryUnit.MEGABYTE);
 }
-public void kB(Double val)
+	/*
+	 * gets the value in Gigabyte
+	 * 
+	 * @returns value in Gigabyte
+	 */
+public Double gigabytes()
 {
-setValue(val,MemoryUnit.KILOBYTE,TimeUnit.SECOND);
+return getValue(MemoryUnit.GIGABYTE);
 }
-public Double kB(TimeUnit rate)
+	/*
+	 * stores the value in Gigabyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Gigabyte
+	 */
+public void gigabytes(Double val)
 {
-return getValue(MemoryUnit.KILOBYTE,rate);
+setValue(val,MemoryUnit.GIGABYTE);
 }
-public void kB(Double val, TimeUnit rate)
+	/*
+	 * Gigabyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newGigabyte(Double new_val)
 {
-setValue(val,MemoryUnit.KILOBYTE,rate);
+return new Memory(new_val,MemoryUnit.GIGABYTE);
 }
-public Double MB()
+	/*
+	 * gets the value in Terabyte
+	 * 
+	 * @returns value in Terabyte
+	 */
+public Double terabytes()
 {
-return getValue(MemoryUnit.MEGABYTE,TimeUnit.SECOND);
+return getValue(MemoryUnit.TERABYTE);
 }
-public void MB(Double val)
+	/*
+	 * stores the value in Terabyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Terabyte
+	 */
+public void terabytes(Double val)
 {
-setValue(val,MemoryUnit.MEGABYTE,TimeUnit.SECOND);
+setValue(val,MemoryUnit.TERABYTE);
 }
-public Double MB(TimeUnit rate)
+	/*
+	 * Terabyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newTerabyte(Double new_val)
 {
-return getValue(MemoryUnit.MEGABYTE,rate);
+return new Memory(new_val,MemoryUnit.TERABYTE);
 }
-public void MB(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Petabyte
+	 * 
+	 * @returns value in Petabyte
+	 */
+public Double petabytes()
 {
-setValue(val,MemoryUnit.MEGABYTE,rate);
+return getValue(MemoryUnit.PETABYTE);
 }
-public Double GB()
+	/*
+	 * stores the value in Petabyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Petabyte
+	 */
+public void petabytes(Double val)
 {
-return getValue(MemoryUnit.GIGABYTE,TimeUnit.SECOND);
+setValue(val,MemoryUnit.PETABYTE);
 }
-public void GB(Double val)
+	/*
+	 * Petabyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newPetabyte(Double new_val)
 {
-setValue(val,MemoryUnit.GIGABYTE,TimeUnit.SECOND);
+return new Memory(new_val,MemoryUnit.PETABYTE);
 }
-public Double GB(TimeUnit rate)
+	/*
+	 * gets the value in Exabyte
+	 * 
+	 * @returns value in Exabyte
+	 */
+public Double exabytes()
 {
-return getValue(MemoryUnit.GIGABYTE,rate);
+return getValue(MemoryUnit.EXABYTE);
 }
-public void GB(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Exabyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Exabyte
+	 */
+public void exabytes(Double val)
 {
-setValue(val,MemoryUnit.GIGABYTE,rate);
+setValue(val,MemoryUnit.EXABYTE);
 }
-public Double TB()
+	/*
+	 * Exabyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newExabyte(Double new_val)
 {
-return getValue(MemoryUnit.TERABYTE,TimeUnit.SECOND);
+return new Memory(new_val,MemoryUnit.EXABYTE);
 }
-public void TB(Double val)
+	/*
+	 * gets the value in Zettabyte
+	 * 
+	 * @returns value in Zettabyte
+	 */
+public Double zettabytes()
 {
-setValue(val,MemoryUnit.TERABYTE,TimeUnit.SECOND);
+return getValue(MemoryUnit.ZETTABYTE);
 }
-public Double TB(TimeUnit rate)
+	/*
+	 * stores the value in Zettabyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Zettabyte
+	 */
+public void zettabytes(Double val)
 {
-return getValue(MemoryUnit.TERABYTE,rate);
+setValue(val,MemoryUnit.ZETTABYTE);
 }
-public void TB(Double val, TimeUnit rate)
+	/*
+	 * Zettabyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newZettabyte(Double new_val)
 {
-setValue(val,MemoryUnit.TERABYTE,rate);
+return new Memory(new_val,MemoryUnit.ZETTABYTE);
 }
-public Double PB()
+	/*
+	 * gets the value in Yottabyte
+	 * 
+	 * @returns value in Yottabyte
+	 */
+public Double yottabytes()
 {
-return getValue(MemoryUnit.PETABYTE,TimeUnit.SECOND);
+return getValue(MemoryUnit.YOTTABYTE);
 }
-public void PB(Double val)
+	/*
+	 * stores the value in Yottabyte
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Yottabyte
+	 */
+public void yottabytes(Double val)
 {
-setValue(val,MemoryUnit.PETABYTE,TimeUnit.SECOND);
+setValue(val,MemoryUnit.YOTTABYTE);
 }
-public Double PB(TimeUnit rate)
+	/*
+	 * Yottabyte Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Memory variable
+	 */
+public static Memory newYottabyte(Double new_val)
 {
-return getValue(MemoryUnit.PETABYTE,rate);
-}
-public void PB(Double val, TimeUnit rate)
-{
-setValue(val,MemoryUnit.PETABYTE,rate);
-}
-public Double EB()
-{
-return getValue(MemoryUnit.EXABYTE,TimeUnit.SECOND);
-}
-public void EB(Double val)
-{
-setValue(val,MemoryUnit.EXABYTE,TimeUnit.SECOND);
-}
-public Double EB(TimeUnit rate)
-{
-return getValue(MemoryUnit.EXABYTE,rate);
-}
-public void EB(Double val, TimeUnit rate)
-{
-setValue(val,MemoryUnit.EXABYTE,rate);
-}
-public Double ZB()
-{
-return getValue(MemoryUnit.ZETTABYTE,TimeUnit.SECOND);
-}
-public void ZB(Double val)
-{
-setValue(val,MemoryUnit.ZETTABYTE,TimeUnit.SECOND);
-}
-public Double ZB(TimeUnit rate)
-{
-return getValue(MemoryUnit.ZETTABYTE,rate);
-}
-public void ZB(Double val, TimeUnit rate)
-{
-setValue(val,MemoryUnit.ZETTABYTE,rate);
-}
-public Double YB()
-{
-return getValue(MemoryUnit.YOTTABYTE,TimeUnit.SECOND);
-}
-public void YB(Double val)
-{
-setValue(val,MemoryUnit.YOTTABYTE,TimeUnit.SECOND);
-}
-public Double YB(TimeUnit rate)
-{
-return getValue(MemoryUnit.YOTTABYTE,rate);
-}
-public void YB(Double val, TimeUnit rate)
-{
-setValue(val,MemoryUnit.YOTTABYTE,rate);
+return new Memory(new_val,MemoryUnit.YOTTABYTE);
 }
 }

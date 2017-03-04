@@ -2,109 +2,185 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.VelocityUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Velocityunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Velocity extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Velocity(Double val,Unit unit)
 {
-super(val,unit,UnitType.VELOCITY,TimeUnit.SECOND);
+super(val,unit,UnitType.VELOCITY);
 }
-protected Velocity(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Nanometers per Second
+	 * 
+	 * @returns value in Nanometers per Second
+	 */
+public Double nanometersPerSeconds()
 {
-super(val,unit,UnitType.VELOCITY,rate);
+return getValue(VelocityUnit.NANOMETERS_PER_SECOND);
 }
-public Velocity()
+	/*
+	 * stores the value in Nanometers per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Nanometers per Second
+	 */
+public void nanometersPerSeconds(Double val)
 {
-super(0.0,VelocityUnit.NANOMETERS,UnitType.VELOCITY,TimeUnit.SECOND);
+setValue(val,VelocityUnit.NANOMETERS_PER_SECOND);
 }
-public static DynamicVal<Velocity> getDynamicVelocityValue()
+	/*
+	 * Nanometers per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Velocity variable
+	 */
+public static Velocity newNanometersPerSecond(Double new_val)
 {
-Velocity valClass = new Velocity(0.0,VelocityUnit.NANOMETERS,TimeUnit.SECOND);
-Velocity derClass = new Velocity(0.0,VelocityUnit.NANOMETERS, TimeUnit.SECOND);
-return new DynamicVal<Velocity>(valClass,derClass);
+return new Velocity(new_val,VelocityUnit.NANOMETERS_PER_SECOND);
 }
-public Double nm()
+	/*
+	 * gets the value in Micrometers per Second
+	 * 
+	 * @returns value in Micrometers per Second
+	 */
+public Double micrometersPerSeconds()
 {
-return getValue(VelocityUnit.NANOMETERS,TimeUnit.SECOND);
+return getValue(VelocityUnit.MICROMETERS_PER_SECOND);
 }
-public void nm(Double val)
+	/*
+	 * stores the value in Micrometers per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Micrometers per Second
+	 */
+public void micrometersPerSeconds(Double val)
 {
-setValue(val,VelocityUnit.NANOMETERS,TimeUnit.SECOND);
+setValue(val,VelocityUnit.MICROMETERS_PER_SECOND);
 }
-public Double nm(TimeUnit rate)
+	/*
+	 * Micrometers per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Velocity variable
+	 */
+public static Velocity newMicrometersPerSecond(Double new_val)
 {
-return getValue(VelocityUnit.NANOMETERS,rate);
+return new Velocity(new_val,VelocityUnit.MICROMETERS_PER_SECOND);
 }
-public void nm(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Millimeters per Second
+	 * 
+	 * @returns value in Millimeters per Second
+	 */
+public Double millimetersPerSeconds()
 {
-setValue(val,VelocityUnit.NANOMETERS,rate);
+return getValue(VelocityUnit.MILLIMETERS_PER_SECOND);
 }
-public Double um()
+	/*
+	 * stores the value in Millimeters per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Millimeters per Second
+	 */
+public void millimetersPerSeconds(Double val)
 {
-return getValue(VelocityUnit.MICROMETERS,TimeUnit.SECOND);
+setValue(val,VelocityUnit.MILLIMETERS_PER_SECOND);
 }
-public void um(Double val)
+	/*
+	 * Millimeters per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Velocity variable
+	 */
+public static Velocity newMillimetersPerSecond(Double new_val)
 {
-setValue(val,VelocityUnit.MICROMETERS,TimeUnit.SECOND);
+return new Velocity(new_val,VelocityUnit.MILLIMETERS_PER_SECOND);
 }
-public Double um(TimeUnit rate)
+	/*
+	 * gets the value in Meters per Second
+	 * 
+	 * @returns value in Meters per Second
+	 */
+public Double metersPerSeconds()
 {
-return getValue(VelocityUnit.MICROMETERS,rate);
+return getValue(VelocityUnit.METERS_PER_SECOND);
 }
-public void um(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Meters per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Meters per Second
+	 */
+public void metersPerSeconds(Double val)
 {
-setValue(val,VelocityUnit.MICROMETERS,rate);
+setValue(val,VelocityUnit.METERS_PER_SECOND);
 }
-public Double mm()
+	/*
+	 * Meters per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Velocity variable
+	 */
+public static Velocity newMetersPerSecond(Double new_val)
 {
-return getValue(VelocityUnit.MILLIMETERS,TimeUnit.SECOND);
+return new Velocity(new_val,VelocityUnit.METERS_PER_SECOND);
 }
-public void mm(Double val)
+	/*
+	 * gets the value in Kilometers per Second
+	 * 
+	 * @returns value in Kilometers per Second
+	 */
+public Double kilometersPerSeconds()
 {
-setValue(val,VelocityUnit.MILLIMETERS,TimeUnit.SECOND);
+return getValue(VelocityUnit.KILOMETERS_PER_SECOND);
 }
-public Double mm(TimeUnit rate)
+	/*
+	 * stores the value in Kilometers per Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kilometers per Second
+	 */
+public void kilometersPerSeconds(Double val)
 {
-return getValue(VelocityUnit.MILLIMETERS,rate);
+setValue(val,VelocityUnit.KILOMETERS_PER_SECOND);
 }
-public void mm(Double val, TimeUnit rate)
+	/*
+	 * Kilometers per Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Velocity variable
+	 */
+public static Velocity newKilometersPerSecond(Double new_val)
 {
-setValue(val,VelocityUnit.MILLIMETERS,rate);
-}
-public Double m()
-{
-return getValue(VelocityUnit.METERS,TimeUnit.SECOND);
-}
-public void m(Double val)
-{
-setValue(val,VelocityUnit.METERS,TimeUnit.SECOND);
-}
-public Double m(TimeUnit rate)
-{
-return getValue(VelocityUnit.METERS,rate);
-}
-public void m(Double val, TimeUnit rate)
-{
-setValue(val,VelocityUnit.METERS,rate);
-}
-public Double km()
-{
-return getValue(VelocityUnit.KILOMETERS,TimeUnit.SECOND);
-}
-public void km(Double val)
-{
-setValue(val,VelocityUnit.KILOMETERS,TimeUnit.SECOND);
-}
-public Double km(TimeUnit rate)
-{
-return getValue(VelocityUnit.KILOMETERS,rate);
-}
-public void km(Double val, TimeUnit rate)
-{
-setValue(val,VelocityUnit.KILOMETERS,rate);
+return new Velocity(new_val,VelocityUnit.KILOMETERS_PER_SECOND);
 }
 }

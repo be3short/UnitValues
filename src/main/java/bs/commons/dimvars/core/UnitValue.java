@@ -2,8 +2,6 @@ package bs.commons.dimvars.core;
 
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.exceptions.UnitException;
-import bs.commons.dimvars.units.DistanceUnit;
-import bs.commons.dimvars.units.TimeUnit;
 
 /*
  * Unit Val is short for Unit Value, which is a value with an associated unit.  This class allows values to be stored in a specified unit, and then retrieved in any unit of the same type
@@ -11,36 +9,50 @@ import bs.commons.dimvars.units.TimeUnit;
 public class UnitValue
 {
 
-	public Unit unit;
-	public TimeUnit rate;
-	public Double value;
+	public Unit unit; // units of the value
+	public Double value; // value itself
 
+	/*
+	 * Public Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 	public UnitValue(Double val, Unit unit) throws UnitException
 	{
 		value = val;
-		this.rate = null;
-		this.unit = unit;//UnitData.getUnitData(unit);
+		this.unit = unit;
+		UnitData.getUnitData(unit);
 	}
 
-	public UnitValue(Double val, Unit unit, TimeUnit rate) throws UnitException
-	{
-		value = val;
-		this.rate = rate;
-		this.unit = unit;//UnitData.getUnitData(unit);
-	}
-
-	protected UnitValue(Double val, Unit unit, UnitGroup group, TimeUnit rate)
+	/*
+	 * Protected Constructor - this constructor is used to define extensions of
+	 * this class, see classes in bs.commons.dimvars.values package for examples
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @param group - unit type group
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly or if the unit does not match the group specified
+	 */
+	protected UnitValue(Double val, Unit unit, UnitGroup group)
 	{
 		UnitData data = null;
 		try
 		{
 			value = val;
-			this.rate = rate;
-			this.unit = unit;//
+			this.unit = unit;
 			data = UnitData.getUnitData(this.unit);
 		} catch (Exception unitException)
 		{
-			new UnitException("Unable to create " + group.getCategory() + " value: invalid unit used in constructor")
+			new UnitException("Unable to create " + group.getType() + " value: invalid unit used in constructor")
 			.printStackTrace();
 			;
 			unitException.printStackTrace();
@@ -48,13 +60,25 @@ public class UnitValue
 		}
 		if (!data.group.equals(group))
 		{
-			new UnitException("Unable to create " + group.getCategory() + " value: Wrong unit " + data.getDescription()
+			new UnitException("Unable to create " + group.getType() + " value: Wrong unit " + data.getDescription()
 			+ " used in constructor").printStackTrace();
 			;
 			System.exit(1);
 		}
 	}
 
+	/*
+	 * Public setVal - Sets the value in a specified unit
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @param group - unit type group
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly or if the unit does not match the group specified
+	 */
 	public void setVal(Double val, Unit unit) throws UnitException
 	{
 		UnitData newUnitData = UnitData.getUnitData(unit);
@@ -62,7 +86,7 @@ public class UnitValue
 		if (!newUnitData.group.equals(UnitData.getUnitData(this.unit).group))
 		{
 			throw new UnitException("Unable to store value: Wrong type " + newUnitData.getDescription()
-			+ " for a variable of type " + UnitData.getUnitData(this.unit).group.getCategory());
+			+ " for a variable of type " + UnitData.getUnitData(this.unit).group.getType());
 		}
 		try
 		{
@@ -71,17 +95,6 @@ public class UnitValue
 		{
 			throw new UnitException(
 			"Unable to store value: Bad value " + value + " of unit " + newUnitData.getDescription());
-		}
-	}
-
-	public Double getVal() throws UnitException
-	{
-		if (unit == null)
-		{
-			return value;
-		} else
-		{
-			throw new UnitException("Unable to get value : No units specified for dimensioned value");
 		}
 	}
 
@@ -105,26 +118,6 @@ public class UnitValue
 		}
 	}
 
-	protected Double getValue(Unit unit, TimeUnit rate)
-	{
-		Double returnVal = null;
-		try
-		{
-			returnVal = value * UnitData.getUnitData(this.unit).getConversionFactor(unit);
-			if (this.rate != null)
-			{
-				returnVal = returnVal * UnitData.getUnitData(this.rate).getConversionFactor(rate);
-			}
-		} catch (Exception unitException)
-		{
-			System.err.println("Improper use of set value");
-			unitException.printStackTrace();
-			System.exit(1);
-		}
-		return returnVal;
-
-	}
-
 	protected Double getValue(Unit unit)
 	{
 		Double returnVal = null;
@@ -143,20 +136,11 @@ public class UnitValue
 
 	protected void setValue(Double val, Unit unit)
 	{
-		setValue(val, unit, null);
-	}
-
-	protected void setValue(Double val, Unit unit, TimeUnit rate)
-	{
 		try
 		{
 			value = val;
 			UnitData.getUnitData(unit);
 			this.unit = unit;//UnitData.getUnitData(unit);
-			if (this.rate != null)
-			{
-				this.rate = rate;
-			}
 		} catch (UnitException unitException)
 		{
 			System.err.println("Improper use of set value");

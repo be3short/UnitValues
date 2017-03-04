@@ -8,11 +8,11 @@ import bs.commons.dimvars.core.UnitData.Unit;
 public enum MassUnit implements Unit
 {
 
-	GRAMS(
-		"Grams",
+	GRAM(
+		"Gram",
 		"g"),
-	KILOGRAMS(
-		"Kilograms",
+	KILOGRAM(
+		"Kilogram",
 		"kg");
 
 	private MassUnit(String unit_name, String unit_abbreviation)
@@ -26,8 +26,8 @@ public enum MassUnit implements Unit
 
 		UnitConversionMap map = new UnitConversionMap();
 
-		map.addConversions(MassUnit.GRAMS, 1.0, 1000.0);
-		map.addConversions(MassUnit.KILOGRAMS, .001, 1.0);
+		map.addConversions(MassUnit.GRAM, 1.0, 1000.0);
+		map.addConversions(MassUnit.KILOGRAM, .001, 1.0);
 
 		return map;
 	}
@@ -35,14 +35,7 @@ public enum MassUnit implements Unit
 	@Override
 	public UnitGroup getGroup()
 	{
-		// TODO Auto-generated method stub
 		return UnitType.MASS;
-	}
-
-	@Override
-	public TimeUnit getRate()
-	{
-		return null;
 	}
 
 }

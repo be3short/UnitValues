@@ -2,109 +2,185 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.DistanceUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Distanceunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Distance extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Distance(Double val,Unit unit)
 {
-super(val,unit,UnitType.DISTANCE,null);
+super(val,unit,UnitType.DISTANCE);
 }
-protected Distance(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Nanometer
+	 * 
+	 * @returns value in Nanometer
+	 */
+public Double nanometers()
 {
-super(val,unit,UnitType.DISTANCE,rate);
+return getValue(DistanceUnit.NANOMETER);
 }
-public Distance()
+	/*
+	 * stores the value in Nanometer
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Nanometer
+	 */
+public void nanometers(Double val)
 {
-super(0.0,DistanceUnit.NANOMETERS,UnitType.DISTANCE,null);
+setValue(val,DistanceUnit.NANOMETER);
 }
-public static DynamicVal<Distance> getDynamicDistanceValue()
+	/*
+	 * Nanometer Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Distance variable
+	 */
+public static Distance newNanometer(Double new_val)
 {
-Distance valClass = new Distance(0.0,DistanceUnit.NANOMETERS,null);
-Distance derClass = new Distance(0.0,DistanceUnit.NANOMETERS, TimeUnit.SECOND);
-return new DynamicVal<Distance>(valClass,derClass);
+return new Distance(new_val,DistanceUnit.NANOMETER);
 }
-public Double nm()
+	/*
+	 * gets the value in Micrometer
+	 * 
+	 * @returns value in Micrometer
+	 */
+public Double micrometers()
 {
-return getValue(DistanceUnit.NANOMETERS,TimeUnit.SECOND);
+return getValue(DistanceUnit.MICROMETER);
 }
-public void nm(Double val)
+	/*
+	 * stores the value in Micrometer
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Micrometer
+	 */
+public void micrometers(Double val)
 {
-setValue(val,DistanceUnit.NANOMETERS,TimeUnit.SECOND);
+setValue(val,DistanceUnit.MICROMETER);
 }
-public Double nm(TimeUnit rate)
+	/*
+	 * Micrometer Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Distance variable
+	 */
+public static Distance newMicrometer(Double new_val)
 {
-return getValue(DistanceUnit.NANOMETERS,rate);
+return new Distance(new_val,DistanceUnit.MICROMETER);
 }
-public void nm(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Millimeter
+	 * 
+	 * @returns value in Millimeter
+	 */
+public Double millimeters()
 {
-setValue(val,DistanceUnit.NANOMETERS,rate);
+return getValue(DistanceUnit.MILLIMETER);
 }
-public Double um()
+	/*
+	 * stores the value in Millimeter
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Millimeter
+	 */
+public void millimeters(Double val)
 {
-return getValue(DistanceUnit.MICROMETERS,TimeUnit.SECOND);
+setValue(val,DistanceUnit.MILLIMETER);
 }
-public void um(Double val)
+	/*
+	 * Millimeter Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Distance variable
+	 */
+public static Distance newMillimeter(Double new_val)
 {
-setValue(val,DistanceUnit.MICROMETERS,TimeUnit.SECOND);
+return new Distance(new_val,DistanceUnit.MILLIMETER);
 }
-public Double um(TimeUnit rate)
+	/*
+	 * gets the value in Meter
+	 * 
+	 * @returns value in Meter
+	 */
+public Double meters()
 {
-return getValue(DistanceUnit.MICROMETERS,rate);
+return getValue(DistanceUnit.METER);
 }
-public void um(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Meter
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Meter
+	 */
+public void meters(Double val)
 {
-setValue(val,DistanceUnit.MICROMETERS,rate);
+setValue(val,DistanceUnit.METER);
 }
-public Double mm()
+	/*
+	 * Meter Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Distance variable
+	 */
+public static Distance newMeter(Double new_val)
 {
-return getValue(DistanceUnit.MILLIMETERS,TimeUnit.SECOND);
+return new Distance(new_val,DistanceUnit.METER);
 }
-public void mm(Double val)
+	/*
+	 * gets the value in Kilometer
+	 * 
+	 * @returns value in Kilometer
+	 */
+public Double kilometers()
 {
-setValue(val,DistanceUnit.MILLIMETERS,TimeUnit.SECOND);
+return getValue(DistanceUnit.KILOMETER);
 }
-public Double mm(TimeUnit rate)
+	/*
+	 * stores the value in Kilometer
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kilometer
+	 */
+public void kilometers(Double val)
 {
-return getValue(DistanceUnit.MILLIMETERS,rate);
+setValue(val,DistanceUnit.KILOMETER);
 }
-public void mm(Double val, TimeUnit rate)
+	/*
+	 * Kilometer Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Distance variable
+	 */
+public static Distance newKilometer(Double new_val)
 {
-setValue(val,DistanceUnit.MILLIMETERS,rate);
-}
-public Double m()
-{
-return getValue(DistanceUnit.METERS,TimeUnit.SECOND);
-}
-public void m(Double val)
-{
-setValue(val,DistanceUnit.METERS,TimeUnit.SECOND);
-}
-public Double m(TimeUnit rate)
-{
-return getValue(DistanceUnit.METERS,rate);
-}
-public void m(Double val, TimeUnit rate)
-{
-setValue(val,DistanceUnit.METERS,rate);
-}
-public Double km()
-{
-return getValue(DistanceUnit.KILOMETERS,TimeUnit.SECOND);
-}
-public void km(Double val)
-{
-setValue(val,DistanceUnit.KILOMETERS,TimeUnit.SECOND);
-}
-public Double km(TimeUnit rate)
-{
-return getValue(DistanceUnit.KILOMETERS,rate);
-}
-public void km(Double val, TimeUnit rate)
-{
-setValue(val,DistanceUnit.KILOMETERS,rate);
+return new Distance(new_val,DistanceUnit.KILOMETER);
 }
 }

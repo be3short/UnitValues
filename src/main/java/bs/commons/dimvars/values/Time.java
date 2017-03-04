@@ -3,124 +3,215 @@ package bs.commons.dimvars.values;
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
-import bs.commons.dimvars.units.TimeUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Timeunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Time extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Time(Double val,Unit unit)
 {
-super(val,unit,UnitType.TIME,null);
+super(val,unit,UnitType.TIME);
 }
-protected Time(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Nanosecond
+	 * 
+	 * @returns value in Nanosecond
+	 */
+public Double nanoseconds()
 {
-super(val,unit,UnitType.TIME,rate);
+return getValue(TimeUnit.NANOSECOND);
 }
-public Time()
+	/*
+	 * stores the value in Nanosecond
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Nanosecond
+	 */
+public void nanoseconds(Double val)
 {
-super(0.0,TimeUnit.NANOSECOND,UnitType.TIME,null);
+setValue(val,TimeUnit.NANOSECOND);
 }
-public static DynamicVal<Time> getDynamicTimeValue()
+	/*
+	 * Nanosecond Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Time variable
+	 */
+public static Time newNanosecond(Double new_val)
 {
-Time valClass = new Time(0.0,TimeUnit.NANOSECOND,null);
-Time derClass = new Time(0.0,TimeUnit.NANOSECOND, TimeUnit.SECOND);
-return new DynamicVal<Time>(valClass,derClass);
+return new Time(new_val,TimeUnit.NANOSECOND);
 }
-public Double nS()
+	/*
+	 * gets the value in Microsecond
+	 * 
+	 * @returns value in Microsecond
+	 */
+public Double microseconds()
 {
-return getValue(TimeUnit.NANOSECOND,TimeUnit.SECOND);
+return getValue(TimeUnit.MICROSECOND);
 }
-public void nS(Double val)
+	/*
+	 * stores the value in Microsecond
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Microsecond
+	 */
+public void microseconds(Double val)
 {
-setValue(val,TimeUnit.NANOSECOND,TimeUnit.SECOND);
+setValue(val,TimeUnit.MICROSECOND);
 }
-public Double nS(TimeUnit rate)
+	/*
+	 * Microsecond Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Time variable
+	 */
+public static Time newMicrosecond(Double new_val)
 {
-return getValue(TimeUnit.NANOSECOND,rate);
+return new Time(new_val,TimeUnit.MICROSECOND);
 }
-public void nS(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Millisecond
+	 * 
+	 * @returns value in Millisecond
+	 */
+public Double milliseconds()
 {
-setValue(val,TimeUnit.NANOSECOND,rate);
+return getValue(TimeUnit.MILLISECOND);
 }
-public Double us()
+	/*
+	 * stores the value in Millisecond
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Millisecond
+	 */
+public void milliseconds(Double val)
 {
-return getValue(TimeUnit.MICROSECOND,TimeUnit.SECOND);
+setValue(val,TimeUnit.MILLISECOND);
 }
-public void us(Double val)
+	/*
+	 * Millisecond Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Time variable
+	 */
+public static Time newMillisecond(Double new_val)
 {
-setValue(val,TimeUnit.MICROSECOND,TimeUnit.SECOND);
+return new Time(new_val,TimeUnit.MILLISECOND);
 }
-public Double us(TimeUnit rate)
+	/*
+	 * gets the value in Second
+	 * 
+	 * @returns value in Second
+	 */
+public Double seconds()
 {
-return getValue(TimeUnit.MICROSECOND,rate);
+return getValue(TimeUnit.SECOND);
 }
-public void us(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Second
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Second
+	 */
+public void seconds(Double val)
 {
-setValue(val,TimeUnit.MICROSECOND,rate);
+setValue(val,TimeUnit.SECOND);
 }
-public Double ms()
+	/*
+	 * Second Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Time variable
+	 */
+public static Time newSecond(Double new_val)
 {
-return getValue(TimeUnit.MILLISECOND,TimeUnit.SECOND);
+return new Time(new_val,TimeUnit.SECOND);
 }
-public void ms(Double val)
+	/*
+	 * gets the value in Minute
+	 * 
+	 * @returns value in Minute
+	 */
+public Double minutes()
 {
-setValue(val,TimeUnit.MILLISECOND,TimeUnit.SECOND);
+return getValue(TimeUnit.MINUTE);
 }
-public Double ms(TimeUnit rate)
+	/*
+	 * stores the value in Minute
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Minute
+	 */
+public void minutes(Double val)
 {
-return getValue(TimeUnit.MILLISECOND,rate);
+setValue(val,TimeUnit.MINUTE);
 }
-public void ms(Double val, TimeUnit rate)
+	/*
+	 * Minute Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Time variable
+	 */
+public static Time newMinute(Double new_val)
 {
-setValue(val,TimeUnit.MILLISECOND,rate);
+return new Time(new_val,TimeUnit.MINUTE);
 }
-public Double s()
+	/*
+	 * gets the value in Hour
+	 * 
+	 * @returns value in Hour
+	 */
+public Double hours()
 {
-return getValue(TimeUnit.SECOND,TimeUnit.SECOND);
+return getValue(TimeUnit.HOUR);
 }
-public void s(Double val)
+	/*
+	 * stores the value in Hour
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Hour
+	 */
+public void hours(Double val)
 {
-setValue(val,TimeUnit.SECOND,TimeUnit.SECOND);
+setValue(val,TimeUnit.HOUR);
 }
-public Double s(TimeUnit rate)
+	/*
+	 * Hour Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Time variable
+	 */
+public static Time newHour(Double new_val)
 {
-return getValue(TimeUnit.SECOND,rate);
-}
-public void s(Double val, TimeUnit rate)
-{
-setValue(val,TimeUnit.SECOND,rate);
-}
-public Double min()
-{
-return getValue(TimeUnit.MINUTE,TimeUnit.SECOND);
-}
-public void min(Double val)
-{
-setValue(val,TimeUnit.MINUTE,TimeUnit.SECOND);
-}
-public Double min(TimeUnit rate)
-{
-return getValue(TimeUnit.MINUTE,rate);
-}
-public void min(Double val, TimeUnit rate)
-{
-setValue(val,TimeUnit.MINUTE,rate);
-}
-public Double hr()
-{
-return getValue(TimeUnit.HOUR,TimeUnit.SECOND);
-}
-public void hr(Double val)
-{
-setValue(val,TimeUnit.HOUR,TimeUnit.SECOND);
-}
-public Double hr(TimeUnit rate)
-{
-return getValue(TimeUnit.HOUR,rate);
-}
-public void hr(Double val, TimeUnit rate)
-{
-setValue(val,TimeUnit.HOUR,rate);
+return new Time(new_val,TimeUnit.HOUR);
 }
 }

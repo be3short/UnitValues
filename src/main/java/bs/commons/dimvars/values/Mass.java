@@ -2,61 +2,92 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.MassUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Massunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Mass extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Mass(Double val,Unit unit)
 {
-super(val,unit,UnitType.MASS,null);
+super(val,unit,UnitType.MASS);
 }
-protected Mass(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Gram
+	 * 
+	 * @returns value in Gram
+	 */
+public Double grams()
 {
-super(val,unit,UnitType.MASS,rate);
+return getValue(MassUnit.GRAM);
 }
-public Mass()
+	/*
+	 * stores the value in Gram
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Gram
+	 */
+public void grams(Double val)
 {
-super(0.0,MassUnit.GRAMS,UnitType.MASS,null);
+setValue(val,MassUnit.GRAM);
 }
-public static DynamicVal<Mass> getDynamicMassValue()
+	/*
+	 * Gram Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Mass variable
+	 */
+public static Mass newGram(Double new_val)
 {
-Mass valClass = new Mass(0.0,MassUnit.GRAMS,null);
-Mass derClass = new Mass(0.0,MassUnit.GRAMS, TimeUnit.SECOND);
-return new DynamicVal<Mass>(valClass,derClass);
+return new Mass(new_val,MassUnit.GRAM);
 }
-public Double g()
+	/*
+	 * gets the value in Kilogram
+	 * 
+	 * @returns value in Kilogram
+	 */
+public Double kilograms()
 {
-return getValue(MassUnit.GRAMS,TimeUnit.SECOND);
+return getValue(MassUnit.KILOGRAM);
 }
-public void g(Double val)
+	/*
+	 * stores the value in Kilogram
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kilogram
+	 */
+public void kilograms(Double val)
 {
-setValue(val,MassUnit.GRAMS,TimeUnit.SECOND);
+setValue(val,MassUnit.KILOGRAM);
 }
-public Double g(TimeUnit rate)
+	/*
+	 * Kilogram Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Mass variable
+	 */
+public static Mass newKilogram(Double new_val)
 {
-return getValue(MassUnit.GRAMS,rate);
-}
-public void g(Double val, TimeUnit rate)
-{
-setValue(val,MassUnit.GRAMS,rate);
-}
-public Double kg()
-{
-return getValue(MassUnit.KILOGRAMS,TimeUnit.SECOND);
-}
-public void kg(Double val)
-{
-setValue(val,MassUnit.KILOGRAMS,TimeUnit.SECOND);
-}
-public Double kg(TimeUnit rate)
-{
-return getValue(MassUnit.KILOGRAMS,rate);
-}
-public void kg(Double val, TimeUnit rate)
-{
-setValue(val,MassUnit.KILOGRAMS,rate);
+return new Mass(new_val,MassUnit.KILOGRAM);
 }
 }

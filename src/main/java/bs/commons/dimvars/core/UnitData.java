@@ -3,9 +3,7 @@ package bs.commons.dimvars.core;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.exceptions.UnitException;
-import bs.commons.dimvars.units.TimeUnit;
 
 public class UnitData
 {
@@ -16,8 +14,6 @@ public class UnitData
 		public UnitGroup getGroup();
 
 		public UnitConversionMap getConversionMap();
-
-		public TimeUnit getRate();
 
 		static void updateConversions(UnitConversionMap map)
 		{
@@ -89,7 +85,7 @@ public class UnitData
 
 	public String getDescription()
 	{
-		return "(" + unitName + " : " + group.getCategory() + ")";
+		return "(" + unitName + " : " + group.getType() + ")";
 	}
 
 	public Double getConversionFactor(UnitData.Unit output) throws UnitException
@@ -130,24 +126,6 @@ public class UnitData
 		return null;
 
 	}
-
-	//	protected static void newUnitDetails(String name, String abbreviation, UnitData.Unit unit, UnitGroup unit_category)
-	//	{
-	//		UnitData det = new UnitData(unit, unit_category, name, abbreviation);
-	//		if (details.containsKey(unit_category))
-	//		{
-	//			details.get(unit_category).put(unit, det);
-	//			unitLists.get(unit_category).add(unit);
-	//		} else
-	//		{
-	//			HashMap<UnitData.Unit, UnitData> detailMap = new HashMap<UnitData.Unit, UnitData>();
-	//			ArrayList<UnitData.Unit> unitList = new ArrayList<UnitData.Unit>();
-	//			unitList.add(unit);
-	//			detailMap.put(unit, det);
-	//			details.put(unit_category, detailMap);
-	//			unitLists.put(unit_category, unitList);
-	//		}
-	//	}
 
 	public UnitData.Unit getUnit()
 	{

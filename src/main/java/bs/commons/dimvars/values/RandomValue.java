@@ -1,7 +1,5 @@
 package bs.commons.dimvars.values;
 
-import bs.commons.dimvars.core.UnitData.Unit;
-
 public class RandomValue
 {
 

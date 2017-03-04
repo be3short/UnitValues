@@ -2,61 +2,92 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.EnergyUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Energyunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Energy extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Energy(Double val,Unit unit)
 {
-super(val,unit,UnitType.ENERGY,TimeUnit.SECOND);
+super(val,unit,UnitType.ENERGY);
 }
-protected Energy(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Watt Hour
+	 * 
+	 * @returns value in Watt Hour
+	 */
+public Double wattHours()
 {
-super(val,unit,UnitType.ENERGY,rate);
+return getValue(EnergyUnit.WATT_HOUR);
 }
-public Energy()
+	/*
+	 * stores the value in Watt Hour
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Watt Hour
+	 */
+public void wattHours(Double val)
 {
-super(0.0,EnergyUnit.WATT_HOUR,UnitType.ENERGY,TimeUnit.SECOND);
+setValue(val,EnergyUnit.WATT_HOUR);
 }
-public static DynamicVal<Energy> getDynamicEnergyValue()
+	/*
+	 * Watt Hour Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Energy variable
+	 */
+public static Energy newWattHour(Double new_val)
 {
-Energy valClass = new Energy(0.0,EnergyUnit.WATT_HOUR,TimeUnit.SECOND);
-Energy derClass = new Energy(0.0,EnergyUnit.WATT_HOUR, TimeUnit.SECOND);
-return new DynamicVal<Energy>(valClass,derClass);
+return new Energy(new_val,EnergyUnit.WATT_HOUR);
 }
-public Double wH()
+	/*
+	 * gets the value in Miliamp Hour
+	 * 
+	 * @returns value in Miliamp Hour
+	 */
+public Double miliampHours()
 {
-return getValue(EnergyUnit.WATT_HOUR,TimeUnit.SECOND);
+return getValue(EnergyUnit.MILIAMP_HOUR);
 }
-public void wH(Double val)
+	/*
+	 * stores the value in Miliamp Hour
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Miliamp Hour
+	 */
+public void miliampHours(Double val)
 {
-setValue(val,EnergyUnit.WATT_HOUR,TimeUnit.SECOND);
+setValue(val,EnergyUnit.MILIAMP_HOUR);
 }
-public Double wH(TimeUnit rate)
+	/*
+	 * Miliamp Hour Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Energy variable
+	 */
+public static Energy newMiliampHour(Double new_val)
 {
-return getValue(EnergyUnit.WATT_HOUR,rate);
-}
-public void wH(Double val, TimeUnit rate)
-{
-setValue(val,EnergyUnit.WATT_HOUR,rate);
-}
-public Double mAh()
-{
-return getValue(EnergyUnit.MILIAMP_HOUR,TimeUnit.SECOND);
-}
-public void mAh(Double val)
-{
-setValue(val,EnergyUnit.MILIAMP_HOUR,TimeUnit.SECOND);
-}
-public Double mAh(TimeUnit rate)
-{
-return getValue(EnergyUnit.MILIAMP_HOUR,rate);
-}
-public void mAh(Double val, TimeUnit rate)
-{
-setValue(val,EnergyUnit.MILIAMP_HOUR,rate);
+return new Energy(new_val,EnergyUnit.MILIAMP_HOUR);
 }
 }

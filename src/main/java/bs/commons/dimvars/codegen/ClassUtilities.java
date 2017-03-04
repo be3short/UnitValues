@@ -10,6 +10,7 @@ import com.google.common.reflect.ClassPath.ClassInfo;
 public class ClassUtilities
 {
 
+	@SuppressWarnings("rawtypes")
 	public static ArrayList<Class> getClassesListFromPackageSection(String... section)
 	{
 
@@ -74,12 +75,12 @@ public class ClassUtilities
 
 		} catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static HashMap<String, ArrayList<Object>> getAllInterfaceEnumValues(Class interface_class, String... section)
 	{
 		HashMap<String, ArrayList<Object>> returnMap = new HashMap<String, ArrayList<Object>>();
@@ -101,13 +102,13 @@ public class ClassUtilities
 				}
 			} catch (Exception e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		return returnMap;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static HashMap<String, Object> getAllInterfaceClasses(Class main_class, Object interface_class,
 	String... section)
 	{
@@ -129,7 +130,6 @@ public class ClassUtilities
 				}
 			} catch (Exception e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -142,9 +142,9 @@ public class ClassUtilities
 		public ProtectedClassLoader(ClassLoader loader)
 		{
 			super(loader);
-			// TODO Auto-generated constructor stub
 		}
 
+		@SuppressWarnings("rawtypes")
 		public Class getClassProtected(String class_name)
 		{
 			try
@@ -155,7 +155,6 @@ public class ClassUtilities
 				}
 			} catch (Exception e)
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return null;

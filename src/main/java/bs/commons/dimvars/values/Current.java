@@ -2,141 +2,247 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.TimeUnit;
-import bs.commons.dimvars.core.DynamicVal;
 import bs.commons.dimvars.units.CurrentUnit;
 import bs.commons.dimvars.core.UnitType;
 
+/**
+ * Class that stores a value in Currentunits. This value can be extracted or updated in any units of the same type.
+ *
+ * @author: Brendan Short
+ *
+ * @date: 03-02-2017
+ */
 public class Current extends UnitValue
 {
+	/*
+	 * General Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @param unit - units of the value to be stored
+	 * 
+	 * @throws UnitException - throws an exception if the unit is not configured
+	 * correctly
+	 */
 public Current(Double val,Unit unit)
 {
-super(val,unit,UnitType.CURRENT,null);
+super(val,unit,UnitType.CURRENT);
 }
-protected Current(Double val,Unit unit, TimeUnit rate)
+	/*
+	 * gets the value in Nanoamp
+	 * 
+	 * @returns value in Nanoamp
+	 */
+public Double nanoamps()
 {
-super(val,unit,UnitType.CURRENT,rate);
+return getValue(CurrentUnit.NANOAMP);
 }
-public Current()
+	/*
+	 * stores the value in Nanoamp
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Nanoamp
+	 */
+public void nanoamps(Double val)
 {
-super(0.0,CurrentUnit.NANOAMP,UnitType.CURRENT,null);
+setValue(val,CurrentUnit.NANOAMP);
 }
-public static DynamicVal<Current> getDynamicCurrentValue()
+	/*
+	 * Nanoamp Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Current variable
+	 */
+public static Current newNanoamp(Double new_val)
 {
-Current valClass = new Current(0.0,CurrentUnit.NANOAMP,null);
-Current derClass = new Current(0.0,CurrentUnit.NANOAMP, TimeUnit.SECOND);
-return new DynamicVal<Current>(valClass,derClass);
+return new Current(new_val,CurrentUnit.NANOAMP);
 }
-public Double nA()
+	/*
+	 * gets the value in Microamp
+	 * 
+	 * @returns value in Microamp
+	 */
+public Double microamps()
 {
-return getValue(CurrentUnit.NANOAMP,TimeUnit.SECOND);
+return getValue(CurrentUnit.MICROAMP);
 }
-public void nA(Double val)
+	/*
+	 * stores the value in Microamp
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Microamp
+	 */
+public void microamps(Double val)
 {
-setValue(val,CurrentUnit.NANOAMP,TimeUnit.SECOND);
+setValue(val,CurrentUnit.MICROAMP);
 }
-public Double nA(TimeUnit rate)
+	/*
+	 * Microamp Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Current variable
+	 */
+public static Current newMicroamp(Double new_val)
 {
-return getValue(CurrentUnit.NANOAMP,rate);
+return new Current(new_val,CurrentUnit.MICROAMP);
 }
-public void nA(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Milliamp
+	 * 
+	 * @returns value in Milliamp
+	 */
+public Double milliamps()
 {
-setValue(val,CurrentUnit.NANOAMP,rate);
+return getValue(CurrentUnit.MILLIAMP);
 }
-public Double uA()
+	/*
+	 * stores the value in Milliamp
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Milliamp
+	 */
+public void milliamps(Double val)
 {
-return getValue(CurrentUnit.MICROAMP,TimeUnit.SECOND);
+setValue(val,CurrentUnit.MILLIAMP);
 }
-public void uA(Double val)
+	/*
+	 * Milliamp Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Current variable
+	 */
+public static Current newMilliamp(Double new_val)
 {
-setValue(val,CurrentUnit.MICROAMP,TimeUnit.SECOND);
+return new Current(new_val,CurrentUnit.MILLIAMP);
 }
-public Double uA(TimeUnit rate)
+	/*
+	 * gets the value in Amp
+	 * 
+	 * @returns value in Amp
+	 */
+public Double amps()
 {
-return getValue(CurrentUnit.MICROAMP,rate);
+return getValue(CurrentUnit.AMP);
 }
-public void uA(Double val, TimeUnit rate)
+	/*
+	 * stores the value in Amp
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Amp
+	 */
+public void amps(Double val)
 {
-setValue(val,CurrentUnit.MICROAMP,rate);
+setValue(val,CurrentUnit.AMP);
 }
-public Double mA()
+	/*
+	 * Amp Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Current variable
+	 */
+public static Current newAmp(Double new_val)
 {
-return getValue(CurrentUnit.MILLIAMP,TimeUnit.SECOND);
+return new Current(new_val,CurrentUnit.AMP);
 }
-public void mA(Double val)
+	/*
+	 * gets the value in Kiloamp
+	 * 
+	 * @returns value in Kiloamp
+	 */
+public Double kiloamps()
 {
-setValue(val,CurrentUnit.MILLIAMP,TimeUnit.SECOND);
+return getValue(CurrentUnit.KILO_AMP);
 }
-public Double mA(TimeUnit rate)
+	/*
+	 * stores the value in Kiloamp
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Kiloamp
+	 */
+public void kiloamps(Double val)
 {
-return getValue(CurrentUnit.MILLIAMP,rate);
+setValue(val,CurrentUnit.KILO_AMP);
 }
-public void mA(Double val, TimeUnit rate)
+	/*
+	 * Kiloamp Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Current variable
+	 */
+public static Current newKiloamp(Double new_val)
 {
-setValue(val,CurrentUnit.MILLIAMP,rate);
+return new Current(new_val,CurrentUnit.KILO_AMP);
 }
-public Double A()
+	/*
+	 * gets the value in Megaamp
+	 * 
+	 * @returns value in Megaamp
+	 */
+public Double megaamps()
 {
-return getValue(CurrentUnit.AMP,TimeUnit.SECOND);
+return getValue(CurrentUnit.MEGA_AMP);
 }
-public void A(Double val)
+	/*
+	 * stores the value in Megaamp
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Megaamp
+	 */
+public void megaamps(Double val)
 {
-setValue(val,CurrentUnit.AMP,TimeUnit.SECOND);
+setValue(val,CurrentUnit.MEGA_AMP);
 }
-public Double A(TimeUnit rate)
+	/*
+	 * Megaamp Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Current variable
+	 */
+public static Current newMegaamp(Double new_val)
 {
-return getValue(CurrentUnit.AMP,rate);
+return new Current(new_val,CurrentUnit.MEGA_AMP);
 }
-public void A(Double val, TimeUnit rate)
+	/*
+	 * gets the value in Gigaamp
+	 * 
+	 * @returns value in Gigaamp
+	 */
+public Double gigaamps()
 {
-setValue(val,CurrentUnit.AMP,rate);
+return getValue(CurrentUnit.GIGA_AMP);
 }
-public Double kA()
+	/*
+	 * stores the value in Gigaamp
+	 * 
+	 *@param value to be stored
+	 *
+	 * @returns value in Gigaamp
+	 */
+public void gigaamps(Double val)
 {
-return getValue(CurrentUnit.KILO_AMP,TimeUnit.SECOND);
+setValue(val,CurrentUnit.GIGA_AMP);
 }
-public void kA(Double val)
+	/*
+	 * Gigaamp Constructor
+	 * 
+	 * @param val - value to be stored
+	 * 
+	 * @returns Current variable
+	 */
+public static Current newGigaamp(Double new_val)
 {
-setValue(val,CurrentUnit.KILO_AMP,TimeUnit.SECOND);
-}
-public Double kA(TimeUnit rate)
-{
-return getValue(CurrentUnit.KILO_AMP,rate);
-}
-public void kA(Double val, TimeUnit rate)
-{
-setValue(val,CurrentUnit.KILO_AMP,rate);
-}
-public Double MA()
-{
-return getValue(CurrentUnit.MEGA_AMP,TimeUnit.SECOND);
-}
-public void MA(Double val)
-{
-setValue(val,CurrentUnit.MEGA_AMP,TimeUnit.SECOND);
-}
-public Double MA(TimeUnit rate)
-{
-return getValue(CurrentUnit.MEGA_AMP,rate);
-}
-public void MA(Double val, TimeUnit rate)
-{
-setValue(val,CurrentUnit.MEGA_AMP,rate);
-}
-public Double GA()
-{
-return getValue(CurrentUnit.GIGA_AMP,TimeUnit.SECOND);
-}
-public void GA(Double val)
-{
-setValue(val,CurrentUnit.GIGA_AMP,TimeUnit.SECOND);
-}
-public Double GA(TimeUnit rate)
-{
-return getValue(CurrentUnit.GIGA_AMP,rate);
-}
-public void GA(Double val, TimeUnit rate)
-{
-setValue(val,CurrentUnit.GIGA_AMP,rate);
+return new Current(new_val,CurrentUnit.GIGA_AMP);
 }
 }
