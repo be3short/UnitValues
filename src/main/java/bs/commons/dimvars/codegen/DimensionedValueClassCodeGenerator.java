@@ -22,6 +22,7 @@ public class DimensionedValueClassCodeGenerator
 		valueClassFile += getConstructor(units);
 		for (Unit unit : units)
 		{
+			valueClassFile += getUnitMethods(unit);
 		}
 		valueClassFile += "}";
 		writeFile(source_directory, package_name, units, valueClassFile);
@@ -65,7 +66,7 @@ public class DimensionedValueClassCodeGenerator
 		String unitTypeName = units[0].getGroup().getType();
 		String classHeader = "/**\n * Class that stores a value in " + unitTypeName
 		+ "units. This value can be extracted or updated in any units of the same type.\n *\n * @author: Brendan Short\n *\n * @date: 03-02-2017\n */\n";
-		classHeader += "public class " + units[0].getGroup().getType() + " extends UnitValue" + "\n{\n";
+		classHeader += "public class " + units[0].getGroup().getType() + " extends UnitValue<Double>" + "\n{\n";
 		return classHeader;
 	}
 
@@ -134,8 +135,12 @@ public class DimensionedValueClassCodeGenerator
 		getMethod += "	/*\n	 * " + unitName
 		+ " Constructor\n	 * \n	 * @param val - value to be stored\n	 * \n	 * @returns " + className
 		+ " variable\n	 */\n";
-		getMethod += "public static " + className + " new" + capitalizedUnitAbrev + "(Double new_val)\n{\n";
+		getMethod += "public static " + className + " new" + capitalizedUnitAbrev + "Value(Double new_val)\n{\n";
 		getMethod += "return new " + className + "(new_val," + unitClassName + ");\n}\n";
+		getMethod += "	/*\n	 * " + unitName + " Constructor with zero value\n* \n	 * @returns " + className
+		+ " variable\n	 */\n";
+		getMethod += "public static " + className + " new" + capitalizedUnitAbrev + "Value()\n{\n";
+		getMethod += "return new " + className + "(0.0," + unitClassName + ");\n}\n";
 		//if (unit.getRate() != null)
 		//{
 		//getMethod += "public Double " + unitAbrev + "(TimeUnit rate)\n{\n";
@@ -166,7 +171,8 @@ public class DimensionedValueClassCodeGenerator
 
 	public static void createAllValueClasses()
 	{
-		HashMap<String, ArrayList<Object>> units = ClassUtilities.getAllInterfaceEnumValues(Unit.class, "bs.");
+		HashMap<String, ArrayList<Object>> units = ClassUtilities.getAllInterfaceEnumValues(Unit.class,
+		"bs.commons.dimvars.units");
 		units.remove("NoUnit");
 		System.out.println("Value classes to write " + units.size());
 		for (ArrayList<Object> unitList : units.values())

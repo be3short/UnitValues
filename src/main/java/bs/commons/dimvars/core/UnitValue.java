@@ -6,11 +6,11 @@ import bs.commons.dimvars.exceptions.UnitException;
 /*
  * Unit Val is short for Unit Value, which is a value with an associated unit.  This class allows values to be stored in a specified unit, and then retrieved in any unit of the same type
  */
-public class UnitValue
+public class UnitValue<T> extends AnyObject<T>
 {
 
-	public Unit unit; // units of the value
-	public Double value; // value itself
+	private Unit unit; // units of the value
+	private Class<T> valueClass;
 
 	/*
 	 * Public Constructor
@@ -22,9 +22,15 @@ public class UnitValue
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly
 	 */
-	public UnitValue(Double val, Unit unit) throws UnitException
+	@SuppressWarnings("unchecked")
+	public UnitValue(T val, Unit unit) throws UnitException
 	{
-		value = val;
+		super(val);
+		//System.out.println(val.getClass());
+		if (val.getClass().equals(Double.class))
+		{
+			valueClass = (Class<T>) Double.class;
+		}
 		this.unit = unit;
 		UnitData.getUnitData(unit);
 	}
@@ -42,12 +48,16 @@ public class UnitValue
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly or if the unit does not match the group specified
 	 */
-	protected UnitValue(Double val, Unit unit, UnitGroup group)
+	protected UnitValue(T val, Unit unit, UnitGroup group)
 	{
+		super(val);
 		UnitData data = null;
+		if (val.getClass().equals(Double.class))
+		{
+			valueClass = (Class<T>) Double.class;
+		}
 		try
 		{
-			value = val;
 			this.unit = unit;
 			data = UnitData.getUnitData(this.unit);
 		} catch (Exception unitException)
@@ -79,7 +89,7 @@ public class UnitValue
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly or if the unit does not match the group specified
 	 */
-	public void setVal(Double val, Unit unit) throws UnitException
+	public void set(T val, Unit unit) throws UnitException
 	{
 		UnitData newUnitData = UnitData.getUnitData(unit);
 		this.unit = unit;//newUnitData;
@@ -90,17 +100,22 @@ public class UnitValue
 		}
 		try
 		{
-			value = val;
+			set(val);
 		} catch (Exception e)
 		{
 			throw new UnitException(
-			"Unable to store value: Bad value " + value + " of unit " + newUnitData.getDescription());
+			"Unable to store value: Bad value " + val + " of unit " + newUnitData.getDescription());
 		}
 	}
 
-	public Double getVal(Unit unit) throws UnitException
+	public T get(Unit unit) throws UnitException
 	{
+		if (unit.equals(this.unit))
+		{
+			return get();
+		}
 		UnitData returnUnitData = UnitData.getUnitData(unit);
+		T returnVal = null;
 		if (this.unit == null)
 		{
 			throw new UnitException(
@@ -109,21 +124,43 @@ public class UnitValue
 		{
 			try
 			{
-				return value * UnitData.getUnitData(this.unit).getConversionFactor(unit);
+				if (get().getClass().equals(Double.class))
+				{
+					returnVal = (valueClass)
+					.cast(Double.class.cast(get()) * UnitData.getUnitData(this.unit).getConversionFactor(unit));
+				} else
+				{
+					returnVal = get();
+				}
 			} catch (Exception e)
 			{
 				throw new UnitException("Unable to get value : No conversion to " + returnUnitData.getDescription()
 				+ " from " + UnitData.getUnitData(this.unit).getDescription());
 			}
 		}
+		return returnVal;
 	}
 
-	protected Double getValue(Unit unit)
+	protected T getValue(Unit unit)
 	{
-		Double returnVal = null;
+		T returnVal = null;
+		if (unit.equals(this.unit))
+		{
+			return get();
+		}
 		try
 		{
-			returnVal = value * UnitData.getUnitData(this.unit).getConversionFactor(unit);
+			if (get().getClass().equals(Double.class))
+			{
+				System.out.println(
+				get().toString() + " " + unit.toString() + UnitData.getUnitData(this.unit).getConversionFactor(unit));
+				returnVal = (valueClass)
+				.cast(((Double) get()) * UnitData.getUnitData(this.unit).getConversionFactor(unit));
+				System.out.println(returnVal);
+			} else
+			{
+				return get();
+			}
 		} catch (Exception unitException)
 		{
 			System.err.println("Improper use of set value");
@@ -134,11 +171,11 @@ public class UnitValue
 
 	}
 
-	protected void setValue(Double val, Unit unit)
+	protected void setValue(T val, Unit unit)
 	{
 		try
 		{
-			value = val;
+			set(val);
 			UnitData.getUnitData(unit);
 			this.unit = unit;//UnitData.getUnitData(unit);
 		} catch (UnitException unitException)
@@ -147,6 +184,11 @@ public class UnitValue
 			unitException.printStackTrace();
 			System.exit(1);
 		}
+	}
+
+	public Unit getUnit()
+	{
+		return this.unit;
 	}
 
 }

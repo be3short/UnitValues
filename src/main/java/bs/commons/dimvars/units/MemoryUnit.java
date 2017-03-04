@@ -52,6 +52,7 @@ public enum MemoryUnit implements Unit
 		UnitConversionMap map = new UnitConversionMap();
 		for (MemoryUnit unit : MemoryUnit.values())
 		{
+			System.out.println(unit.name() + " " + unit.ordinal());
 			map.addConversions(unit, getByteConversionArray(unit.ordinal()));
 		}
 		return map;
@@ -60,16 +61,24 @@ public enum MemoryUnit implements Unit
 	public Double[] getByteConversionArray(Integer multiplier_index)
 	{
 		Double bitMult = 1.0;
+		Integer numIncrease = 0;
 		if (multiplier_index == 0)
 		{
-			bitMult = 8.0;
+			numIncrease = -1;
+			bitMult = 1 / 8.0;
 		}
 		Double[] conversions = new Double[10];
 		for (Integer place = 1; place < 10; place++)
 		{
-			conversions[place] = bitMult * Math.pow(1024, (place - multiplier_index - 1));
+			conversions[place] = bitMult * Math.pow(1024, -(place - multiplier_index + numIncrease));
 		}
-		conversions[0] = bitMult * conversions[1] / 8;
+		if (multiplier_index == 0)
+		{
+			conversions[0] = 1.0;
+		} else
+		{
+			conversions[0] = bitMult * conversions[1];
+		}
 		return conversions;
 	}
 

@@ -14,7 +14,7 @@ import bs.commons.dimvars.units.NoUnit;
  *
  * @date: 03-02-2017
  */
-public class Unitless extends UnitValue
+public class Unitless extends UnitValue<Double>
 {
 
 	/*

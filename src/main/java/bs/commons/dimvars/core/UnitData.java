@@ -79,6 +79,7 @@ public class UnitData
 			return data;
 		} catch (Exception e)
 		{
+			//IO.debug("Attempted to get unit " + unit.getClass());
 			throw new UnitException("Non existant unit", e.getCause());
 		}
 	}

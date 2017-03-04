@@ -9,19 +9,19 @@ public enum VelocityUnit implements Unit
 {
 	NANOMETERS_PER_SECOND(
 		"Nanometers per Second",
-		"nm"),
+		"nm/s"),
 	MICROMETERS_PER_SECOND(
 		"Micrometers per Second",
-		"um"),
+		"um/s"),
 	MILLIMETERS_PER_SECOND(
 		"Millimeters per Second",
-		"mm"),
+		"mm/s"),
 	METERS_PER_SECOND(
 		"Meters per Second",
-		"m"),
+		"m/s"),
 	KILOMETERS_PER_SECOND(
 		"Kilometers per Second",
-		"km");
+		"km/s");
 
 	private VelocityUnit(String unit_name, String unit_abbreviation)
 	{
