@@ -5,7 +5,7 @@ import bs.commons.dimvars.core.UnitData.Unit;
 import bs.commons.dimvars.core.UnitGroup;
 import bs.commons.dimvars.core.UnitType;
 
-public enum CurrentUnit implements Unit
+public enum AmperageUnits implements Unit
 {
 	NANOAMP(
 		"Nanoamp",
@@ -29,9 +29,9 @@ public enum CurrentUnit implements Unit
 		"Gigaamp",
 		"GA");
 
-	private CurrentUnit(String unit_name, String unit_abbreviation)
+	private AmperageUnits(String unit_name, String unit_abbreviation)
 	{
-		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.CURRENT);
+		Unit.newUnitDetails(unit_name, unit_abbreviation, this, UnitType.AMPERAGE);
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public enum CurrentUnit implements Unit
 	{
 
 		UnitConversionMap map = new UnitConversionMap();
-		for (CurrentUnit unit : CurrentUnit.values())
+		for (AmperageUnits unit : AmperageUnits.values())
 		{
 			map.addConversions(unit, getVoltageConversionArray(unit.ordinal()));
 		}
@@ -48,7 +48,7 @@ public enum CurrentUnit implements Unit
 
 	public Double[] getVoltageConversionArray(Integer multiplier_index)
 	{
-		Double[] conversions = new Double[CurrentUnit.values().length];
+		Double[] conversions = new Double[AmperageUnits.values().length];
 		for (Integer place = 0; place < conversions.length; place++)
 		{
 			conversions[place] = Math.pow(10, -(place - 4) * 3);
@@ -60,6 +60,6 @@ public enum CurrentUnit implements Unit
 	@Override
 	public UnitGroup getGroup()
 	{
-		return UnitType.CURRENT;
+		return UnitType.AMPERAGE;
 	}
 }

@@ -2,17 +2,17 @@ package bs.commons.dimvars.values;
 
 import bs.commons.dimvars.core.UnitValue;
 import bs.commons.dimvars.core.UnitData.Unit;
-import bs.commons.dimvars.units.CurrentUnit;
+import bs.commons.dimvars.units.AmperageUnits;
 import bs.commons.dimvars.core.UnitType;
 
 /**
- * Class that stores a value in Currentunits. This value can be extracted or updated in any units of the same type.
+ * Class that stores a value in Amperageunits. This value can be extracted or updated in any units of the same type.
  *
  * @author: Brendan Short
  *
  * @date: 03-02-2017
  */
-public class Current extends UnitValue<Double>
+public class Amperage extends UnitValue<Double>
 {
 	/*
 	 * General Constructor
@@ -24,9 +24,9 @@ public class Current extends UnitValue<Double>
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly
 	 */
-public Current(Double val,Unit unit)
+public Amperage(Double val,Unit unit)
 {
-super(val,unit,UnitType.CURRENT);
+super(val,unit,UnitType.AMPERAGE);
 }
 	/*
 	 * gets the value in Nanoamp
@@ -35,7 +35,7 @@ super(val,unit,UnitType.CURRENT);
 	 */
 public Double nanoamps()
 {
-return getValue(CurrentUnit.NANOAMP);
+return getValue(AmperageUnits.NANOAMP);
 }
 	/*
 	 * stores the value in Nanoamp
@@ -46,27 +46,27 @@ return getValue(CurrentUnit.NANOAMP);
 	 */
 public void nanoamps(Double val)
 {
-setValue(val,CurrentUnit.NANOAMP);
+setValue(val,AmperageUnits.NANOAMP);
 }
 	/*
 	 * Nanoamp Constructor
 	 * 
 	 * @param val - value to be stored
 	 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newNanoampValue(Double new_val)
+public static Amperage newNanoampValue(Double new_val)
 {
-return new Current(new_val,CurrentUnit.NANOAMP);
+return new Amperage(new_val,AmperageUnits.NANOAMP);
 }
 	/*
 	 * Nanoamp Constructor with zero value
 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newNanoampValue()
+public static Amperage newNanoampValue()
 {
-return new Current(0.0,CurrentUnit.NANOAMP);
+return new Amperage(0.0,AmperageUnits.NANOAMP);
 }
 	/*
 	 * gets the value in Microamp
@@ -75,7 +75,7 @@ return new Current(0.0,CurrentUnit.NANOAMP);
 	 */
 public Double microamps()
 {
-return getValue(CurrentUnit.MICROAMP);
+return getValue(AmperageUnits.MICROAMP);
 }
 	/*
 	 * stores the value in Microamp
@@ -86,27 +86,27 @@ return getValue(CurrentUnit.MICROAMP);
 	 */
 public void microamps(Double val)
 {
-setValue(val,CurrentUnit.MICROAMP);
+setValue(val,AmperageUnits.MICROAMP);
 }
 	/*
 	 * Microamp Constructor
 	 * 
 	 * @param val - value to be stored
 	 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newMicroampValue(Double new_val)
+public static Amperage newMicroampValue(Double new_val)
 {
-return new Current(new_val,CurrentUnit.MICROAMP);
+return new Amperage(new_val,AmperageUnits.MICROAMP);
 }
 	/*
 	 * Microamp Constructor with zero value
 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newMicroampValue()
+public static Amperage newMicroampValue()
 {
-return new Current(0.0,CurrentUnit.MICROAMP);
+return new Amperage(0.0,AmperageUnits.MICROAMP);
 }
 	/*
 	 * gets the value in Milliamp
@@ -115,7 +115,7 @@ return new Current(0.0,CurrentUnit.MICROAMP);
 	 */
 public Double milliamps()
 {
-return getValue(CurrentUnit.MILLIAMP);
+return getValue(AmperageUnits.MILLIAMP);
 }
 	/*
 	 * stores the value in Milliamp
@@ -126,27 +126,27 @@ return getValue(CurrentUnit.MILLIAMP);
 	 */
 public void milliamps(Double val)
 {
-setValue(val,CurrentUnit.MILLIAMP);
+setValue(val,AmperageUnits.MILLIAMP);
 }
 	/*
 	 * Milliamp Constructor
 	 * 
 	 * @param val - value to be stored
 	 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newMilliampValue(Double new_val)
+public static Amperage newMilliampValue(Double new_val)
 {
-return new Current(new_val,CurrentUnit.MILLIAMP);
+return new Amperage(new_val,AmperageUnits.MILLIAMP);
 }
 	/*
 	 * Milliamp Constructor with zero value
 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newMilliampValue()
+public static Amperage newMilliampValue()
 {
-return new Current(0.0,CurrentUnit.MILLIAMP);
+return new Amperage(0.0,AmperageUnits.MILLIAMP);
 }
 	/*
 	 * gets the value in Amp
@@ -155,7 +155,7 @@ return new Current(0.0,CurrentUnit.MILLIAMP);
 	 */
 public Double amps()
 {
-return getValue(CurrentUnit.AMP);
+return getValue(AmperageUnits.AMP);
 }
 	/*
 	 * stores the value in Amp
@@ -166,27 +166,27 @@ return getValue(CurrentUnit.AMP);
 	 */
 public void amps(Double val)
 {
-setValue(val,CurrentUnit.AMP);
+setValue(val,AmperageUnits.AMP);
 }
 	/*
 	 * Amp Constructor
 	 * 
 	 * @param val - value to be stored
 	 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newAmpValue(Double new_val)
+public static Amperage newAmpValue(Double new_val)
 {
-return new Current(new_val,CurrentUnit.AMP);
+return new Amperage(new_val,AmperageUnits.AMP);
 }
 	/*
 	 * Amp Constructor with zero value
 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newAmpValue()
+public static Amperage newAmpValue()
 {
-return new Current(0.0,CurrentUnit.AMP);
+return new Amperage(0.0,AmperageUnits.AMP);
 }
 	/*
 	 * gets the value in Kiloamp
@@ -195,7 +195,7 @@ return new Current(0.0,CurrentUnit.AMP);
 	 */
 public Double kiloamps()
 {
-return getValue(CurrentUnit.KILO_AMP);
+return getValue(AmperageUnits.KILO_AMP);
 }
 	/*
 	 * stores the value in Kiloamp
@@ -206,27 +206,27 @@ return getValue(CurrentUnit.KILO_AMP);
 	 */
 public void kiloamps(Double val)
 {
-setValue(val,CurrentUnit.KILO_AMP);
+setValue(val,AmperageUnits.KILO_AMP);
 }
 	/*
 	 * Kiloamp Constructor
 	 * 
 	 * @param val - value to be stored
 	 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newKiloampValue(Double new_val)
+public static Amperage newKiloampValue(Double new_val)
 {
-return new Current(new_val,CurrentUnit.KILO_AMP);
+return new Amperage(new_val,AmperageUnits.KILO_AMP);
 }
 	/*
 	 * Kiloamp Constructor with zero value
 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newKiloampValue()
+public static Amperage newKiloampValue()
 {
-return new Current(0.0,CurrentUnit.KILO_AMP);
+return new Amperage(0.0,AmperageUnits.KILO_AMP);
 }
 	/*
 	 * gets the value in Megaamp
@@ -235,7 +235,7 @@ return new Current(0.0,CurrentUnit.KILO_AMP);
 	 */
 public Double megaamps()
 {
-return getValue(CurrentUnit.MEGA_AMP);
+return getValue(AmperageUnits.MEGA_AMP);
 }
 	/*
 	 * stores the value in Megaamp
@@ -246,27 +246,27 @@ return getValue(CurrentUnit.MEGA_AMP);
 	 */
 public void megaamps(Double val)
 {
-setValue(val,CurrentUnit.MEGA_AMP);
+setValue(val,AmperageUnits.MEGA_AMP);
 }
 	/*
 	 * Megaamp Constructor
 	 * 
 	 * @param val - value to be stored
 	 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newMegaampValue(Double new_val)
+public static Amperage newMegaampValue(Double new_val)
 {
-return new Current(new_val,CurrentUnit.MEGA_AMP);
+return new Amperage(new_val,AmperageUnits.MEGA_AMP);
 }
 	/*
 	 * Megaamp Constructor with zero value
 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newMegaampValue()
+public static Amperage newMegaampValue()
 {
-return new Current(0.0,CurrentUnit.MEGA_AMP);
+return new Amperage(0.0,AmperageUnits.MEGA_AMP);
 }
 	/*
 	 * gets the value in Gigaamp
@@ -275,7 +275,7 @@ return new Current(0.0,CurrentUnit.MEGA_AMP);
 	 */
 public Double gigaamps()
 {
-return getValue(CurrentUnit.GIGA_AMP);
+return getValue(AmperageUnits.GIGA_AMP);
 }
 	/*
 	 * stores the value in Gigaamp
@@ -286,26 +286,26 @@ return getValue(CurrentUnit.GIGA_AMP);
 	 */
 public void gigaamps(Double val)
 {
-setValue(val,CurrentUnit.GIGA_AMP);
+setValue(val,AmperageUnits.GIGA_AMP);
 }
 	/*
 	 * Gigaamp Constructor
 	 * 
 	 * @param val - value to be stored
 	 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newGigaampValue(Double new_val)
+public static Amperage newGigaampValue(Double new_val)
 {
-return new Current(new_val,CurrentUnit.GIGA_AMP);
+return new Amperage(new_val,AmperageUnits.GIGA_AMP);
 }
 	/*
 	 * Gigaamp Constructor with zero value
 * 
-	 * @returns Current variable
+	 * @returns Amperage variable
 	 */
-public static Current newGigaampValue()
+public static Amperage newGigaampValue()
 {
-return new Current(0.0,CurrentUnit.GIGA_AMP);
+return new Amperage(0.0,AmperageUnits.GIGA_AMP);
 }
 }

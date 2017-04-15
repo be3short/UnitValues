@@ -12,14 +12,16 @@ public enum UnitType implements UnitGroup
 		"Velocity"),
 	ANGLE(
 		"Angle"),
+	ANGULAR_VELOCITY(
+		"AngularVelocity"),
 	MASS(
 		"Mass"),
 	MEMORY(
 		"Memory"),
 	VOLTAGE(
 		"Voltage"),
-	CURRENT(
-		"Current"),
+	AMPERAGE(
+		"Amperage"),
 	POWER(
 		"Power"),
 	ENERGY(

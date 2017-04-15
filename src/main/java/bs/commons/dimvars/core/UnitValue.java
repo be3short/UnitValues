@@ -152,11 +152,11 @@ public class UnitValue<T> extends AnyObject<T>
 		{
 			if (get().getClass().equals(Double.class))
 			{
-				System.out.println(
-				get().toString() + " " + unit.toString() + UnitData.getUnitData(this.unit).getConversionFactor(unit));
+				//System.out.println(
+				//get().toString() + " " + unit.toString() + UnitData.getUnitData(this.unit).getConversionFactor(unit));
 				returnVal = (valueClass)
 				.cast(((Double) get()) * UnitData.getUnitData(this.unit).getConversionFactor(unit));
-				System.out.println(returnVal);
+				//System.out.println(returnVal);
 			} else
 			{
 				return get();

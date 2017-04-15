@@ -52,7 +52,7 @@ public enum MemoryUnit implements Unit
 		UnitConversionMap map = new UnitConversionMap();
 		for (MemoryUnit unit : MemoryUnit.values())
 		{
-			System.out.println(unit.name() + " " + unit.ordinal());
+			//	System.out.println(unit.name() + " " + unit.ordinal());
 			map.addConversions(unit, getByteConversionArray(unit.ordinal()));
 		}
 		return map;
