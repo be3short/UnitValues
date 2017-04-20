@@ -55,7 +55,7 @@ setValue(val,DataRateUnit.BITS_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newBitsPerSeconValue(Double new_val)
+public static Datarate newBitsPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.BITS_PER_SEC);
 }
@@ -64,7 +64,7 @@ return new Datarate(new_val,DataRateUnit.BITS_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newBitsPerSeconValue()
+public static Datarate newBitsPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.BITS_PER_SEC);
 }
@@ -95,7 +95,7 @@ setValue(val,DataRateUnit.BYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newBytesPerSeconValue(Double new_val)
+public static Datarate newBytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.BYTES_PER_SEC);
 }
@@ -104,7 +104,7 @@ return new Datarate(new_val,DataRateUnit.BYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newBytesPerSeconValue()
+public static Datarate newBytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.BYTES_PER_SEC);
 }
@@ -135,7 +135,7 @@ setValue(val,DataRateUnit.KILOBYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newKilobytesPerSeconValue(Double new_val)
+public static Datarate newKilobytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.KILOBYTES_PER_SEC);
 }
@@ -144,7 +144,7 @@ return new Datarate(new_val,DataRateUnit.KILOBYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newKilobytesPerSeconValue()
+public static Datarate newKilobytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.KILOBYTES_PER_SEC);
 }
@@ -175,7 +175,7 @@ setValue(val,DataRateUnit.MEGABYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newMegabytesPerSeconValue(Double new_val)
+public static Datarate newMegabytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.MEGABYTES_PER_SEC);
 }
@@ -184,7 +184,7 @@ return new Datarate(new_val,DataRateUnit.MEGABYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newMegabytesPerSeconValue()
+public static Datarate newMegabytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.MEGABYTES_PER_SEC);
 }
@@ -215,7 +215,7 @@ setValue(val,DataRateUnit.GIGABYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newGigabytesPerSeconValue(Double new_val)
+public static Datarate newGigabytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.GIGABYTES_PER_SEC);
 }
@@ -224,7 +224,7 @@ return new Datarate(new_val,DataRateUnit.GIGABYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newGigabytesPerSeconValue()
+public static Datarate newGigabytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.GIGABYTES_PER_SEC);
 }
@@ -255,7 +255,7 @@ setValue(val,DataRateUnit.TERABYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newTerabytesPerSeconValue(Double new_val)
+public static Datarate newTerabytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.TERABYTES_PER_SEC);
 }
@@ -264,7 +264,7 @@ return new Datarate(new_val,DataRateUnit.TERABYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newTerabytesPerSeconValue()
+public static Datarate newTerabytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.TERABYTES_PER_SEC);
 }
@@ -295,7 +295,7 @@ setValue(val,DataRateUnit.PETABYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newPetabytesPerSeconValue(Double new_val)
+public static Datarate newPetabytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.PETABYTES_PER_SEC);
 }
@@ -304,7 +304,7 @@ return new Datarate(new_val,DataRateUnit.PETABYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newPetabytesPerSeconValue()
+public static Datarate newPetabytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.PETABYTES_PER_SEC);
 }
@@ -335,7 +335,7 @@ setValue(val,DataRateUnit.EXABYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newExabytesPerSeconValue(Double new_val)
+public static Datarate newExabytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.EXABYTES_PER_SEC);
 }
@@ -344,7 +344,7 @@ return new Datarate(new_val,DataRateUnit.EXABYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newExabytesPerSeconValue()
+public static Datarate newExabytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.EXABYTES_PER_SEC);
 }
@@ -375,7 +375,7 @@ setValue(val,DataRateUnit.ZETTABYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newZettabytesPerSeconValue(Double new_val)
+public static Datarate newZettabytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.ZETTABYTES_PER_SEC);
 }
@@ -384,7 +384,7 @@ return new Datarate(new_val,DataRateUnit.ZETTABYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newZettabytesPerSeconValue()
+public static Datarate newZettabytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.ZETTABYTES_PER_SEC);
 }
@@ -415,7 +415,7 @@ setValue(val,DataRateUnit.YOTTABYTES_PER_SEC);
 	 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newYottabytesPerSeconValue(Double new_val)
+public static Datarate newYottabytesPerSecondValue(Double new_val)
 {
 return new Datarate(new_val,DataRateUnit.YOTTABYTES_PER_SEC);
 }
@@ -424,7 +424,7 @@ return new Datarate(new_val,DataRateUnit.YOTTABYTES_PER_SEC);
 * 
 	 * @returns Datarate variable
 	 */
-public static Datarate newYottabytesPerSeconValue()
+public static Datarate newYottabytesPerSecondValue()
 {
 return new Datarate(0.0,DataRateUnit.YOTTABYTES_PER_SEC);
 }

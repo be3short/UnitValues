@@ -55,7 +55,7 @@ setValue(val,DistanceUnit.NANOMETER);
 	 * 
 	 * @returns Distance variable
 	 */
-public static Distance newNanometerValue(Double new_val)
+public static Distance newNanometersValue(Double new_val)
 {
 return new Distance(new_val,DistanceUnit.NANOMETER);
 }
@@ -64,7 +64,7 @@ return new Distance(new_val,DistanceUnit.NANOMETER);
 * 
 	 * @returns Distance variable
 	 */
-public static Distance newNanometerValue()
+public static Distance newNanometersValue()
 {
 return new Distance(0.0,DistanceUnit.NANOMETER);
 }
@@ -95,7 +95,7 @@ setValue(val,DistanceUnit.MICROMETER);
 	 * 
 	 * @returns Distance variable
 	 */
-public static Distance newMicrometerValue(Double new_val)
+public static Distance newMicrometersValue(Double new_val)
 {
 return new Distance(new_val,DistanceUnit.MICROMETER);
 }
@@ -104,7 +104,7 @@ return new Distance(new_val,DistanceUnit.MICROMETER);
 * 
 	 * @returns Distance variable
 	 */
-public static Distance newMicrometerValue()
+public static Distance newMicrometersValue()
 {
 return new Distance(0.0,DistanceUnit.MICROMETER);
 }
@@ -135,7 +135,7 @@ setValue(val,DistanceUnit.MILLIMETER);
 	 * 
 	 * @returns Distance variable
 	 */
-public static Distance newMillimeterValue(Double new_val)
+public static Distance newMillimetersValue(Double new_val)
 {
 return new Distance(new_val,DistanceUnit.MILLIMETER);
 }
@@ -144,7 +144,7 @@ return new Distance(new_val,DistanceUnit.MILLIMETER);
 * 
 	 * @returns Distance variable
 	 */
-public static Distance newMillimeterValue()
+public static Distance newMillimetersValue()
 {
 return new Distance(0.0,DistanceUnit.MILLIMETER);
 }
@@ -175,7 +175,7 @@ setValue(val,DistanceUnit.METER);
 	 * 
 	 * @returns Distance variable
 	 */
-public static Distance newMeterValue(Double new_val)
+public static Distance newMetersValue(Double new_val)
 {
 return new Distance(new_val,DistanceUnit.METER);
 }
@@ -184,7 +184,7 @@ return new Distance(new_val,DistanceUnit.METER);
 * 
 	 * @returns Distance variable
 	 */
-public static Distance newMeterValue()
+public static Distance newMetersValue()
 {
 return new Distance(0.0,DistanceUnit.METER);
 }
@@ -215,7 +215,7 @@ setValue(val,DistanceUnit.KILOMETER);
 	 * 
 	 * @returns Distance variable
 	 */
-public static Distance newKilometerValue(Double new_val)
+public static Distance newKilometersValue(Double new_val)
 {
 return new Distance(new_val,DistanceUnit.KILOMETER);
 }
@@ -224,7 +224,7 @@ return new Distance(new_val,DistanceUnit.KILOMETER);
 * 
 	 * @returns Distance variable
 	 */
-public static Distance newKilometerValue()
+public static Distance newKilometersValue()
 {
 return new Distance(0.0,DistanceUnit.KILOMETER);
 }

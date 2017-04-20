@@ -55,7 +55,7 @@ setValue(val,AngleUnit.RADIAN);
 	 * 
 	 * @returns Angle variable
 	 */
-public static Angle newRadianValue(Double new_val)
+public static Angle newRadiansValue(Double new_val)
 {
 return new Angle(new_val,AngleUnit.RADIAN);
 }
@@ -64,7 +64,7 @@ return new Angle(new_val,AngleUnit.RADIAN);
 * 
 	 * @returns Angle variable
 	 */
-public static Angle newRadianValue()
+public static Angle newRadiansValue()
 {
 return new Angle(0.0,AngleUnit.RADIAN);
 }
@@ -95,7 +95,7 @@ setValue(val,AngleUnit.DEGREE);
 	 * 
 	 * @returns Angle variable
 	 */
-public static Angle newDegreeValue(Double new_val)
+public static Angle newDegreesValue(Double new_val)
 {
 return new Angle(new_val,AngleUnit.DEGREE);
 }
@@ -104,7 +104,7 @@ return new Angle(new_val,AngleUnit.DEGREE);
 * 
 	 * @returns Angle variable
 	 */
-public static Angle newDegreeValue()
+public static Angle newDegreesValue()
 {
 return new Angle(0.0,AngleUnit.DEGREE);
 }

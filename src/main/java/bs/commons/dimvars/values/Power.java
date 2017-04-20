@@ -55,7 +55,7 @@ setValue(val,PowerUnit.NANOWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newNanowattValue(Double new_val)
+public static Power newNanowattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.NANOWATT);
 }
@@ -64,7 +64,7 @@ return new Power(new_val,PowerUnit.NANOWATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newNanowattValue()
+public static Power newNanowattsValue()
 {
 return new Power(0.0,PowerUnit.NANOWATT);
 }
@@ -95,7 +95,7 @@ setValue(val,PowerUnit.MICROWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newMicrowattValue(Double new_val)
+public static Power newMicrowattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.MICROWATT);
 }
@@ -104,7 +104,7 @@ return new Power(new_val,PowerUnit.MICROWATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newMicrowattValue()
+public static Power newMicrowattsValue()
 {
 return new Power(0.0,PowerUnit.MICROWATT);
 }
@@ -135,7 +135,7 @@ setValue(val,PowerUnit.MILLIWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newMilliwattValue(Double new_val)
+public static Power newMilliwattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.MILLIWATT);
 }
@@ -144,7 +144,7 @@ return new Power(new_val,PowerUnit.MILLIWATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newMilliwattValue()
+public static Power newMilliwattsValue()
 {
 return new Power(0.0,PowerUnit.MILLIWATT);
 }
@@ -175,7 +175,7 @@ setValue(val,PowerUnit.WATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newWattValue(Double new_val)
+public static Power newWattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.WATT);
 }
@@ -184,7 +184,7 @@ return new Power(new_val,PowerUnit.WATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newWattValue()
+public static Power newWattsValue()
 {
 return new Power(0.0,PowerUnit.WATT);
 }
@@ -215,7 +215,7 @@ setValue(val,PowerUnit.KILOWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newKilowattValue(Double new_val)
+public static Power newKilowattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.KILOWATT);
 }
@@ -224,7 +224,7 @@ return new Power(new_val,PowerUnit.KILOWATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newKilowattValue()
+public static Power newKilowattsValue()
 {
 return new Power(0.0,PowerUnit.KILOWATT);
 }
@@ -255,7 +255,7 @@ setValue(val,PowerUnit.MEGAWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newMegawattValue(Double new_val)
+public static Power newMegawattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.MEGAWATT);
 }
@@ -264,7 +264,7 @@ return new Power(new_val,PowerUnit.MEGAWATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newMegawattValue()
+public static Power newMegawattsValue()
 {
 return new Power(0.0,PowerUnit.MEGAWATT);
 }
@@ -295,7 +295,7 @@ setValue(val,PowerUnit.GIGAWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newGigawattValue(Double new_val)
+public static Power newGigawattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.GIGAWATT);
 }
@@ -304,7 +304,7 @@ return new Power(new_val,PowerUnit.GIGAWATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newGigawattValue()
+public static Power newGigawattsValue()
 {
 return new Power(0.0,PowerUnit.GIGAWATT);
 }
@@ -335,7 +335,7 @@ setValue(val,PowerUnit.TERAWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newTerawattValue(Double new_val)
+public static Power newTerawattsValue(Double new_val)
 {
 return new Power(new_val,PowerUnit.TERAWATT);
 }
@@ -344,7 +344,7 @@ return new Power(new_val,PowerUnit.TERAWATT);
 * 
 	 * @returns Power variable
 	 */
-public static Power newTerawattValue()
+public static Power newTerawattsValue()
 {
 return new Power(0.0,PowerUnit.TERAWATT);
 }

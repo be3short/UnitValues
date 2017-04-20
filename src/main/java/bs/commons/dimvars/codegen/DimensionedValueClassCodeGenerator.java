@@ -124,7 +124,6 @@ public class DimensionedValueClassCodeGenerator
 		}
 
 		String capitalizedUnitAbrev = unitAbrev.substring(0, 1).toUpperCase() + unitAbrev.substring(1);
-		capitalizedUnitAbrev = capitalizedUnitAbrev.substring(0, unitAbrev.length() - 1);
 		String getMethod = "	/*\n	 * gets the value in " + unitName + "\n	 * \n	 * @returns value in "
 		+ unitName + "\n	 */\n";
 		getMethod += "public Double " + unitAbrev + "()\n{\n";
@@ -174,7 +173,7 @@ public class DimensionedValueClassCodeGenerator
 	public static String correctForImproperPlural(String attempt)
 	{
 		String correctedAttempt = attempt;
-		if (correctedAttempt.contains("PerSecond"))
+		if (correctedAttempt.contains("PerSecond") && !correctedAttempt.contains("Value"))
 		{
 			correctedAttempt.replace("PerSeconds", "PerSecond");
 		} else

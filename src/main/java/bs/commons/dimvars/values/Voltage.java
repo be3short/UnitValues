@@ -55,7 +55,7 @@ setValue(val,VoltageUnit.NANOVOLT);
 	 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newNanovoltValue(Double new_val)
+public static Voltage newNanovoltsValue(Double new_val)
 {
 return new Voltage(new_val,VoltageUnit.NANOVOLT);
 }
@@ -64,7 +64,7 @@ return new Voltage(new_val,VoltageUnit.NANOVOLT);
 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newNanovoltValue()
+public static Voltage newNanovoltsValue()
 {
 return new Voltage(0.0,VoltageUnit.NANOVOLT);
 }
@@ -95,7 +95,7 @@ setValue(val,VoltageUnit.MICROVOLT);
 	 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newMicrovoltValue(Double new_val)
+public static Voltage newMicrovoltsValue(Double new_val)
 {
 return new Voltage(new_val,VoltageUnit.MICROVOLT);
 }
@@ -104,7 +104,7 @@ return new Voltage(new_val,VoltageUnit.MICROVOLT);
 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newMicrovoltValue()
+public static Voltage newMicrovoltsValue()
 {
 return new Voltage(0.0,VoltageUnit.MICROVOLT);
 }
@@ -135,7 +135,7 @@ setValue(val,VoltageUnit.MILLIVOLT);
 	 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newMillivoltValue(Double new_val)
+public static Voltage newMillivoltsValue(Double new_val)
 {
 return new Voltage(new_val,VoltageUnit.MILLIVOLT);
 }
@@ -144,7 +144,7 @@ return new Voltage(new_val,VoltageUnit.MILLIVOLT);
 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newMillivoltValue()
+public static Voltage newMillivoltsValue()
 {
 return new Voltage(0.0,VoltageUnit.MILLIVOLT);
 }
@@ -175,7 +175,7 @@ setValue(val,VoltageUnit.VOLT);
 	 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newVoltValue(Double new_val)
+public static Voltage newVoltsValue(Double new_val)
 {
 return new Voltage(new_val,VoltageUnit.VOLT);
 }
@@ -184,7 +184,7 @@ return new Voltage(new_val,VoltageUnit.VOLT);
 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newVoltValue()
+public static Voltage newVoltsValue()
 {
 return new Voltage(0.0,VoltageUnit.VOLT);
 }
@@ -215,7 +215,7 @@ setValue(val,VoltageUnit.KILOVOLT);
 	 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newKilovoltValue(Double new_val)
+public static Voltage newKilovoltsValue(Double new_val)
 {
 return new Voltage(new_val,VoltageUnit.KILOVOLT);
 }
@@ -224,7 +224,7 @@ return new Voltage(new_val,VoltageUnit.KILOVOLT);
 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newKilovoltValue()
+public static Voltage newKilovoltsValue()
 {
 return new Voltage(0.0,VoltageUnit.KILOVOLT);
 }
@@ -255,7 +255,7 @@ setValue(val,VoltageUnit.MEGAVOLT);
 	 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newMegavoltValue(Double new_val)
+public static Voltage newMegavoltsValue(Double new_val)
 {
 return new Voltage(new_val,VoltageUnit.MEGAVOLT);
 }
@@ -264,7 +264,7 @@ return new Voltage(new_val,VoltageUnit.MEGAVOLT);
 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newMegavoltValue()
+public static Voltage newMegavoltsValue()
 {
 return new Voltage(0.0,VoltageUnit.MEGAVOLT);
 }
@@ -295,7 +295,7 @@ setValue(val,VoltageUnit.GIGAVOLT);
 	 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newGigavoltValue(Double new_val)
+public static Voltage newGigavoltsValue(Double new_val)
 {
 return new Voltage(new_val,VoltageUnit.GIGAVOLT);
 }
@@ -304,7 +304,7 @@ return new Voltage(new_val,VoltageUnit.GIGAVOLT);
 * 
 	 * @returns Voltage variable
 	 */
-public static Voltage newGigavoltValue()
+public static Voltage newGigavoltsValue()
 {
 return new Voltage(0.0,VoltageUnit.GIGAVOLT);
 }

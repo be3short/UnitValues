@@ -55,7 +55,7 @@ setValue(val,TimeUnit.NANOSECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newNanosecondValue(Double new_val)
+public static Time newNanosecondsValue(Double new_val)
 {
 return new Time(new_val,TimeUnit.NANOSECOND);
 }
@@ -64,7 +64,7 @@ return new Time(new_val,TimeUnit.NANOSECOND);
 * 
 	 * @returns Time variable
 	 */
-public static Time newNanosecondValue()
+public static Time newNanosecondsValue()
 {
 return new Time(0.0,TimeUnit.NANOSECOND);
 }
@@ -95,7 +95,7 @@ setValue(val,TimeUnit.MICROSECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newMicrosecondValue(Double new_val)
+public static Time newMicrosecondsValue(Double new_val)
 {
 return new Time(new_val,TimeUnit.MICROSECOND);
 }
@@ -104,7 +104,7 @@ return new Time(new_val,TimeUnit.MICROSECOND);
 * 
 	 * @returns Time variable
 	 */
-public static Time newMicrosecondValue()
+public static Time newMicrosecondsValue()
 {
 return new Time(0.0,TimeUnit.MICROSECOND);
 }
@@ -135,7 +135,7 @@ setValue(val,TimeUnit.MILLISECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newMillisecondValue(Double new_val)
+public static Time newMillisecondsValue(Double new_val)
 {
 return new Time(new_val,TimeUnit.MILLISECOND);
 }
@@ -144,7 +144,7 @@ return new Time(new_val,TimeUnit.MILLISECOND);
 * 
 	 * @returns Time variable
 	 */
-public static Time newMillisecondValue()
+public static Time newMillisecondsValue()
 {
 return new Time(0.0,TimeUnit.MILLISECOND);
 }
@@ -175,7 +175,7 @@ setValue(val,TimeUnit.SECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newSecondValue(Double new_val)
+public static Time newSecondsValue(Double new_val)
 {
 return new Time(new_val,TimeUnit.SECOND);
 }
@@ -184,7 +184,7 @@ return new Time(new_val,TimeUnit.SECOND);
 * 
 	 * @returns Time variable
 	 */
-public static Time newSecondValue()
+public static Time newSecondsValue()
 {
 return new Time(0.0,TimeUnit.SECOND);
 }
@@ -215,7 +215,7 @@ setValue(val,TimeUnit.MINUTE);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newMinuteValue(Double new_val)
+public static Time newMinutesValue(Double new_val)
 {
 return new Time(new_val,TimeUnit.MINUTE);
 }
@@ -224,7 +224,7 @@ return new Time(new_val,TimeUnit.MINUTE);
 * 
 	 * @returns Time variable
 	 */
-public static Time newMinuteValue()
+public static Time newMinutesValue()
 {
 return new Time(0.0,TimeUnit.MINUTE);
 }
@@ -255,7 +255,7 @@ setValue(val,TimeUnit.HOUR);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newHourValue(Double new_val)
+public static Time newHoursValue(Double new_val)
 {
 return new Time(new_val,TimeUnit.HOUR);
 }
@@ -264,7 +264,7 @@ return new Time(new_val,TimeUnit.HOUR);
 * 
 	 * @returns Time variable
 	 */
-public static Time newHourValue()
+public static Time newHoursValue()
 {
 return new Time(0.0,TimeUnit.HOUR);
 }

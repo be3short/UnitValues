@@ -55,7 +55,7 @@ setValue(val,AngularVelocityUnit.RADIANS_PER_SEC);
 	 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newRadiansPerSeconValue(Double new_val)
+public static AngularVelocity newRadiansPerSecondValue(Double new_val)
 {
 return new AngularVelocity(new_val,AngularVelocityUnit.RADIANS_PER_SEC);
 }
@@ -64,7 +64,7 @@ return new AngularVelocity(new_val,AngularVelocityUnit.RADIANS_PER_SEC);
 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newRadiansPerSeconValue()
+public static AngularVelocity newRadiansPerSecondValue()
 {
 return new AngularVelocity(0.0,AngularVelocityUnit.RADIANS_PER_SEC);
 }
@@ -95,7 +95,7 @@ setValue(val,AngularVelocityUnit.DEGREES_PER_SEC);
 	 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newDegreePerSeconValue(Double new_val)
+public static AngularVelocity newDegreePerSecondValue(Double new_val)
 {
 return new AngularVelocity(new_val,AngularVelocityUnit.DEGREES_PER_SEC);
 }
@@ -104,7 +104,7 @@ return new AngularVelocity(new_val,AngularVelocityUnit.DEGREES_PER_SEC);
 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newDegreePerSeconValue()
+public static AngularVelocity newDegreePerSecondValue()
 {
 return new AngularVelocity(0.0,AngularVelocityUnit.DEGREES_PER_SEC);
 }

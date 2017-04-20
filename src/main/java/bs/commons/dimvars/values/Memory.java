@@ -55,7 +55,7 @@ setValue(val,MemoryUnit.BIT);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newBitValue(Double new_val)
+public static Memory newBitsValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.BIT);
 }
@@ -64,7 +64,7 @@ return new Memory(new_val,MemoryUnit.BIT);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newBitValue()
+public static Memory newBitsValue()
 {
 return new Memory(0.0,MemoryUnit.BIT);
 }
@@ -95,7 +95,7 @@ setValue(val,MemoryUnit.BYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newByteValue(Double new_val)
+public static Memory newBytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.BYTE);
 }
@@ -104,7 +104,7 @@ return new Memory(new_val,MemoryUnit.BYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newByteValue()
+public static Memory newBytesValue()
 {
 return new Memory(0.0,MemoryUnit.BYTE);
 }
@@ -135,7 +135,7 @@ setValue(val,MemoryUnit.KILOBYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newKilobyteValue(Double new_val)
+public static Memory newKilobytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.KILOBYTE);
 }
@@ -144,7 +144,7 @@ return new Memory(new_val,MemoryUnit.KILOBYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newKilobyteValue()
+public static Memory newKilobytesValue()
 {
 return new Memory(0.0,MemoryUnit.KILOBYTE);
 }
@@ -175,7 +175,7 @@ setValue(val,MemoryUnit.MEGABYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newMegabyteValue(Double new_val)
+public static Memory newMegabytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.MEGABYTE);
 }
@@ -184,7 +184,7 @@ return new Memory(new_val,MemoryUnit.MEGABYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newMegabyteValue()
+public static Memory newMegabytesValue()
 {
 return new Memory(0.0,MemoryUnit.MEGABYTE);
 }
@@ -215,7 +215,7 @@ setValue(val,MemoryUnit.GIGABYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newGigabyteValue(Double new_val)
+public static Memory newGigabytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.GIGABYTE);
 }
@@ -224,7 +224,7 @@ return new Memory(new_val,MemoryUnit.GIGABYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newGigabyteValue()
+public static Memory newGigabytesValue()
 {
 return new Memory(0.0,MemoryUnit.GIGABYTE);
 }
@@ -255,7 +255,7 @@ setValue(val,MemoryUnit.TERABYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newTerabyteValue(Double new_val)
+public static Memory newTerabytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.TERABYTE);
 }
@@ -264,7 +264,7 @@ return new Memory(new_val,MemoryUnit.TERABYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newTerabyteValue()
+public static Memory newTerabytesValue()
 {
 return new Memory(0.0,MemoryUnit.TERABYTE);
 }
@@ -295,7 +295,7 @@ setValue(val,MemoryUnit.PETABYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newPetabyteValue(Double new_val)
+public static Memory newPetabytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.PETABYTE);
 }
@@ -304,7 +304,7 @@ return new Memory(new_val,MemoryUnit.PETABYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newPetabyteValue()
+public static Memory newPetabytesValue()
 {
 return new Memory(0.0,MemoryUnit.PETABYTE);
 }
@@ -335,7 +335,7 @@ setValue(val,MemoryUnit.EXABYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newExabyteValue(Double new_val)
+public static Memory newExabytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.EXABYTE);
 }
@@ -344,7 +344,7 @@ return new Memory(new_val,MemoryUnit.EXABYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newExabyteValue()
+public static Memory newExabytesValue()
 {
 return new Memory(0.0,MemoryUnit.EXABYTE);
 }
@@ -375,7 +375,7 @@ setValue(val,MemoryUnit.ZETTABYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newZettabyteValue(Double new_val)
+public static Memory newZettabytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.ZETTABYTE);
 }
@@ -384,7 +384,7 @@ return new Memory(new_val,MemoryUnit.ZETTABYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newZettabyteValue()
+public static Memory newZettabytesValue()
 {
 return new Memory(0.0,MemoryUnit.ZETTABYTE);
 }
@@ -415,7 +415,7 @@ setValue(val,MemoryUnit.YOTTABYTE);
 	 * 
 	 * @returns Memory variable
 	 */
-public static Memory newYottabyteValue(Double new_val)
+public static Memory newYottabytesValue(Double new_val)
 {
 return new Memory(new_val,MemoryUnit.YOTTABYTE);
 }
@@ -424,7 +424,7 @@ return new Memory(new_val,MemoryUnit.YOTTABYTE);
 * 
 	 * @returns Memory variable
 	 */
-public static Memory newYottabyteValue()
+public static Memory newYottabytesValue()
 {
 return new Memory(0.0,MemoryUnit.YOTTABYTE);
 }

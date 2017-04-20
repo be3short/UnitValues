@@ -55,7 +55,7 @@ setValue(val,AmperageUnits.NANOAMP);
 	 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newNanoampValue(Double new_val)
+public static Amperage newNanoampsValue(Double new_val)
 {
 return new Amperage(new_val,AmperageUnits.NANOAMP);
 }
@@ -64,7 +64,7 @@ return new Amperage(new_val,AmperageUnits.NANOAMP);
 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newNanoampValue()
+public static Amperage newNanoampsValue()
 {
 return new Amperage(0.0,AmperageUnits.NANOAMP);
 }
@@ -95,7 +95,7 @@ setValue(val,AmperageUnits.MICROAMP);
 	 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newMicroampValue(Double new_val)
+public static Amperage newMicroampsValue(Double new_val)
 {
 return new Amperage(new_val,AmperageUnits.MICROAMP);
 }
@@ -104,7 +104,7 @@ return new Amperage(new_val,AmperageUnits.MICROAMP);
 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newMicroampValue()
+public static Amperage newMicroampsValue()
 {
 return new Amperage(0.0,AmperageUnits.MICROAMP);
 }
@@ -135,7 +135,7 @@ setValue(val,AmperageUnits.MILLIAMP);
 	 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newMilliampValue(Double new_val)
+public static Amperage newMilliampsValue(Double new_val)
 {
 return new Amperage(new_val,AmperageUnits.MILLIAMP);
 }
@@ -144,7 +144,7 @@ return new Amperage(new_val,AmperageUnits.MILLIAMP);
 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newMilliampValue()
+public static Amperage newMilliampsValue()
 {
 return new Amperage(0.0,AmperageUnits.MILLIAMP);
 }
@@ -175,7 +175,7 @@ setValue(val,AmperageUnits.AMP);
 	 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newAmpValue(Double new_val)
+public static Amperage newAmpsValue(Double new_val)
 {
 return new Amperage(new_val,AmperageUnits.AMP);
 }
@@ -184,7 +184,7 @@ return new Amperage(new_val,AmperageUnits.AMP);
 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newAmpValue()
+public static Amperage newAmpsValue()
 {
 return new Amperage(0.0,AmperageUnits.AMP);
 }
@@ -215,7 +215,7 @@ setValue(val,AmperageUnits.KILO_AMP);
 	 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newKiloampValue(Double new_val)
+public static Amperage newKiloampsValue(Double new_val)
 {
 return new Amperage(new_val,AmperageUnits.KILO_AMP);
 }
@@ -224,7 +224,7 @@ return new Amperage(new_val,AmperageUnits.KILO_AMP);
 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newKiloampValue()
+public static Amperage newKiloampsValue()
 {
 return new Amperage(0.0,AmperageUnits.KILO_AMP);
 }
@@ -255,7 +255,7 @@ setValue(val,AmperageUnits.MEGA_AMP);
 	 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newMegaampValue(Double new_val)
+public static Amperage newMegaampsValue(Double new_val)
 {
 return new Amperage(new_val,AmperageUnits.MEGA_AMP);
 }
@@ -264,7 +264,7 @@ return new Amperage(new_val,AmperageUnits.MEGA_AMP);
 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newMegaampValue()
+public static Amperage newMegaampsValue()
 {
 return new Amperage(0.0,AmperageUnits.MEGA_AMP);
 }
@@ -295,7 +295,7 @@ setValue(val,AmperageUnits.GIGA_AMP);
 	 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newGigaampValue(Double new_val)
+public static Amperage newGigaampsValue(Double new_val)
 {
 return new Amperage(new_val,AmperageUnits.GIGA_AMP);
 }
@@ -304,7 +304,7 @@ return new Amperage(new_val,AmperageUnits.GIGA_AMP);
 * 
 	 * @returns Amperage variable
 	 */
-public static Amperage newGigaampValue()
+public static Amperage newGigaampsValue()
 {
 return new Amperage(0.0,AmperageUnits.GIGA_AMP);
 }

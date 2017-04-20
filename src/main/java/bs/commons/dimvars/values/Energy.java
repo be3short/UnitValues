@@ -55,7 +55,7 @@ setValue(val,EnergyUnit.WATT_HOUR);
 	 * 
 	 * @returns Energy variable
 	 */
-public static Energy newWattHourValue(Double new_val)
+public static Energy newWattHoursValue(Double new_val)
 {
 return new Energy(new_val,EnergyUnit.WATT_HOUR);
 }
@@ -64,7 +64,7 @@ return new Energy(new_val,EnergyUnit.WATT_HOUR);
 * 
 	 * @returns Energy variable
 	 */
-public static Energy newWattHourValue()
+public static Energy newWattHoursValue()
 {
 return new Energy(0.0,EnergyUnit.WATT_HOUR);
 }
@@ -95,7 +95,7 @@ setValue(val,EnergyUnit.MILIAMP_HOUR);
 	 * 
 	 * @returns Energy variable
 	 */
-public static Energy newMiliampHourValue(Double new_val)
+public static Energy newMiliampHoursValue(Double new_val)
 {
 return new Energy(new_val,EnergyUnit.MILIAMP_HOUR);
 }
@@ -104,7 +104,7 @@ return new Energy(new_val,EnergyUnit.MILIAMP_HOUR);
 * 
 	 * @returns Energy variable
 	 */
-public static Energy newMiliampHourValue()
+public static Energy newMiliampHoursValue()
 {
 return new Energy(0.0,EnergyUnit.MILIAMP_HOUR);
 }

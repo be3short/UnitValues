@@ -55,7 +55,7 @@ setValue(val,MassUnit.GRAM);
 	 * 
 	 * @returns Mass variable
 	 */
-public static Mass newGramValue(Double new_val)
+public static Mass newGramsValue(Double new_val)
 {
 return new Mass(new_val,MassUnit.GRAM);
 }
@@ -64,7 +64,7 @@ return new Mass(new_val,MassUnit.GRAM);
 * 
 	 * @returns Mass variable
 	 */
-public static Mass newGramValue()
+public static Mass newGramsValue()
 {
 return new Mass(0.0,MassUnit.GRAM);
 }
@@ -95,7 +95,7 @@ setValue(val,MassUnit.KILOGRAM);
 	 * 
 	 * @returns Mass variable
 	 */
-public static Mass newKilogramValue(Double new_val)
+public static Mass newKilogramsValue(Double new_val)
 {
 return new Mass(new_val,MassUnit.KILOGRAM);
 }
@@ -104,7 +104,7 @@ return new Mass(new_val,MassUnit.KILOGRAM);
 * 
 	 * @returns Mass variable
 	 */
-public static Mass newKilogramValue()
+public static Mass newKilogramsValue()
 {
 return new Mass(0.0,MassUnit.KILOGRAM);
 }
