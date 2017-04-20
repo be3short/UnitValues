@@ -15,7 +15,7 @@ Maven:
 <!-- Add dependency -->
 <dependency>
     <groupId>com.github.brendan1991</groupId>
-    <artifactId>UnitVariables</artifactId>
+    <artifactId>UnitValues</artifactId>
     <version>v0.3</version>
 </dependency>
 ----
