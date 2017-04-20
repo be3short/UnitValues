@@ -1,0 +1,40 @@
+== UnitValues
+This library features variables that also contain units. These values can be stored and extracted in any unit of the same category (ie value stored in bytes can be extracted as megabytes). This eliminates the need to perform conversions, which eliminates a possible source of error, and unnecessary conversion code.    
+
+
+== Dependency
+Maven:
+
+[source,xml]
+----
+<!-- Add repository (if not already included) -->
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+
+<!-- Add dependency -->
+<dependency>
+    <groupId>com.github.brendan1991</groupId>
+    <artifactId>UnitValues</artifactId>
+    <version>v0.3</version>
+</dependency>
+----
+
+Gradle:
+
+[source,java]
+----
+//Add repository (if not already included):
+repositories {
+     ...
+     maven { url "https://jitpack.io" }
+}
+
+//Add dependency:
+dependencies {
+    ...
+    compile 'com.github.brendan1991:UnitValues:v0.3'
+}
+----
+
