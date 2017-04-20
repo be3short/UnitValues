@@ -1,6 +1,5 @@
 == UnitValues
-This library features variables that also contain units. These values can be stored and extracted in any unit of the same category (ie value stored in bytes can be extracted as megabytes). This eliminates the need to perform conversions, which eliminates a possible source of error, and unnecessary conversion code.    
-
+This library features variables that also contain units. These values can be stored and extracted in any unit of the same category (ie value stored in bytes can be extracted as megabytes). This eliminates the need to perform conversions, which eliminates a possible source of error, and unnecessary conversion code.
 
 == Dependency
 Maven:
@@ -16,7 +15,7 @@ Maven:
 <!-- Add dependency -->
 <dependency>
     <groupId>com.github.brendan1991</groupId>
-    <artifactId>UnitValues</artifactId>
+    <artifactId>UnitVariables</artifactId>
     <version>v0.3</version>
 </dependency>
 ----
@@ -37,4 +36,3 @@ dependencies {
     compile 'com.github.brendan1991:UnitValues:v0.3'
 }
 ----
-
