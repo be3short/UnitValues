@@ -33,7 +33,7 @@ super(val,unit,UnitType.VELOCITY);
 	 * 
 	 * @returns value in Nanometers per Second
 	 */
-public Double nanometersPerSeconds()
+public Double nanometersPerSecond()
 {
 return getValue(VelocityUnit.NANOMETERS_PER_SECOND);
 }
@@ -44,7 +44,7 @@ return getValue(VelocityUnit.NANOMETERS_PER_SECOND);
 	 *
 	 * @returns value in Nanometers per Second
 	 */
-public void nanometersPerSeconds(Double val)
+public void nanometersPerSecond(Double val)
 {
 setValue(val,VelocityUnit.NANOMETERS_PER_SECOND);
 }
@@ -55,7 +55,7 @@ setValue(val,VelocityUnit.NANOMETERS_PER_SECOND);
 	 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newNanometersPerSecondValue(Double new_val)
+public static Velocity newNanometersPerSeconValue(Double new_val)
 {
 return new Velocity(new_val,VelocityUnit.NANOMETERS_PER_SECOND);
 }
@@ -64,7 +64,7 @@ return new Velocity(new_val,VelocityUnit.NANOMETERS_PER_SECOND);
 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newNanometersPerSecondValue()
+public static Velocity newNanometersPerSeconValue()
 {
 return new Velocity(0.0,VelocityUnit.NANOMETERS_PER_SECOND);
 }
@@ -73,7 +73,7 @@ return new Velocity(0.0,VelocityUnit.NANOMETERS_PER_SECOND);
 	 * 
 	 * @returns value in Micrometers per Second
 	 */
-public Double micrometersPerSeconds()
+public Double micrometersPerSecond()
 {
 return getValue(VelocityUnit.MICROMETERS_PER_SECOND);
 }
@@ -84,7 +84,7 @@ return getValue(VelocityUnit.MICROMETERS_PER_SECOND);
 	 *
 	 * @returns value in Micrometers per Second
 	 */
-public void micrometersPerSeconds(Double val)
+public void micrometersPerSecond(Double val)
 {
 setValue(val,VelocityUnit.MICROMETERS_PER_SECOND);
 }
@@ -95,7 +95,7 @@ setValue(val,VelocityUnit.MICROMETERS_PER_SECOND);
 	 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newMicrometersPerSecondValue(Double new_val)
+public static Velocity newMicrometersPerSeconValue(Double new_val)
 {
 return new Velocity(new_val,VelocityUnit.MICROMETERS_PER_SECOND);
 }
@@ -104,7 +104,7 @@ return new Velocity(new_val,VelocityUnit.MICROMETERS_PER_SECOND);
 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newMicrometersPerSecondValue()
+public static Velocity newMicrometersPerSeconValue()
 {
 return new Velocity(0.0,VelocityUnit.MICROMETERS_PER_SECOND);
 }
@@ -113,7 +113,7 @@ return new Velocity(0.0,VelocityUnit.MICROMETERS_PER_SECOND);
 	 * 
 	 * @returns value in Millimeters per Second
 	 */
-public Double millimetersPerSeconds()
+public Double millimetersPerSecond()
 {
 return getValue(VelocityUnit.MILLIMETERS_PER_SECOND);
 }
@@ -124,7 +124,7 @@ return getValue(VelocityUnit.MILLIMETERS_PER_SECOND);
 	 *
 	 * @returns value in Millimeters per Second
 	 */
-public void millimetersPerSeconds(Double val)
+public void millimetersPerSecond(Double val)
 {
 setValue(val,VelocityUnit.MILLIMETERS_PER_SECOND);
 }
@@ -135,7 +135,7 @@ setValue(val,VelocityUnit.MILLIMETERS_PER_SECOND);
 	 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newMillimetersPerSecondValue(Double new_val)
+public static Velocity newMillimetersPerSeconValue(Double new_val)
 {
 return new Velocity(new_val,VelocityUnit.MILLIMETERS_PER_SECOND);
 }
@@ -144,7 +144,7 @@ return new Velocity(new_val,VelocityUnit.MILLIMETERS_PER_SECOND);
 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newMillimetersPerSecondValue()
+public static Velocity newMillimetersPerSeconValue()
 {
 return new Velocity(0.0,VelocityUnit.MILLIMETERS_PER_SECOND);
 }
@@ -153,7 +153,7 @@ return new Velocity(0.0,VelocityUnit.MILLIMETERS_PER_SECOND);
 	 * 
 	 * @returns value in Meters per Second
 	 */
-public Double metersPerSeconds()
+public Double metersPerSecond()
 {
 return getValue(VelocityUnit.METERS_PER_SECOND);
 }
@@ -164,7 +164,7 @@ return getValue(VelocityUnit.METERS_PER_SECOND);
 	 *
 	 * @returns value in Meters per Second
 	 */
-public void metersPerSeconds(Double val)
+public void metersPerSecond(Double val)
 {
 setValue(val,VelocityUnit.METERS_PER_SECOND);
 }
@@ -175,7 +175,7 @@ setValue(val,VelocityUnit.METERS_PER_SECOND);
 	 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newMetersPerSecondValue(Double new_val)
+public static Velocity newMetersPerSeconValue(Double new_val)
 {
 return new Velocity(new_val,VelocityUnit.METERS_PER_SECOND);
 }
@@ -184,7 +184,7 @@ return new Velocity(new_val,VelocityUnit.METERS_PER_SECOND);
 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newMetersPerSecondValue()
+public static Velocity newMetersPerSeconValue()
 {
 return new Velocity(0.0,VelocityUnit.METERS_PER_SECOND);
 }
@@ -193,7 +193,7 @@ return new Velocity(0.0,VelocityUnit.METERS_PER_SECOND);
 	 * 
 	 * @returns value in Kilometers per Second
 	 */
-public Double kilometersPerSeconds()
+public Double kilometersPerSecond()
 {
 return getValue(VelocityUnit.KILOMETERS_PER_SECOND);
 }
@@ -204,7 +204,7 @@ return getValue(VelocityUnit.KILOMETERS_PER_SECOND);
 	 *
 	 * @returns value in Kilometers per Second
 	 */
-public void kilometersPerSeconds(Double val)
+public void kilometersPerSecond(Double val)
 {
 setValue(val,VelocityUnit.KILOMETERS_PER_SECOND);
 }
@@ -215,7 +215,7 @@ setValue(val,VelocityUnit.KILOMETERS_PER_SECOND);
 	 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newKilometersPerSecondValue(Double new_val)
+public static Velocity newKilometersPerSeconValue(Double new_val)
 {
 return new Velocity(new_val,VelocityUnit.KILOMETERS_PER_SECOND);
 }
@@ -224,7 +224,7 @@ return new Velocity(new_val,VelocityUnit.KILOMETERS_PER_SECOND);
 * 
 	 * @returns Velocity variable
 	 */
-public static Velocity newKilometersPerSecondValue()
+public static Velocity newKilometersPerSeconValue()
 {
 return new Velocity(0.0,VelocityUnit.KILOMETERS_PER_SECOND);
 }

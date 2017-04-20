@@ -33,7 +33,7 @@ super(val,unit,UnitType.ANGULAR_VELOCITY);
 	 * 
 	 * @returns value in Radians per Second
 	 */
-public Double radiansPerSeconds()
+public Double radiansPerSecond()
 {
 return getValue(AngularVelocityUnit.RADIANS_PER_SEC);
 }
@@ -44,7 +44,7 @@ return getValue(AngularVelocityUnit.RADIANS_PER_SEC);
 	 *
 	 * @returns value in Radians per Second
 	 */
-public void radiansPerSeconds(Double val)
+public void radiansPerSecond(Double val)
 {
 setValue(val,AngularVelocityUnit.RADIANS_PER_SEC);
 }
@@ -55,7 +55,7 @@ setValue(val,AngularVelocityUnit.RADIANS_PER_SEC);
 	 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newRadiansPerSecondValue(Double new_val)
+public static AngularVelocity newRadiansPerSeconValue(Double new_val)
 {
 return new AngularVelocity(new_val,AngularVelocityUnit.RADIANS_PER_SEC);
 }
@@ -64,7 +64,7 @@ return new AngularVelocity(new_val,AngularVelocityUnit.RADIANS_PER_SEC);
 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newRadiansPerSecondValue()
+public static AngularVelocity newRadiansPerSeconValue()
 {
 return new AngularVelocity(0.0,AngularVelocityUnit.RADIANS_PER_SEC);
 }
@@ -73,7 +73,7 @@ return new AngularVelocity(0.0,AngularVelocityUnit.RADIANS_PER_SEC);
 	 * 
 	 * @returns value in Degree per Second
 	 */
-public Double degreePerSeconds()
+public Double degreePerSecond()
 {
 return getValue(AngularVelocityUnit.DEGREES_PER_SEC);
 }
@@ -84,7 +84,7 @@ return getValue(AngularVelocityUnit.DEGREES_PER_SEC);
 	 *
 	 * @returns value in Degree per Second
 	 */
-public void degreePerSeconds(Double val)
+public void degreePerSecond(Double val)
 {
 setValue(val,AngularVelocityUnit.DEGREES_PER_SEC);
 }
@@ -95,7 +95,7 @@ setValue(val,AngularVelocityUnit.DEGREES_PER_SEC);
 	 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newDegreePerSecondValue(Double new_val)
+public static AngularVelocity newDegreePerSeconValue(Double new_val)
 {
 return new AngularVelocity(new_val,AngularVelocityUnit.DEGREES_PER_SEC);
 }
@@ -104,7 +104,7 @@ return new AngularVelocity(new_val,AngularVelocityUnit.DEGREES_PER_SEC);
 * 
 	 * @returns AngularVelocity variable
 	 */
-public static AngularVelocity newDegreePerSecondValue()
+public static AngularVelocity newDegreePerSeconValue()
 {
 return new AngularVelocity(0.0,AngularVelocityUnit.DEGREES_PER_SEC);
 }

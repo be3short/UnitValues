@@ -124,13 +124,14 @@ public class DimensionedValueClassCodeGenerator
 		}
 
 		String capitalizedUnitAbrev = unitAbrev.substring(0, 1).toUpperCase() + unitAbrev.substring(1);
+		capitalizedUnitAbrev = capitalizedUnitAbrev.substring(0, unitAbrev.length() - 1);
 		String getMethod = "	/*\n	 * gets the value in " + unitName + "\n	 * \n	 * @returns value in "
 		+ unitName + "\n	 */\n";
-		getMethod += "public Double " + unitAbrev + "s()\n{\n";
+		getMethod += "public Double " + unitAbrev + "()\n{\n";
 		getMethod += "return getValue(" + unitClassName + ");\n}\n";
 		getMethod += "	/*\n	 * stores the value in " + unitName
 		+ "\n	 * \n	 *@param value to be stored\n	 *\n	 * @returns value in " + unitName + "\n	 */\n";
-		getMethod += "public void " + unitAbrev + "s(Double val)\n{\n";
+		getMethod += "public void " + unitAbrev + "(Double val)\n{\n";
 		getMethod += "setValue(val," + unitClassName + ");\n}\n";
 		getMethod += "	/*\n	 * " + unitName
 		+ " Constructor\n	 * \n	 * @param val - value to be stored\n	 * \n	 * @returns " + className
@@ -166,7 +167,21 @@ public class DimensionedValueClassCodeGenerator
 		{
 			newName = "Byte";
 		}
+		newName = correctForImproperPlural(newName);
 		return newName;
+	}
+
+	public static String correctForImproperPlural(String attempt)
+	{
+		String correctedAttempt = attempt;
+		if (correctedAttempt.contains("PerSecond"))
+		{
+			correctedAttempt.replace("PerSeconds", "PerSecond");
+		} else
+		{
+			correctedAttempt = correctedAttempt + "s";
+		}
+		return correctedAttempt;
 	}
 
 	public static void createAllValueClasses()
