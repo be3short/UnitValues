@@ -14,7 +14,7 @@ Maven:
 
 <!-- Add dependency -->
 <dependency>
-    <groupId>com.github.brendan1991</groupId>
+    <groupId>com.github.be3short</groupId>
     <artifactId>UnitValues</artifactId>
     <version>v0.3</version>
 </dependency>
@@ -33,6 +33,6 @@ repositories {
 //Add dependency:
 dependencies {
     ...
-    compile 'com.github.brendan1991:UnitValues:v0.3'
+    compile 'com.github.be3short:UnitValues:v0.3'
 }
 ----
