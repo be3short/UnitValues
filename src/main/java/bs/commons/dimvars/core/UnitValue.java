@@ -6,6 +6,7 @@ import bs.commons.dimvars.exceptions.UnitException;
 /*
  * Unit Val is short for Unit Value, which is a value with an associated unit.  This class allows values to be stored in a specified unit, and then retrieved in any unit of the same type
  */
+@SuppressWarnings("unchecked")
 public class UnitValue<T> extends AnyObject<T>
 {
 
@@ -22,7 +23,6 @@ public class UnitValue<T> extends AnyObject<T>
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly
 	 */
-	@SuppressWarnings("unchecked")
 	public UnitValue(T val, Unit unit) throws UnitException
 	{
 		super(val);
