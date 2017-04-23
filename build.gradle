@@ -22,4 +22,5 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.12'
      compile 'com.google.guava:guava:20.0'
+     compile 'com.github.be3short:ObjectTools:v0.2'
 }

@@ -1,9 +1,9 @@
 package bs.commons.unitvars.core;
 
 /*
- * Class that stores any object.  This class is used to pass objects that could change during runtime.
+ * Class that stores any object.  This class is used to pass objects that could change during runtime to ensure the correct pointer.
  */
-public abstract class AnyObject<T>
+public abstract class StoredObject<T>
 {
 
 	private T object; // value itself
@@ -13,7 +13,7 @@ public abstract class AnyObject<T>
 	 * 
 	 * @param obj - object to be stored
 	 */
-	protected AnyObject(T obj)
+	protected StoredObject(T obj)
 	{
 		object = obj;
 	}
@@ -36,6 +36,16 @@ public abstract class AnyObject<T>
 	protected T get()
 	{
 		return object;
+	}
+
+	/*
+	 * returns flag if object is null
+	 * 
+	 * @return null object flag
+	 */
+	protected Boolean hasObject()
+	{
+		return object == null;
 	}
 
 }
