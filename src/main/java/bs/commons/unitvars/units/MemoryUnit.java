@@ -1,9 +1,9 @@
 package bs.commons.unitvars.units;
 
 import bs.commons.unitvars.core.UnitConversionMap;
+import bs.commons.unitvars.core.UnitData.Unit;
 import bs.commons.unitvars.core.UnitGroup;
 import bs.commons.unitvars.core.UnitType;
-import bs.commons.unitvars.core.UnitData.Unit;
 
 public enum MemoryUnit implements Unit
 {
@@ -75,9 +75,10 @@ public enum MemoryUnit implements Unit
 		if (multiplier_index == 0)
 		{
 			conversions[0] = 1.0;
+
 		} else
 		{
-			conversions[0] = bitMult * conversions[1];
+			conversions[0] = 8.0 * conversions[1];
 		}
 		return conversions;
 	}
