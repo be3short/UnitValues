@@ -8,6 +8,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import bs.commons.objects.utilities.ClassUtilities;
 import bs.commons.unitvars.core.UnitData;
 import bs.commons.unitvars.core.UnitData.Unit;
 import bs.commons.unitvars.exceptions.UnitException;

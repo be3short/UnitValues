@@ -1,7 +1,12 @@
 package bs.commons.unitvars.core;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import bs.commons.objects.utilities.ClassUtilities;
 import bs.commons.unitvars.core.UnitData.Unit;
 import bs.commons.unitvars.exceptions.UnitException;
+import bs.commons.unitvars.values.Memory;
 
 /*
  * Unit Val is short for Unit Value, which is a value with an associated unit.  This class allows values to be stored in a specified unit, and then retrieved in any unit of the same type
@@ -191,4 +196,36 @@ public class UnitValue<T> extends StoredObject<T>
 		return this.unit;
 	}
 
+	public String printAllValues()
+	{
+		String output = "";
+		try
+		{
+			output += "Current Value is in " + UnitData.getUnitData(unit).unitName + " : " + get()
+			+ UnitData.getUnitData(unit).unitAbbreviation;
+		} catch (UnitException e1)
+		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		//Memory mem = Memory.newGigabytesValue(1.0);
+		Memory mem = Memory.newBitsValue(1073741824 * 8.0);
+		HashMap<String, ArrayList<Object>> units = ClassUtilities.getAllInterfaceEnumValues(Unit.class,
+		"bs.commons.unitvars.units");
+		for (Object unitEnumObj : units.get(unit.getClass().getSimpleName()))
+		{
+			try
+			{
+				Unit unitEnum = (Unit) unitEnumObj;
+				output += "\nValue in " + UnitData.getUnitData(unitEnum).unitName + " : "
+				+ String.format("%f", mem.get(unitEnum).doubleValue()) + " "
+				+ UnitData.getUnitData(unitEnum).unitAbbreviation;
+			} catch (UnitException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return output;
+	}
 }
