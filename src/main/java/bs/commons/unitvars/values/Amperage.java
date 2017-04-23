@@ -338,5 +338,4 @@ public class Amperage extends UnitValue<Double>
 	{
 		return new Amperage(0.0, AmperageUnits.GIGA_AMP);
 	}
-
 }

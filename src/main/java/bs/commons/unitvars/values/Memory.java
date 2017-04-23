@@ -470,15 +470,4 @@ public class Memory extends UnitValue<Double>
 	{
 		return new Memory(0.0, MemoryUnit.YOTTABYTE);
 	}
-
-	public static void Demo()
-	{
-		Memory mem = Memory.newGigabytesValue(1.0);
-		System.out.println(mem.printAllValues());
-	}
-
-	public static void main(String args[])
-	{
-		Demo();
-	}
 }

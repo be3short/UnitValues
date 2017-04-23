@@ -1,12 +1,13 @@
 package bs.commons.unitvars.values;
 
-import bs.commons.unitvars.core.UnitValue;
 import bs.commons.unitvars.core.UnitData.Unit;
-import bs.commons.unitvars.units.PowerUnit;
 import bs.commons.unitvars.core.UnitType;
+import bs.commons.unitvars.core.UnitValue;
+import bs.commons.unitvars.units.PowerUnit;
 
 /**
- * Class that stores a value in Powerunits. This value can be extracted or updated in any units of the same type.
+ * Class that stores a value in Powerunits. This value can be extracted or
+ * updated in any units of the same type.
  *
  * @author: Brendan Short
  *
@@ -14,6 +15,7 @@ import bs.commons.unitvars.core.UnitType;
  */
 public class Power extends UnitValue<Double>
 {
+
 	/*
 	 * General Constructor
 	 * 
@@ -24,30 +26,33 @@ public class Power extends UnitValue<Double>
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly
 	 */
-public Power(Double val,Unit unit)
-{
-super(val,unit,UnitType.POWER);
-}
+	public Power(Double val, Unit unit)
+	{
+		super(val, unit, UnitType.POWER);
+	}
+
 	/*
 	 * gets the value in Nanowatt
 	 * 
 	 * @returns value in Nanowatt
 	 */
-public Double nanowatts()
-{
-return getValue(PowerUnit.NANOWATT);
-}
+	public Double nanowatts()
+	{
+		return getValue(PowerUnit.NANOWATT);
+	}
+
 	/*
 	 * stores the value in Nanowatt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Nanowatt
 	 */
-public void nanowatts(Double val)
-{
-setValue(val,PowerUnit.NANOWATT);
-}
+	public void nanowatts(Double val)
+	{
+		setValue(val, PowerUnit.NANOWATT);
+	}
+
 	/*
 	 * Nanowatt Constructor
 	 * 
@@ -55,39 +60,43 @@ setValue(val,PowerUnit.NANOWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newNanowattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.NANOWATT);
-}
+	public static Power newNanowattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.NANOWATT);
+	}
+
 	/*
 	 * Nanowatt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newNanowattsValue()
-{
-return new Power(0.0,PowerUnit.NANOWATT);
-}
+	public static Power newNanowattsValue()
+	{
+		return new Power(0.0, PowerUnit.NANOWATT);
+	}
+
 	/*
 	 * gets the value in Microwatt
 	 * 
 	 * @returns value in Microwatt
 	 */
-public Double microwatts()
-{
-return getValue(PowerUnit.MICROWATT);
-}
+	public Double microwatts()
+	{
+		return getValue(PowerUnit.MICROWATT);
+	}
+
 	/*
 	 * stores the value in Microwatt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Microwatt
 	 */
-public void microwatts(Double val)
-{
-setValue(val,PowerUnit.MICROWATT);
-}
+	public void microwatts(Double val)
+	{
+		setValue(val, PowerUnit.MICROWATT);
+	}
+
 	/*
 	 * Microwatt Constructor
 	 * 
@@ -95,39 +104,43 @@ setValue(val,PowerUnit.MICROWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newMicrowattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.MICROWATT);
-}
+	public static Power newMicrowattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.MICROWATT);
+	}
+
 	/*
 	 * Microwatt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newMicrowattsValue()
-{
-return new Power(0.0,PowerUnit.MICROWATT);
-}
+	public static Power newMicrowattsValue()
+	{
+		return new Power(0.0, PowerUnit.MICROWATT);
+	}
+
 	/*
 	 * gets the value in Milliwatt
 	 * 
 	 * @returns value in Milliwatt
 	 */
-public Double milliwatts()
-{
-return getValue(PowerUnit.MILLIWATT);
-}
+	public Double milliwatts()
+	{
+		return getValue(PowerUnit.MILLIWATT);
+	}
+
 	/*
 	 * stores the value in Milliwatt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Milliwatt
 	 */
-public void milliwatts(Double val)
-{
-setValue(val,PowerUnit.MILLIWATT);
-}
+	public void milliwatts(Double val)
+	{
+		setValue(val, PowerUnit.MILLIWATT);
+	}
+
 	/*
 	 * Milliwatt Constructor
 	 * 
@@ -135,39 +148,43 @@ setValue(val,PowerUnit.MILLIWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newMilliwattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.MILLIWATT);
-}
+	public static Power newMilliwattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.MILLIWATT);
+	}
+
 	/*
 	 * Milliwatt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newMilliwattsValue()
-{
-return new Power(0.0,PowerUnit.MILLIWATT);
-}
+	public static Power newMilliwattsValue()
+	{
+		return new Power(0.0, PowerUnit.MILLIWATT);
+	}
+
 	/*
 	 * gets the value in Watt
 	 * 
 	 * @returns value in Watt
 	 */
-public Double watts()
-{
-return getValue(PowerUnit.WATT);
-}
+	public Double watts()
+	{
+		return getValue(PowerUnit.WATT);
+	}
+
 	/*
 	 * stores the value in Watt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Watt
 	 */
-public void watts(Double val)
-{
-setValue(val,PowerUnit.WATT);
-}
+	public void watts(Double val)
+	{
+		setValue(val, PowerUnit.WATT);
+	}
+
 	/*
 	 * Watt Constructor
 	 * 
@@ -175,39 +192,43 @@ setValue(val,PowerUnit.WATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newWattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.WATT);
-}
+	public static Power newWattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.WATT);
+	}
+
 	/*
 	 * Watt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newWattsValue()
-{
-return new Power(0.0,PowerUnit.WATT);
-}
+	public static Power newWattsValue()
+	{
+		return new Power(0.0, PowerUnit.WATT);
+	}
+
 	/*
 	 * gets the value in Kilowatt
 	 * 
 	 * @returns value in Kilowatt
 	 */
-public Double kilowatts()
-{
-return getValue(PowerUnit.KILOWATT);
-}
+	public Double kilowatts()
+	{
+		return getValue(PowerUnit.KILOWATT);
+	}
+
 	/*
 	 * stores the value in Kilowatt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Kilowatt
 	 */
-public void kilowatts(Double val)
-{
-setValue(val,PowerUnit.KILOWATT);
-}
+	public void kilowatts(Double val)
+	{
+		setValue(val, PowerUnit.KILOWATT);
+	}
+
 	/*
 	 * Kilowatt Constructor
 	 * 
@@ -215,39 +236,43 @@ setValue(val,PowerUnit.KILOWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newKilowattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.KILOWATT);
-}
+	public static Power newKilowattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.KILOWATT);
+	}
+
 	/*
 	 * Kilowatt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newKilowattsValue()
-{
-return new Power(0.0,PowerUnit.KILOWATT);
-}
+	public static Power newKilowattsValue()
+	{
+		return new Power(0.0, PowerUnit.KILOWATT);
+	}
+
 	/*
 	 * gets the value in Megawatt
 	 * 
 	 * @returns value in Megawatt
 	 */
-public Double megawatts()
-{
-return getValue(PowerUnit.MEGAWATT);
-}
+	public Double megawatts()
+	{
+		return getValue(PowerUnit.MEGAWATT);
+	}
+
 	/*
 	 * stores the value in Megawatt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Megawatt
 	 */
-public void megawatts(Double val)
-{
-setValue(val,PowerUnit.MEGAWATT);
-}
+	public void megawatts(Double val)
+	{
+		setValue(val, PowerUnit.MEGAWATT);
+	}
+
 	/*
 	 * Megawatt Constructor
 	 * 
@@ -255,39 +280,43 @@ setValue(val,PowerUnit.MEGAWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newMegawattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.MEGAWATT);
-}
+	public static Power newMegawattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.MEGAWATT);
+	}
+
 	/*
 	 * Megawatt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newMegawattsValue()
-{
-return new Power(0.0,PowerUnit.MEGAWATT);
-}
+	public static Power newMegawattsValue()
+	{
+		return new Power(0.0, PowerUnit.MEGAWATT);
+	}
+
 	/*
 	 * gets the value in Gigawatt
 	 * 
 	 * @returns value in Gigawatt
 	 */
-public Double gigawatts()
-{
-return getValue(PowerUnit.GIGAWATT);
-}
+	public Double gigawatts()
+	{
+		return getValue(PowerUnit.GIGAWATT);
+	}
+
 	/*
 	 * stores the value in Gigawatt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Gigawatt
 	 */
-public void gigawatts(Double val)
-{
-setValue(val,PowerUnit.GIGAWATT);
-}
+	public void gigawatts(Double val)
+	{
+		setValue(val, PowerUnit.GIGAWATT);
+	}
+
 	/*
 	 * Gigawatt Constructor
 	 * 
@@ -295,39 +324,43 @@ setValue(val,PowerUnit.GIGAWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newGigawattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.GIGAWATT);
-}
+	public static Power newGigawattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.GIGAWATT);
+	}
+
 	/*
 	 * Gigawatt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newGigawattsValue()
-{
-return new Power(0.0,PowerUnit.GIGAWATT);
-}
+	public static Power newGigawattsValue()
+	{
+		return new Power(0.0, PowerUnit.GIGAWATT);
+	}
+
 	/*
 	 * gets the value in Terawatt
 	 * 
 	 * @returns value in Terawatt
 	 */
-public Double terawatts()
-{
-return getValue(PowerUnit.TERAWATT);
-}
+	public Double terawatts()
+	{
+		return getValue(PowerUnit.TERAWATT);
+	}
+
 	/*
 	 * stores the value in Terawatt
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Terawatt
 	 */
-public void terawatts(Double val)
-{
-setValue(val,PowerUnit.TERAWATT);
-}
+	public void terawatts(Double val)
+	{
+		setValue(val, PowerUnit.TERAWATT);
+	}
+
 	/*
 	 * Terawatt Constructor
 	 * 
@@ -335,17 +368,18 @@ setValue(val,PowerUnit.TERAWATT);
 	 * 
 	 * @returns Power variable
 	 */
-public static Power newTerawattsValue(Double new_val)
-{
-return new Power(new_val,PowerUnit.TERAWATT);
-}
+	public static Power newTerawattsValue(Double new_val)
+	{
+		return new Power(new_val, PowerUnit.TERAWATT);
+	}
+
 	/*
 	 * Terawatt Constructor with zero value
-* 
+	 * 
 	 * @returns Power variable
 	 */
-public static Power newTerawattsValue()
-{
-return new Power(0.0,PowerUnit.TERAWATT);
-}
+	public static Power newTerawattsValue()
+	{
+		return new Power(0.0, PowerUnit.TERAWATT);
+	}
 }

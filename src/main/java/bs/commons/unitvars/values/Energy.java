@@ -1,12 +1,13 @@
 package bs.commons.unitvars.values;
 
-import bs.commons.unitvars.core.UnitValue;
 import bs.commons.unitvars.core.UnitData.Unit;
-import bs.commons.unitvars.units.EnergyUnit;
 import bs.commons.unitvars.core.UnitType;
+import bs.commons.unitvars.core.UnitValue;
+import bs.commons.unitvars.units.EnergyUnit;
 
 /**
- * Class that stores a value in Energyunits. This value can be extracted or updated in any units of the same type.
+ * Class that stores a value in Energyunits. This value can be extracted or
+ * updated in any units of the same type.
  *
  * @author: Brendan Short
  *
@@ -14,6 +15,7 @@ import bs.commons.unitvars.core.UnitType;
  */
 public class Energy extends UnitValue<Double>
 {
+
 	/*
 	 * General Constructor
 	 * 
@@ -24,30 +26,33 @@ public class Energy extends UnitValue<Double>
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly
 	 */
-public Energy(Double val,Unit unit)
-{
-super(val,unit,UnitType.ENERGY);
-}
+	public Energy(Double val, Unit unit)
+	{
+		super(val, unit, UnitType.ENERGY);
+	}
+
 	/*
 	 * gets the value in Watt Hour
 	 * 
 	 * @returns value in Watt Hour
 	 */
-public Double wattHours()
-{
-return getValue(EnergyUnit.WATT_HOUR);
-}
+	public Double wattHours()
+	{
+		return getValue(EnergyUnit.WATT_HOUR);
+	}
+
 	/*
 	 * stores the value in Watt Hour
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Watt Hour
 	 */
-public void wattHours(Double val)
-{
-setValue(val,EnergyUnit.WATT_HOUR);
-}
+	public void wattHours(Double val)
+	{
+		setValue(val, EnergyUnit.WATT_HOUR);
+	}
+
 	/*
 	 * Watt Hour Constructor
 	 * 
@@ -55,39 +60,43 @@ setValue(val,EnergyUnit.WATT_HOUR);
 	 * 
 	 * @returns Energy variable
 	 */
-public static Energy newWattHoursValue(Double new_val)
-{
-return new Energy(new_val,EnergyUnit.WATT_HOUR);
-}
+	public static Energy newWattHoursValue(Double new_val)
+	{
+		return new Energy(new_val, EnergyUnit.WATT_HOUR);
+	}
+
 	/*
 	 * Watt Hour Constructor with zero value
-* 
+	 * 
 	 * @returns Energy variable
 	 */
-public static Energy newWattHoursValue()
-{
-return new Energy(0.0,EnergyUnit.WATT_HOUR);
-}
+	public static Energy newWattHoursValue()
+	{
+		return new Energy(0.0, EnergyUnit.WATT_HOUR);
+	}
+
 	/*
 	 * gets the value in Miliamp Hour
 	 * 
 	 * @returns value in Miliamp Hour
 	 */
-public Double miliampHours()
-{
-return getValue(EnergyUnit.MILIAMP_HOUR);
-}
+	public Double miliampHours()
+	{
+		return getValue(EnergyUnit.MILIAMP_HOUR);
+	}
+
 	/*
 	 * stores the value in Miliamp Hour
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Miliamp Hour
 	 */
-public void miliampHours(Double val)
-{
-setValue(val,EnergyUnit.MILIAMP_HOUR);
-}
+	public void miliampHours(Double val)
+	{
+		setValue(val, EnergyUnit.MILIAMP_HOUR);
+	}
+
 	/*
 	 * Miliamp Hour Constructor
 	 * 
@@ -95,17 +104,18 @@ setValue(val,EnergyUnit.MILIAMP_HOUR);
 	 * 
 	 * @returns Energy variable
 	 */
-public static Energy newMiliampHoursValue(Double new_val)
-{
-return new Energy(new_val,EnergyUnit.MILIAMP_HOUR);
-}
+	public static Energy newMiliampHoursValue(Double new_val)
+	{
+		return new Energy(new_val, EnergyUnit.MILIAMP_HOUR);
+	}
+
 	/*
 	 * Miliamp Hour Constructor with zero value
-* 
+	 * 
 	 * @returns Energy variable
 	 */
-public static Energy newMiliampHoursValue()
-{
-return new Energy(0.0,EnergyUnit.MILIAMP_HOUR);
-}
+	public static Energy newMiliampHoursValue()
+	{
+		return new Energy(0.0, EnergyUnit.MILIAMP_HOUR);
+	}
 }

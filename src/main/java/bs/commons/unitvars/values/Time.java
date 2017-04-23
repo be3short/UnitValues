@@ -1,12 +1,13 @@
 package bs.commons.unitvars.values;
 
-import bs.commons.unitvars.core.UnitValue;
 import bs.commons.unitvars.core.UnitData.Unit;
-import bs.commons.unitvars.units.TimeUnit;
 import bs.commons.unitvars.core.UnitType;
+import bs.commons.unitvars.core.UnitValue;
+import bs.commons.unitvars.units.TimeUnit;
 
 /**
- * Class that stores a value in Timeunits. This value can be extracted or updated in any units of the same type.
+ * Class that stores a value in Timeunits. This value can be extracted or
+ * updated in any units of the same type.
  *
  * @author: Brendan Short
  *
@@ -14,6 +15,7 @@ import bs.commons.unitvars.core.UnitType;
  */
 public class Time extends UnitValue<Double>
 {
+
 	/*
 	 * General Constructor
 	 * 
@@ -24,30 +26,33 @@ public class Time extends UnitValue<Double>
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly
 	 */
-public Time(Double val,Unit unit)
-{
-super(val,unit,UnitType.TIME);
-}
+	public Time(Double val, Unit unit)
+	{
+		super(val, unit, UnitType.TIME);
+	}
+
 	/*
 	 * gets the value in Nanosecond
 	 * 
 	 * @returns value in Nanosecond
 	 */
-public Double nanoseconds()
-{
-return getValue(TimeUnit.NANOSECOND);
-}
+	public Double nanoseconds()
+	{
+		return getValue(TimeUnit.NANOSECOND);
+	}
+
 	/*
 	 * stores the value in Nanosecond
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Nanosecond
 	 */
-public void nanoseconds(Double val)
-{
-setValue(val,TimeUnit.NANOSECOND);
-}
+	public void nanoseconds(Double val)
+	{
+		setValue(val, TimeUnit.NANOSECOND);
+	}
+
 	/*
 	 * Nanosecond Constructor
 	 * 
@@ -55,39 +60,43 @@ setValue(val,TimeUnit.NANOSECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newNanosecondsValue(Double new_val)
-{
-return new Time(new_val,TimeUnit.NANOSECOND);
-}
+	public static Time newNanosecondsValue(Double new_val)
+	{
+		return new Time(new_val, TimeUnit.NANOSECOND);
+	}
+
 	/*
 	 * Nanosecond Constructor with zero value
-* 
+	 * 
 	 * @returns Time variable
 	 */
-public static Time newNanosecondsValue()
-{
-return new Time(0.0,TimeUnit.NANOSECOND);
-}
+	public static Time newNanosecondsValue()
+	{
+		return new Time(0.0, TimeUnit.NANOSECOND);
+	}
+
 	/*
 	 * gets the value in Microsecond
 	 * 
 	 * @returns value in Microsecond
 	 */
-public Double microseconds()
-{
-return getValue(TimeUnit.MICROSECOND);
-}
+	public Double microseconds()
+	{
+		return getValue(TimeUnit.MICROSECOND);
+	}
+
 	/*
 	 * stores the value in Microsecond
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Microsecond
 	 */
-public void microseconds(Double val)
-{
-setValue(val,TimeUnit.MICROSECOND);
-}
+	public void microseconds(Double val)
+	{
+		setValue(val, TimeUnit.MICROSECOND);
+	}
+
 	/*
 	 * Microsecond Constructor
 	 * 
@@ -95,39 +104,43 @@ setValue(val,TimeUnit.MICROSECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newMicrosecondsValue(Double new_val)
-{
-return new Time(new_val,TimeUnit.MICROSECOND);
-}
+	public static Time newMicrosecondsValue(Double new_val)
+	{
+		return new Time(new_val, TimeUnit.MICROSECOND);
+	}
+
 	/*
 	 * Microsecond Constructor with zero value
-* 
+	 * 
 	 * @returns Time variable
 	 */
-public static Time newMicrosecondsValue()
-{
-return new Time(0.0,TimeUnit.MICROSECOND);
-}
+	public static Time newMicrosecondsValue()
+	{
+		return new Time(0.0, TimeUnit.MICROSECOND);
+	}
+
 	/*
 	 * gets the value in Millisecond
 	 * 
 	 * @returns value in Millisecond
 	 */
-public Double milliseconds()
-{
-return getValue(TimeUnit.MILLISECOND);
-}
+	public Double milliseconds()
+	{
+		return getValue(TimeUnit.MILLISECOND);
+	}
+
 	/*
 	 * stores the value in Millisecond
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Millisecond
 	 */
-public void milliseconds(Double val)
-{
-setValue(val,TimeUnit.MILLISECOND);
-}
+	public void milliseconds(Double val)
+	{
+		setValue(val, TimeUnit.MILLISECOND);
+	}
+
 	/*
 	 * Millisecond Constructor
 	 * 
@@ -135,39 +148,43 @@ setValue(val,TimeUnit.MILLISECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newMillisecondsValue(Double new_val)
-{
-return new Time(new_val,TimeUnit.MILLISECOND);
-}
+	public static Time newMillisecondsValue(Double new_val)
+	{
+		return new Time(new_val, TimeUnit.MILLISECOND);
+	}
+
 	/*
 	 * Millisecond Constructor with zero value
-* 
+	 * 
 	 * @returns Time variable
 	 */
-public static Time newMillisecondsValue()
-{
-return new Time(0.0,TimeUnit.MILLISECOND);
-}
+	public static Time newMillisecondsValue()
+	{
+		return new Time(0.0, TimeUnit.MILLISECOND);
+	}
+
 	/*
 	 * gets the value in Second
 	 * 
 	 * @returns value in Second
 	 */
-public Double seconds()
-{
-return getValue(TimeUnit.SECOND);
-}
+	public Double seconds()
+	{
+		return getValue(TimeUnit.SECOND);
+	}
+
 	/*
 	 * stores the value in Second
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Second
 	 */
-public void seconds(Double val)
-{
-setValue(val,TimeUnit.SECOND);
-}
+	public void seconds(Double val)
+	{
+		setValue(val, TimeUnit.SECOND);
+	}
+
 	/*
 	 * Second Constructor
 	 * 
@@ -175,39 +192,43 @@ setValue(val,TimeUnit.SECOND);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newSecondsValue(Double new_val)
-{
-return new Time(new_val,TimeUnit.SECOND);
-}
+	public static Time newSecondsValue(Double new_val)
+	{
+		return new Time(new_val, TimeUnit.SECOND);
+	}
+
 	/*
 	 * Second Constructor with zero value
-* 
+	 * 
 	 * @returns Time variable
 	 */
-public static Time newSecondsValue()
-{
-return new Time(0.0,TimeUnit.SECOND);
-}
+	public static Time newSecondsValue()
+	{
+		return new Time(0.0, TimeUnit.SECOND);
+	}
+
 	/*
 	 * gets the value in Minute
 	 * 
 	 * @returns value in Minute
 	 */
-public Double minutes()
-{
-return getValue(TimeUnit.MINUTE);
-}
+	public Double minutes()
+	{
+		return getValue(TimeUnit.MINUTE);
+	}
+
 	/*
 	 * stores the value in Minute
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Minute
 	 */
-public void minutes(Double val)
-{
-setValue(val,TimeUnit.MINUTE);
-}
+	public void minutes(Double val)
+	{
+		setValue(val, TimeUnit.MINUTE);
+	}
+
 	/*
 	 * Minute Constructor
 	 * 
@@ -215,39 +236,43 @@ setValue(val,TimeUnit.MINUTE);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newMinutesValue(Double new_val)
-{
-return new Time(new_val,TimeUnit.MINUTE);
-}
+	public static Time newMinutesValue(Double new_val)
+	{
+		return new Time(new_val, TimeUnit.MINUTE);
+	}
+
 	/*
 	 * Minute Constructor with zero value
-* 
+	 * 
 	 * @returns Time variable
 	 */
-public static Time newMinutesValue()
-{
-return new Time(0.0,TimeUnit.MINUTE);
-}
+	public static Time newMinutesValue()
+	{
+		return new Time(0.0, TimeUnit.MINUTE);
+	}
+
 	/*
 	 * gets the value in Hour
 	 * 
 	 * @returns value in Hour
 	 */
-public Double hours()
-{
-return getValue(TimeUnit.HOUR);
-}
+	public Double hours()
+	{
+		return getValue(TimeUnit.HOUR);
+	}
+
 	/*
 	 * stores the value in Hour
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Hour
 	 */
-public void hours(Double val)
-{
-setValue(val,TimeUnit.HOUR);
-}
+	public void hours(Double val)
+	{
+		setValue(val, TimeUnit.HOUR);
+	}
+
 	/*
 	 * Hour Constructor
 	 * 
@@ -255,17 +280,18 @@ setValue(val,TimeUnit.HOUR);
 	 * 
 	 * @returns Time variable
 	 */
-public static Time newHoursValue(Double new_val)
-{
-return new Time(new_val,TimeUnit.HOUR);
-}
+	public static Time newHoursValue(Double new_val)
+	{
+		return new Time(new_val, TimeUnit.HOUR);
+	}
+
 	/*
 	 * Hour Constructor with zero value
-* 
+	 * 
 	 * @returns Time variable
 	 */
-public static Time newHoursValue()
-{
-return new Time(0.0,TimeUnit.HOUR);
-}
+	public static Time newHoursValue()
+	{
+		return new Time(0.0, TimeUnit.HOUR);
+	}
 }

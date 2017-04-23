@@ -1,12 +1,13 @@
 package bs.commons.unitvars.values;
 
-import bs.commons.unitvars.core.UnitValue;
 import bs.commons.unitvars.core.UnitData.Unit;
-import bs.commons.unitvars.units.MassUnit;
 import bs.commons.unitvars.core.UnitType;
+import bs.commons.unitvars.core.UnitValue;
+import bs.commons.unitvars.units.MassUnit;
 
 /**
- * Class that stores a value in Massunits. This value can be extracted or updated in any units of the same type.
+ * Class that stores a value in Massunits. This value can be extracted or
+ * updated in any units of the same type.
  *
  * @author: Brendan Short
  *
@@ -14,6 +15,7 @@ import bs.commons.unitvars.core.UnitType;
  */
 public class Mass extends UnitValue<Double>
 {
+
 	/*
 	 * General Constructor
 	 * 
@@ -24,30 +26,33 @@ public class Mass extends UnitValue<Double>
 	 * @throws UnitException - throws an exception if the unit is not configured
 	 * correctly
 	 */
-public Mass(Double val,Unit unit)
-{
-super(val,unit,UnitType.MASS);
-}
+	public Mass(Double val, Unit unit)
+	{
+		super(val, unit, UnitType.MASS);
+	}
+
 	/*
 	 * gets the value in Gram
 	 * 
 	 * @returns value in Gram
 	 */
-public Double grams()
-{
-return getValue(MassUnit.GRAM);
-}
+	public Double grams()
+	{
+		return getValue(MassUnit.GRAM);
+	}
+
 	/*
 	 * stores the value in Gram
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Gram
 	 */
-public void grams(Double val)
-{
-setValue(val,MassUnit.GRAM);
-}
+	public void grams(Double val)
+	{
+		setValue(val, MassUnit.GRAM);
+	}
+
 	/*
 	 * Gram Constructor
 	 * 
@@ -55,39 +60,43 @@ setValue(val,MassUnit.GRAM);
 	 * 
 	 * @returns Mass variable
 	 */
-public static Mass newGramsValue(Double new_val)
-{
-return new Mass(new_val,MassUnit.GRAM);
-}
+	public static Mass newGramsValue(Double new_val)
+	{
+		return new Mass(new_val, MassUnit.GRAM);
+	}
+
 	/*
 	 * Gram Constructor with zero value
-* 
+	 * 
 	 * @returns Mass variable
 	 */
-public static Mass newGramsValue()
-{
-return new Mass(0.0,MassUnit.GRAM);
-}
+	public static Mass newGramsValue()
+	{
+		return new Mass(0.0, MassUnit.GRAM);
+	}
+
 	/*
 	 * gets the value in Kilogram
 	 * 
 	 * @returns value in Kilogram
 	 */
-public Double kilograms()
-{
-return getValue(MassUnit.KILOGRAM);
-}
+	public Double kilograms()
+	{
+		return getValue(MassUnit.KILOGRAM);
+	}
+
 	/*
 	 * stores the value in Kilogram
 	 * 
-	 *@param value to be stored
+	 * @param value to be stored
 	 *
 	 * @returns value in Kilogram
 	 */
-public void kilograms(Double val)
-{
-setValue(val,MassUnit.KILOGRAM);
-}
+	public void kilograms(Double val)
+	{
+		setValue(val, MassUnit.KILOGRAM);
+	}
+
 	/*
 	 * Kilogram Constructor
 	 * 
@@ -95,17 +104,18 @@ setValue(val,MassUnit.KILOGRAM);
 	 * 
 	 * @returns Mass variable
 	 */
-public static Mass newKilogramsValue(Double new_val)
-{
-return new Mass(new_val,MassUnit.KILOGRAM);
-}
+	public static Mass newKilogramsValue(Double new_val)
+	{
+		return new Mass(new_val, MassUnit.KILOGRAM);
+	}
+
 	/*
 	 * Kilogram Constructor with zero value
-* 
+	 * 
 	 * @returns Mass variable
 	 */
-public static Mass newKilogramsValue()
-{
-return new Mass(0.0,MassUnit.KILOGRAM);
-}
+	public static Mass newKilogramsValue()
+	{
+		return new Mass(0.0, MassUnit.KILOGRAM);
+	}
 }
